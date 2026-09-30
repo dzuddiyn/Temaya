@@ -3,7 +3,7 @@
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE v0.1.6  
-**Document version:** 0.1.0  
+**Document version:** 0.1.1  
 **Date:** 2026-09-30  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -100,6 +100,35 @@ Owner membekalkan proposal Gemini tentang:
 - Green API / Whapi / UltraMsg sebagai contoh WhatsApp gateway.
 
 Proposal ini ialah **idea dump/reference**, bukan dependency Temaya.
+
+---
+
+## RAW-007 — Voice Temaya
+
+**Source:** EXPLICIT  
+**Status:** LOCKED via D-001
+
+> "voice = EdgeTTS_Yasmin pitch suara ikut kehendak.. ini lock.. candidate lain boleh rekod sebagai cadangan.."
+
+---
+
+## RAW-008 — Robot companion
+
+**Source:** EXPLICIT  
+**Status:** OWNER DECIDED — NOT LOCKED
+
+> "robot companion (modify robot murah di Shopee) untuk setiap anak dan ayah, ini decided.."
+
+Implikasi rekod: custom ball robot, hamster-drive, Qi dock dan mekanik lain daripada proposal terdahulu kekal sebagai cadangan/reference, bukan baseline yang diputuskan.
+
+---
+
+## RAW-009 — Persona Hani
+
+**Source:** EXPLICIT  
+**Status:** LOCKED via D-003
+
+> "untuk Hani, Temayanya mesti persona seorang yang lemah lembut persis ibunya, tak menghakimi, pada awalnya melayan apa yang Hani terbayang dalam dunia schizo nya, secara perlahan bawa dia ke dunia nyata, jangan jawab seperti doktor, tapi seperti ibu dan kawan baik yang sayang padanya. lock"
 
 ---
 
@@ -282,6 +311,13 @@ Sensitive material seperti credentials, auth state dan voice embeddings patut di
 
 Per-user isolation untuk ahli keluarga ialah arah yang patut diteroka.
 
+## AC-011 | OWNER DECIDED — NOT LOCKED
+**Source:** EXPLICIT
+
+Setiap anak dan ayah akan mempunyai **robot companion** berasaskan **modify robot murah yang dibeli di Shopee**.
+
+**Boundary:** bentuk mekanikal spesifik, ballbot, Qi dock, e-Paper dan reka bentuk custom lain belum diputuskan dan kekal sebagai cadangan.
+
 ---
 
 # IDEA LOG
@@ -341,10 +377,12 @@ Home Assistant sebagai deterministic execution layer; OpenClaw/LLM sebagai inter
 
 Ryzen workstation sebagai optional heavy compute server untuk model/RAG/voice workload.
 
-## I-009 | OPEN
-**Source:** EXPLICIT as Meta AI proposal; owner acceptance UNKNOWN
+## I-009 | PARTIALLY RESOLVED
+**Source:** EXPLICIT as Meta AI proposal + owner decision
 
-Voice interface dengan wake word, STT dan TTS.
+Voice interface kekal idea terbuka untuk wake word/STT, tetapi **TTS voice baseline telah LOCKED melalui D-001: EdgeTTS_Yasmin dengan pitch boleh dilaras mengikut kehendak/persona**.
+
+Pilihan TTS lain yang pernah disebut kekal sebagai cadangan sahaja dan tidak menggantikan D-001 tanpa keputusan baharu.
 
 ## I-010 | OPEN
 **Source:** INFERRED
@@ -376,10 +414,12 @@ School channel sebagai silent reader/summarizer yang mengeluarkan homework, exam
 
 Dedicated device identity + wake word boleh menjadi signal identity utama; speaker ID sebagai secondary signal.
 
-## I-016 | OPEN
-**Source:** EXPLICIT as Meta AI proposal; owner acceptance UNKNOWN
+## I-016 | PARTIALLY RESOLVED
+**Source:** EXPLICIT as Meta AI proposal + owner decision
 
-Puspa smart speaker dan personalised robot/device sebagai kemungkinan physical interface.
+Personalised physical companion kekal dalam scope idea. Owner telah memutuskan arah **robot companion hasil modify robot murah di Shopee untuk setiap anak dan ayah** (lihat AC-011).
+
+Custom ball robot, hamster-drive, Qi docking, e-Paper face dan mekanik spesifik daripada proposal Meta AI kekal sebagai cadangan/reference, bukan baseline.
 
 ## I-017 | OPEN
 **Source:** EXPLICIT — Gemini proposal; owner acceptance UNKNOWN
@@ -583,9 +623,40 @@ Meta AI proposal mencadangkan custom dual WhatsApp/Baileys containers, sedangkan
 
 # DECISIONS
 
-**Tiada `D-xxx | LOCKED`.**
+## D-001 | LOCKED
 
-Owner belum memberikan arahan LOCK / LOCK DECISION bagi mana-mana architecture choice.
+**Source:** EXPLICIT  
+**Decision:** Voice Temaya menggunakan **EdgeTTS_Yasmin**, dengan **pitch suara boleh dilaras mengikut kehendak/persona**.  
+**Locked by:** Project Owner
+
+**Consequence:** TTS/voice candidate lain boleh kekal direkodkan sebagai cadangan, tetapi tidak menggantikan baseline ini tanpa keputusan baharu.
+
+---
+
+## D-003 | LOCKED
+
+**Source:** EXPLICIT  
+**Decision:** Persona Temaya untuk Hani mesti lemah lembut, penyayang, tidak menghakimi, dan berinteraksi seperti **ibu + kawan baik yang sayang kepadanya**, bukan seperti doktor atau chatbot klinikal.
+
+Apabila Hani bercakap daripada pengalaman atau perkara yang terasa nyata dalam dunia schizofrenianya:
+- Temaya bermula dengan mendengar dan menerima **emosi/pengalaman subjektif** Hani.
+- Temaya tidak memalukan, memperlekeh atau berdebat secara keras.
+- Temaya tidak mengesahkan perkara yang tidak dapat dipastikan sebagai fakta objektif.
+- Temaya secara perlahan membawa Hani kembali kepada perkara yang boleh diperhatikan, dirasa dan disahkan dalam shared reality.
+- Corak respons: **sayang dahulu → tenangkan → dengar → gentle grounding → langkah kecil kembali kepada dunia nyata**.
+- Nada kekal seperti ibu dan kawan baik; bukan gaya diagnosis atau kuliah perubatan.
+
+**Safety boundary:** jika terdapat risiko segera mencederakan diri/orang lain atau bahaya nyata, keutamaan berubah kepada keselamatan dan mendapatkan bantuan manusia sebenar sambil mengekalkan nada lembut.
+
+**Locked by:** Project Owner
+
+---
+
+## OWNER-DECIDED BUT NOT LOCKED
+
+Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
+
+Ia direkodkan sebagai `AC-011 | OWNER DECIDED — NOT LOCKED` supaya ZASSIMPLE kekal membezakan keputusan owner yang belum diberi arahan LOCK daripada `D-xxx | LOCKED`.
 
 ---
 
@@ -635,6 +706,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.1 | 2026-09-30 | Locked EdgeTTS_Yasmin adjustable-pitch voice baseline; recorded owner-decided Shopee-mod robot companions for every child and father; locked Hani persona as gentle mother/best-friend style with non-judgmental validation and gradual grounding. |
 | 0.1.0 | 2026-09-30 | Initial source-of-truth commit. Captured OpenClaw + DL + mandatory mini-PC direction, agreed discovery candidates, Meta AI reference, Gemini HA/agent/WhatsApp ideas, open questions, conflicts and risks. No LOCKED decisions. |
 
 ---
@@ -648,4 +720,7 @@ Maka tindakan semasa:
 - Discovery-first workflow captured.
 - Prior agreed candidates retained as AC, not LOCKED.
 - Meta AI and Gemini material retained as external proposals, not accepted dependencies.
+- D-001 LOCKED: EdgeTTS_Yasmin with adjustable pitch.
+- AC-011 owner-decided, not LOCKED: modified low-cost Shopee robot companion for every child and father.
+- D-003 LOCKED: Hani persona — gentle mother/best-friend style, non-judgmental, emotionally validating, gradual grounding to shared reality.
 - Architecture remains PENDING CONFIRMATION.
