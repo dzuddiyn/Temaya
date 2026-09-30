@@ -3,7 +3,7 @@
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE v0.1.6  
-**Document version:** 0.1.2  
+**Document version:** 0.1.3  
 **Date:** 2026-09-30  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -530,6 +530,35 @@ Candidate v1: audio return menggunakan file/URL dahulu sebelum real-time streami
 
 Home Assistant bukan sebahagian audio pipeline. Voice Gateway mengurus recognition/routing; OpenClaw mengurus intent/persona/memory/reasoning; Home Assistant mengurus state/action rumah.
 
+
+## I-033 | LOCKED VIA D-005
+**Source:** EXPLICIT
+
+Semua **smart speaker Temaya** menggunakan ESPHome sebagai firmware/platform end-device standard.
+
+Peranan ESPHome pada smart speaker:
+- microphone / speaker;
+- local wake-word detection;
+- Wi-Fi / OTA;
+- routing audio selepas wake word ke laluan yang dipilih;
+- playback audio response.
+
+ESPHome di sini ialah platform end-device; voice Temaya tidak wajib melalui Home Assistant.
+
+## I-034 | LOCKED VIA D-005
+**Source:** EXPLICIT + owner LOCK
+
+Smart speaker mempunyai **dua laluan voice berasingan**:
+1. **Temaya route** → mini PC Voice Gateway → STT + Speaker ID → OpenClaw → HA tools jika perlu → EdgeTTS_Yasmin → source device.
+2. **Home Assistant native route** → Home Assistant Assist/STT → HA command/action.
+
+Wake word / trigger menentukan laluan. Audio command yang sama tidak dihantar serentak kepada dua STT sebagai default.
+
+## I-035 | LOCKED VIA D-005
+**Source:** INFERRED from explicit dual-route design + owner LOCK
+
+Home Assistant native voice route kekal sebagai independent smart-home control/fallback apabila OpenClaw atau Temaya Voice Gateway tidak tersedia.
+
 ---
 
 # OPEN QUESTIONS
@@ -765,6 +794,55 @@ Not locked by D-004:
 **Locked by:** Project Owner
 
 ---
+## D-005 | LOCKED
+
+**Source:** EXPLICIT + owner LOCK instruction
+**Decision:** Smart speaker Temaya distandardkan pada **ESPHome** dan menggunakan **dual voice route** yang berasingan.
+
+Locked topology:
+
+```text
+                 ESPHome Smart Speaker
+             mic + speaker + local wake word
+                         │
+              wake word / route selected
+                 ┌───────┴────────┐
+                 │                │
+          TEMAYA ROUTE       HA NATIVE ROUTE
+                 │                │
+          Mini PC Voice       Home Assistant
+             Gateway             Assist/STT
+                 │                │
+        STT + Speaker ID      HA command/action
+                 │
+             OpenClaw
+          persona/memory/DL
+                 │
+          HA tools if needed
+                 │
+        EdgeTTS_Yasmin [D-001]
+                 │
+          source device playback
+```
+
+Locked boundaries:
+- ESPHome ialah firmware/platform standard untuk smart speaker Temaya;
+- wake word diproses secara local pada end device;
+- Temaya route dan HA native route ialah dua laluan berasingan;
+- Temaya route tidak perlu melalui Home Assistant untuk STT/reasoning;
+- HA native route boleh terus menggunakan Home Assistant Assist/STT untuk kawalan rumah;
+- satu utterance tidak dihantar kepada kedua-dua STT serentak secara default;
+- Home Assistant native voice route menjadi fallback/independent control path jika Temaya/OpenClaw tidak tersedia.
+
+Still OPEN:
+- exact wake word untuk HA native route;
+- exact ESPHome hardware board/mic/speaker;
+- exact custom transport dari ESPHome ke Temaya Voice Gateway;
+- exact STT/Speaker-ID engines untuk Temaya route.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -819,6 +897,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.3 | 2026-09-30 | Locked ESPHome as smart-speaker end-device standard and dual voice routing: Temaya route to mini PC/OpenClaw and independent HA-native Assist route; no default duplicate STT processing of the same utterance. |
 | 0.1.2 | 2026-09-30 | Locked AC-012 Plan A voice/control pipeline: end-device wake word; post-wake audio to mini PC; STT + Speaker ID; OpenClaw reasoning; HA execution; EdgeTTS_Yasmin response returned to source device. Exact engines/protocols/codecs remain open. |
 | 0.1.1 | 2026-09-30 | Locked EdgeTTS_Yasmin adjustable-pitch voice baseline; recorded owner-decided Shopee-mod robot companions for every child and father; locked Hani persona as gentle mother/best-friend style with non-judgmental validation and gradual grounding. |
 | 0.1.0 | 2026-09-30 | Initial source-of-truth commit. Captured OpenClaw + DL + mandatory mini-PC direction, agreed discovery candidates, Meta AI reference, Gemini HA/agent/WhatsApp ideas, open questions, conflicts and risks. No LOCKED decisions. |
@@ -838,5 +917,7 @@ Maka tindakan semasa:
 - AC-011 owner-decided, not LOCKED: modified low-cost Shopee robot companion for every child and father.
 - D-003 LOCKED: Hani persona — gentle mother/best-friend style, non-judgmental, emotionally validating, gradual grounding to shared reality.
 - D-004 LOCKED: Plan A voice/control path — wake word on end device → post-wake audio to mini PC → STT + Speaker ID → OpenClaw → HA when needed → EdgeTTS_Yasmin → audio back to source device.
-- Exact STT/Speaker-ID engines, transport and codec remain OPEN.
-- Architecture keseluruhan remains PENDING CONFIRMATION; hanya sub-architecture Plan A telah LOCKED.
+- D-005 LOCKED: ESPHome smart speakers with dual voice routes — Temaya via mini PC/OpenClaw, and independent HA-native Assist route.
+- Same utterance is not sent to both STT paths by default; wake word/route selection determines destination.
+- Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
+- Architecture keseluruhan remains PENDING CONFIRMATION; voice/control sub-architecture is increasingly LOCKED.
