@@ -3,8 +3,8 @@
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE v0.1.6  
-**Document version:** 0.1.3  
-**Date:** 2026-09-30  
+**Document version:** 0.1.4  
+**Date:** 2026-10-01  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
 
@@ -559,6 +559,48 @@ Wake word / trigger menentukan laluan. Audio command yang sama tidak dihantar se
 
 Home Assistant native voice route kekal sebagai independent smart-home control/fallback apabila OpenClaw atau Temaya Voice Gateway tidak tersedia.
 
+
+## I-036 | LOCKED VIA D-006
+**Source:** EXTERNAL RESEARCH + owner LOCK
+
+Gunakan **official Home Assistant MCP Server** sebagai candidate bridge standard daripada OpenClaw ke Home Assistant, untuk mengurangkan custom HA tool code dan mengekalkan selective entity exposure.
+
+## I-037 | LOCKED VIA D-006
+**Source:** EXTERNAL RESEARCH + owner LOCK
+
+Voice/context payload Temaya merangkumi sekurang-kurangnya:
+- `speaker_id`
+- `device_id`
+- `area_id`
+- `text`
+
+`area_id` memberi room context kepada OpenClaw.
+
+## I-038 | LOCKED VIA D-006
+**Source:** EXTERNAL RESEARCH + owner LOCK
+
+Speaker identification menggunakan guided enrollment / voice profile dan mempunyai **UNKNOWN fallback** apabila confidence tidak mencukupi. Sistem tidak memaksa setiap utterance kepada known identity.
+
+## I-039 | LOCKED VIA D-006
+**Source:** EXTERNAL RESEARCH + owner LOCK
+
+Permission enforcement untuk action/data sensitif mesti berada **di bawah LLM / outside prompt authority**. Speaker identity boleh menentukan capability yang dibenarkan atau disekat.
+
+## I-040 | LOCKED VIA D-006 AND D-009
+**Source:** EXTERNAL RESEARCH + owner LOCK
+
+Temaya menyokong multi-turn conversation tanpa perlu ulang wake word untuk follow-up yang memang memerlukan jawapan.
+
+## I-041 | LOCKED VIA D-006
+**Source:** EXTERNAL RESEARCH + owner LOCK
+
+Proactive/follow-up reply mesti boleh diroute kembali ke **source device / source room** yang berkaitan.
+
+## I-042 | LOCKED VIA D-006
+**Source:** EXTERNAL RESEARCH + owner LOCK
+
+ESPHome smart speaker dikekalkan sebagai **thin client**: local wake word, capture/send audio, receive audio dan playback; processing berat kekal di mini PC.
+
 ---
 
 # OPEN QUESTIONS
@@ -647,6 +689,20 @@ Apakah protocol audio end device ↔ mini PC?
 
 Apakah audio codec/format untuk return path v1?
 
+
+## Q-016 | RESOLVED VIA D-007
+**Decision:** OpenClaw → Home Assistant menggunakan **Official Home Assistant MCP** sebagai primary bridge.
+
+Fallback order:
+1. Home Assistant Conversation API
+2. direct REST/WebSocket tools
+
+## Q-017 | RESOLVED VIA D-009
+**Decision:** Multi-turn follow-up listening window = **8 saat** apabila Temaya memang menjangka jawapan. Optional **hold-to-talk button** turut disokong pada smart speaker dan direka supaya sesuai untuk wearable/remote/robot device kemudian.
+
+## Q-018 | RESOLVED VIA D-008
+**Decision:** Home Assistant Device/Area Registry ialah authoritative source bagi area mapping. Mapping ini di-clone/sync ke OpenClaw/Temaya sebagai static local fallback/cache. MCP device/area metadata boleh digunakan sebagai enhancement tetapi bukan single dependency.
+
 ---
 
 # RISKS
@@ -706,6 +762,17 @@ Implementation-specific services yang disebut oleh external proposals jangan dia
 **Source:** INFERRED
 
 Latency dan kualiti Wi-Fi boleh mempengaruhi chain selepas wake: audio upload/stream → STT + Speaker ID → OpenClaw → TTS → audio return → playback. Local wake-word detection mengurangkan network load sebelum interaction bermula.
+
+
+## R-012 | OPEN
+**Source:** INFERRED from research
+
+Jika MCP menjadi satu-satunya HA bridge atau satu-satunya sumber room/device context, perubahan capability/metadata MCP boleh menjadi dependency rapuh.
+
+Mitigation locked:
+- HA Conversation API dan REST/WebSocket kekal fallback;
+- HA Device/Area Registry disync ke Temaya/OpenClaw sebagai local static fallback;
+- HA native voice route D-005 kekal independent daripada OpenClaw.
 
 ---
 
@@ -843,6 +910,71 @@ Still OPEN:
 **Locked by:** Project Owner
 
 ---
+## D-006 | LOCKED
+
+**Source:** EXTERNAL RESEARCH + explicit owner decision
+**Decision:** Research-derived refinements berikut diterima dan dikunci:
+- official HA MCP sebagai arah bridge standard;
+- `area_id` dimasukkan ke Temaya context bersama `speaker_id`, `device_id`, dan `text`;
+- guided speaker enrollment + UNKNOWN fallback;
+- permission/gating untuk capability sensitif dikuatkuasakan di bawah LLM, bukan sekadar prompt;
+- multi-turn capability;
+- proactive reply ke source device/room;
+- thin ESPHome client.
+
+**Locked by:** Project Owner
+
+---
+
+## D-007 | LOCKED
+
+**Source:** EXPLICIT owner decision resolving Q-016
+**Decision:** Bridge OpenClaw → Home Assistant:
+
+Primary:
+1. **Official Home Assistant MCP Server**
+
+Fallback:
+2. **Home Assistant Conversation API**
+3. **direct REST/WebSocket tools**
+
+OpenClaw tidak perlu bergantung kepada satu custom HA wrapper sebagai baseline.
+
+**Locked by:** Project Owner
+
+---
+
+## D-008 | LOCKED
+
+**Source:** EXPLICIT owner decision resolving Q-018
+**Decision:** **Home Assistant Device/Area Registry** ialah authoritative source untuk device/area context.
+
+Locked behaviour:
+- registry mapping di-clone/sync ke Temaya/OpenClaw sebagai local static cache/fallback;
+- Temaya context boleh resolve `device_id → area_id → area_name` sebelum HA MCP call;
+- MCP device/area metadata digunakan jika available/practical, tetapi bukan single dependency;
+- sync perlu resolve effective area, termasuk inherited/derived area behaviour jika relevant.
+
+**Locked by:** Project Owner
+
+---
+
+## D-009 | LOCKED
+
+**Source:** EXPLICIT owner decision resolving Q-017
+**Decision:** Multi-turn + hold-to-talk interaction behaviour dikunci.
+
+Locked behaviour:
+- apabila Temaya memang menjangka jawapan (`expects_reply=true`), source device membuka **8 saat follow-up listening window** selepas playback selesai;
+- jika tiada speech dalam 8 saat, conversation ditutup dan wake word diperlukan semula;
+- Speaker ID dijalankan semula pada setiap follow-up; identity boleh bertukar jika orang lain menjawab;
+- **hold-to-talk button** disokong sebagai optional input pada smart speaker;
+- hold-to-talk juga dianggap standard interaction option untuk future wearable / remote / robot device;
+- hold-to-talk membolehkan mic aktif semasa button ditekan dan tamat apabila button dilepaskan, tertakluk kepada implementation final.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -897,6 +1029,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.4 | 2026-10-01 | Locked research-derived refinements: official HA MCP primary bridge with HA Conversation and REST/WebSocket fallbacks; area context from HA registry with synced local cache; speaker enrollment + UNKNOWN; permission layer below LLM; proactive source-device reply; thin ESPHome client; 8-second multi-turn follow-up and optional hold-to-talk for smart speakers/wearables. |
 | 0.1.3 | 2026-09-30 | Locked ESPHome as smart-speaker end-device standard and dual voice routing: Temaya route to mini PC/OpenClaw and independent HA-native Assist route; no default duplicate STT processing of the same utterance. |
 | 0.1.2 | 2026-09-30 | Locked AC-012 Plan A voice/control pipeline: end-device wake word; post-wake audio to mini PC; STT + Speaker ID; OpenClaw reasoning; HA execution; EdgeTTS_Yasmin response returned to source device. Exact engines/protocols/codecs remain open. |
 | 0.1.1 | 2026-09-30 | Locked EdgeTTS_Yasmin adjustable-pitch voice baseline; recorded owner-decided Shopee-mod robot companions for every child and father; locked Hani persona as gentle mother/best-friend style with non-judgmental validation and gradual grounding. |
@@ -919,5 +1052,9 @@ Maka tindakan semasa:
 - D-004 LOCKED: Plan A voice/control path — wake word on end device → post-wake audio to mini PC → STT + Speaker ID → OpenClaw → HA when needed → EdgeTTS_Yasmin → audio back to source device.
 - D-005 LOCKED: ESPHome smart speakers with dual voice routes — Temaya via mini PC/OpenClaw, and independent HA-native Assist route.
 - Same utterance is not sent to both STT paths by default; wake word/route selection determines destination.
+- D-006 LOCKED: research-derived refinements — HA MCP, area context, speaker enrollment/UNKNOWN, permission layer, multi-turn capability, proactive source reply and thin ESPHome client.
+- D-007 LOCKED: HA MCP primary; HA Conversation API then REST/WebSocket as fallbacks.
+- D-008 LOCKED: HA Device/Area Registry is authoritative; synced local mapping in Temaya/OpenClaw is fallback/cache.
+- D-009 LOCKED: 8-second follow-up window when reply is expected + optional hold-to-talk for smart speaker and future wearable/remote devices.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
 - Architecture keseluruhan remains PENDING CONFIRMATION; voice/control sub-architecture is increasingly LOCKED.
