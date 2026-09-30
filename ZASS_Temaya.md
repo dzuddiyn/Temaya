@@ -3,7 +3,7 @@
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE v0.1.6  
-**Document version:** 0.1.1  
+**Document version:** 0.1.2  
 **Date:** 2026-09-30  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -318,6 +318,24 @@ Setiap anak dan ayah akan mempunyai **robot companion** berasaskan **modify robo
 
 **Boundary:** bentuk mekanikal spesifik, ballbot, Qi dock, e-Paper dan reka bentuk custom lain belum diputuskan dan kekal sebagai cadangan.
 
+
+## AC-012 | LOCKED VIA D-004
+**Source:** EXPLICIT + owner LOCK instruction
+
+**Selected:** OpenClaw-Centric Temaya — Plan A.
+
+Locked boundary:
+- wake word diproses pada end device;
+- hanya audio selepas wake word dihantar ke mini PC;
+- mini PC menjalankan STT + Speaker ID + identity routing;
+- structured context dihantar ke OpenClaw;
+- OpenClaw mengurus persona, memory, DL dan reasoning;
+- Home Assistant menjadi execution layer bila state/action rumah diperlukan;
+- response OpenClaw dijana sebagai audio menggunakan EdgeTTS_Yasmin mengikut D-001;
+- audio response dihantar balik ke source robot/smart speaker.
+
+Exact engine, protocol dan codec masih OPEN.
+
 ---
 
 # IDEA LOG
@@ -471,6 +489,47 @@ Node-RED atau HA native automation sebagai candidate orchestration layer bagi se
 
 Local LLM sebagai candidate untuk privacy/offline operation.
 
+
+## I-025 | LOCKED VIA D-004
+**Source:** EXPLICIT
+
+Wake word mesti diproses pada end device, bukan pada mini PC.
+
+## I-026 | LOCKED VIA D-004
+**Source:** EXPLICIT
+
+Hanya selepas wake word dikesan, end device menghantar audio utterance ke mini PC.
+
+## I-027 | LOCKED BOUNDARY VIA D-004
+**Source:** INFERRED from explicit flow + owner LOCK
+
+Mini PC mempunyai Voice Processing / Voice Gateway layer yang berasingan daripada OpenClaw. Layer ini menerima audio selepas wake, menjalankan STT + Speaker ID, menggabungkan device identity, dan menghantar structured request kepada OpenClaw. Nama/implementation service masih OPEN.
+
+## I-028 | LOCKED VIA D-004
+**Source:** EXPLICIT
+
+Selepas wake word, voice recognition mesti menjawab dua perkara: apa yang disebut (STT) dan siapa yang bercakap (Speaker ID).
+
+## I-029 | LOCKED VIA D-004
+**Source:** EXPLICIT + inferred routing
+
+Identity context membezakan device_id daripada speaker_id; device owner tidak semestinya current speaker.
+
+## I-030 | LOCKED VIA D-004
+**Source:** EXPLICIT
+
+Selepas OpenClaw menghasilkan jawapan, mini PC mesti menghasilkan audio mengikut D-001 dan menghantarnya kembali kepada source robot/smart speaker.
+
+## I-031 | OPEN
+**Source:** INFERRED
+
+Candidate v1: audio return menggunakan file/URL dahulu sebelum real-time streaming. Belum LOCKED.
+
+## I-032 | LOCKED VIA D-004
+**Source:** INFERRED from Plan A + owner LOCK
+
+Home Assistant bukan sebahagian audio pipeline. Voice Gateway mengurus recognition/routing; OpenClaw mengurus intent/persona/memory/reasoning; Home Assistant mengurus state/action rumah.
+
 ---
 
 # OPEN QUESTIONS
@@ -543,6 +602,22 @@ Nanti perlu tentukan sama ada tiga jenis data berikut memang perlu boundary berb
 2. Personal / conversational memory
 3. Operational household state
 
+
+## Q-013 | OPEN
+**Source:** UNKNOWN
+
+Apakah engine/model final untuk Speaker ID?
+
+## Q-014 | OPEN
+**Source:** UNKNOWN
+
+Apakah protocol audio end device ↔ mini PC?
+
+## Q-015 | OPEN
+**Source:** UNKNOWN
+
+Apakah audio codec/format untuk return path v1?
+
 ---
 
 # RISKS
@@ -596,6 +671,12 @@ Fungsi boleh overlap antara OpenClaw, HA LLM, Node-RED, Apps Script dan external
 **Source:** INFERRED
 
 Implementation-specific services yang disebut oleh external proposals jangan dianggap dependency Temaya secara automatik.
+
+
+## R-011 | OPEN
+**Source:** INFERRED
+
+Latency dan kualiti Wi-Fi boleh mempengaruhi chain selepas wake: audio upload/stream → STT + Speaker ID → OpenClaw → TTS → audio return → playback. Local wake-word detection mengurangkan network load sebelum interaction bermula.
 
 ---
 
@@ -652,6 +733,38 @@ Apabila Hani bercakap daripada pengalaman atau perkara yang terasa nyata dalam d
 
 ---
 
+## D-004 | LOCKED
+
+**Source:** EXPLICIT + owner LOCK instruction
+**Decision:** OpenClaw-Centric Temaya — Plan A voice/control pipeline dikunci sebagai arah asas.
+
+Locked flow:
+END DEVICE local wake word → audio selepas wake → MINI PC Voice Processing (STT + Speaker ID + identity routing) → OPENCLAW (persona + memory + DL + reasoning) → HA tools bila perlu → HOME ASSISTANT execute state/action.
+
+Return path:
+OPENCLAW response → EdgeTTS_Yasmin [D-001] → audio response → source robot/smart speaker playback.
+
+Locked boundaries:
+- wake word mesti berada pada end device;
+- continuous pre-wake audio tidak perlu dihantar ke mini PC;
+- mini PC menjalankan STT + Speaker ID sebelum routing ke OpenClaw;
+- device_id dan speaker_id ialah identity context yang berbeza;
+- OpenClaw ialah reasoning/persona/memory/DL layer;
+- Home Assistant ialah state/action execution layer, bukan audio-processing layer;
+- audio reply mesti dihantar semula ke source end device.
+
+Not locked by D-004:
+- exact wake-word engine/model;
+- exact STT engine;
+- exact Speaker-ID engine;
+- exact transport protocol;
+- exact audio codec;
+- file/URL vs real-time streaming;
+- exact end-device hardware.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -706,6 +819,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.2 | 2026-09-30 | Locked AC-012 Plan A voice/control pipeline: end-device wake word; post-wake audio to mini PC; STT + Speaker ID; OpenClaw reasoning; HA execution; EdgeTTS_Yasmin response returned to source device. Exact engines/protocols/codecs remain open. |
 | 0.1.1 | 2026-09-30 | Locked EdgeTTS_Yasmin adjustable-pitch voice baseline; recorded owner-decided Shopee-mod robot companions for every child and father; locked Hani persona as gentle mother/best-friend style with non-judgmental validation and gradual grounding. |
 | 0.1.0 | 2026-09-30 | Initial source-of-truth commit. Captured OpenClaw + DL + mandatory mini-PC direction, agreed discovery candidates, Meta AI reference, Gemini HA/agent/WhatsApp ideas, open questions, conflicts and risks. No LOCKED decisions. |
 
@@ -723,4 +837,6 @@ Maka tindakan semasa:
 - D-001 LOCKED: EdgeTTS_Yasmin with adjustable pitch.
 - AC-011 owner-decided, not LOCKED: modified low-cost Shopee robot companion for every child and father.
 - D-003 LOCKED: Hani persona — gentle mother/best-friend style, non-judgmental, emotionally validating, gradual grounding to shared reality.
-- Architecture remains PENDING CONFIRMATION.
+- D-004 LOCKED: Plan A voice/control path — wake word on end device → post-wake audio to mini PC → STT + Speaker ID → OpenClaw → HA when needed → EdgeTTS_Yasmin → audio back to source device.
+- Exact STT/Speaker-ID engines, transport and codec remain OPEN.
+- Architecture keseluruhan remains PENDING CONFIRMATION; hanya sub-architecture Plan A telah LOCKED.
