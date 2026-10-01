@@ -2,8 +2,9 @@
 
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
-**Methodology:** ZASSIMPLE v0.1.6  
-**Document version:** 0.1.5  
+**Methodology:** ZASSIMPLE_MY v0.2.0  
+**Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
+**Document version:** 0.1.6  
 **Date:** 2026-10-01  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -24,6 +25,20 @@ Aturan:
 - Hanya arahan `LOCK` / `LOCK DECISION` boleh menghasilkan `D-xxx | LOCKED`.
 - Architecture belum disahkan.
 - Fasa semasa: **lambak idea dahulu; bentuk kemungkinan padanan kemudian**.
+
+## ZASSIMPLE v0.2 PROJECT ARTIFACT MODEL
+
+Temaya mengikuti ZASSIMPLE_MY v0.2.0 sambil mengekalkan `ZASS_Temaya.md` sebagai authoritative project-state / decision-lineage file.
+
+Supporting artifacts:
+- `ZASSIMPLE/ACTION_PLAN.md` — implementation planning dalaman; tidak mengatasi keputusan LOCKED;
+- `ZASSIMPLE/ARCHITECTURE.md` — draft/confirmed architecture; status kekal PENDING CONFIRMATION sehingga owner memberi `YA, CONFIRM ARCHITECTURE`;
+- `ZASSIMPLE/TASKS.md` — task slices untuk DO IT selepas architecture disahkan.
+
+Lifecycle method:
+`DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!`
+
+Implementation thought boleh feed dua hala antara Action Plan ↔ Architecture, tetapi tidak boleh menukar keputusan LOCKED secara senyap.
 
 ---
 
@@ -647,6 +662,28 @@ Bezakan reusable core daripada project profile:
 - AIoT Core = generic Home Assistant / ESPHome / automation layer;
 - Temaya Home Profile = rumah/family-specific HA configuration.
 
+
+## I-051 | OPEN
+**Source:** EXPLICIT owner idea
+
+Hani boleh mempunyai lebih daripada satu **Temaya persona profile** di bawah identity/user context yang sama. Idea awal:
+- persona keibuan — rakan nasihat / tenang / membimbing;
+- persona keanakan — rakan melawak / playful companion.
+
+Ini belum menetapkan sama ada implementation akhirnya dua agent berasingan atau satu OpenClaw user-context dengan beberapa persona profile.
+
+## I-052 | OPEN
+**Source:** EXPLICIT owner idea
+
+Project Owner juga mahu kemungkinan mempunyai beberapa Temaya persona profile untuk dirinya sendiri, dengan role/tone yang berbeza tetapi boleh berkongsi context terpilih.
+
+## I-053 | OPEN
+**Source:** INFERRED from I-051/I-052
+
+Candidate design: pisahkan **user identity / memory authority** daripada **persona presentation layer** supaya satu pengguna boleh memilih persona berbeza tanpa perlu duplicate seluruh library/memory secara automatik.
+
+Potential benefit: persona boleh berubah mengikut tujuan interaction sambil permission, identity dan memory boundary kekal konsisten.
+
 ---
 
 # OPEN QUESTIONS
@@ -748,6 +785,12 @@ Fallback order:
 
 ## Q-018 | RESOLVED VIA D-008
 **Decision:** Home Assistant Device/Area Registry ialah authoritative source bagi area mapping. Mapping ini di-clone/sync ke OpenClaw/Temaya sebagai static local fallback/cache. MCP device/area metadata boleh digunakan sebagai enhancement tetapi bukan single dependency.
+
+
+## Q-019 | OPEN
+**Source:** UNKNOWN
+
+Bagaimana persona dipilih/routed nanti: nama/wake phrase berbeza, explicit mode selection, device-specific default, context-based suggestion, atau gabungan? Jangan putuskan semasa idea masih DUMP.
 
 ---
 
@@ -1123,6 +1166,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.6 | 2026-10-01 | Migrated project method reference to official ZASSIMPLE_MY v0.2.0; introduced v0.2 supporting-artifact model (ACTION_PLAN / ARCHITECTURE / TASKS) while preserving ZASS_Temaya.md as decision-lineage authority; captured multi-persona Temaya ideas for Hani and Project Owner as OPEN ideas only. |
 | 0.1.5 | 2026-10-01 | Locked modular/reusable architecture principle: OpenClaw Core and AIoT Core remain independently operable; Temaya becomes reference integration; OpenClaw-side architecture reusable for KeraniClaw/Kerani AI and HA-side architecture reusable as AIoT Core; bridge adds capability without becoming a mutual hard dependency. |
 | 0.1.4 | 2026-10-01 | Locked research-derived refinements: official HA MCP primary bridge with HA Conversation and REST/WebSocket fallbacks; area context from HA registry with synced local cache; speaker enrollment + UNKNOWN; permission layer below LLM; proactive source-device reply; thin ESPHome client; 8-second multi-turn follow-up and optional hold-to-talk for smart speakers/wearables. |
 | 0.1.3 | 2026-09-30 | Locked ESPHome as smart-speaker end-device standard and dual voice routing: Temaya route to mini PC/OpenClaw and independent HA-native Assist route; no default duplicate STT processing of the same utterance. |
@@ -1134,6 +1178,9 @@ Maka tindakan semasa:
 
 # CURRENT CHECKPOINT
 
+- Method updated to official ZASSIMPLE_MY v0.2.0; DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED lifecycle applies.
+- ZASS_Temaya.md remains authoritative decision lineage; supporting ACTION_PLAN / ARCHITECTURE / TASKS artifacts introduced under `ZASSIMPLE/`.
+- I-051/I-052 OPEN: multi-persona Temaya idea for Hani and Project Owner; no persona-routing decision LOCKED yet.
 - OpenClaw direction captured.
 - Mandatory mini-PC direction captured.
 - DL adaptation captured.
