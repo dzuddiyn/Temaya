@@ -3,7 +3,7 @@
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE v0.1.6  
-**Document version:** 0.1.4  
+**Document version:** 0.1.5  
 **Date:** 2026-10-01  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -601,6 +601,52 @@ Proactive/follow-up reply mesti boleh diroute kembali ke **source device / sourc
 
 ESPHome smart speaker dikekalkan sebagai **thin client**: local wake word, capture/send audio, receive audio dan playback; processing berat kekal di mini PC.
 
+
+## I-043 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+Architecture Temaya mesti modular: **OpenClaw Core**, **AIoT Core / Home Assistant**, dan **integration bridge** boleh hidup secara berasingan tanpa merosakkan satu sama lain.
+
+## I-044 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+Jika OpenClaw/Temaya layer tidak tersedia, Home Assistant / AIoT Core mesti kekal berfungsi sebagai sistem smart-home sendiri.
+
+## I-045 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+Jika Home Assistant / AIoT Core tidak tersedia, OpenClaw-based assistant mesti kekal berfungsi untuk capability bukan rumah.
+
+## I-046 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+Temaya ialah **reference implementation** yang menggabungkan OpenClaw Core + AIoT Core + bridge + family-specific profile.
+
+## I-047 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+OpenClaw-side architecture mesti reusable untuk projek lain seperti **KeraniClaw / Kerani AI based on OpenClaw**, tanpa mewajibkan Home Assistant.
+
+## I-048 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+Home Assistant-side architecture mesti reusable sebagai **AIoT Core** yang matang untuk projek lain, tanpa mewajibkan OpenClaw.
+
+## I-049 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+Gabungan OpenClaw + HA mesti menambah capability melalui bridge, bukan mencipta dependency wajib dua hala. Bridge failure tidak boleh mematikan kedua-dua core.
+
+## I-050 | LOCKED VIA D-010
+**Source:** EXPLICIT owner decision
+
+Bezakan reusable core daripada project profile:
+- OpenClaw Core = generic AI/agent runtime layer;
+- Temaya Profile = family-specific persona/memory/rules;
+- KeraniClaw Profile = work/kerani-specific layer;
+- AIoT Core = generic Home Assistant / ESPHome / automation layer;
+- Temaya Home Profile = rumah/family-specific HA configuration.
+
 ---
 
 # OPEN QUESTIONS
@@ -975,6 +1021,54 @@ Locked behaviour:
 **Locked by:** Project Owner
 
 ---
+## D-010 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction
+**Decision:** Temaya menggunakan prinsip **modular, independently operable, reusable architecture**.
+
+Locked architecture principle:
+
+```text
+OPENCLAW CORE
+reasoning / memory / persona / tools
+        │
+        │ integration bridge
+        ▼
+AIoT CORE / HOME ASSISTANT
+devices / state / automation / IoT
+```
+
+Locked boundaries:
+- OpenClaw Core dan AIoT Core mesti boleh beroperasi secara independent;
+- OpenClaw failure tidak boleh mematikan Home Assistant / AIoT Core;
+- Home Assistant failure tidak boleh mematikan OpenClaw capability yang tidak memerlukan rumah;
+- bridge failure tidak boleh merosakkan kedua-dua core;
+- Temaya ialah reference implementation gabungan kedua-dua core;
+- OpenClaw-side design mesti reusable untuk KeraniClaw / Kerani AI based on OpenClaw;
+- HA-side design mesti reusable sebagai AIoT Core untuk projek lain;
+- project-specific persona, memory, rules dan home configuration diletakkan sebagai profile/layer di atas reusable cores, bukan dicampur ke core;
+- integrasi mesti menambah capability, bukan menjadikan kedua-dua core mandatory dependencies antara satu sama lain.
+
+Reference decomposition:
+
+```text
+OpenClaw Core
+├── Temaya Profile
+└── KeraniClaw Profile
+
+AIoT Core
+└── Temaya Home Profile
+
+Temaya
+= OpenClaw Core
++ AIoT Core
++ Integration Bridge
++ Family-specific profile
+```
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1029,6 +1123,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.5 | 2026-10-01 | Locked modular/reusable architecture principle: OpenClaw Core and AIoT Core remain independently operable; Temaya becomes reference integration; OpenClaw-side architecture reusable for KeraniClaw/Kerani AI and HA-side architecture reusable as AIoT Core; bridge adds capability without becoming a mutual hard dependency. |
 | 0.1.4 | 2026-10-01 | Locked research-derived refinements: official HA MCP primary bridge with HA Conversation and REST/WebSocket fallbacks; area context from HA registry with synced local cache; speaker enrollment + UNKNOWN; permission layer below LLM; proactive source-device reply; thin ESPHome client; 8-second multi-turn follow-up and optional hold-to-talk for smart speakers/wearables. |
 | 0.1.3 | 2026-09-30 | Locked ESPHome as smart-speaker end-device standard and dual voice routing: Temaya route to mini PC/OpenClaw and independent HA-native Assist route; no default duplicate STT processing of the same utterance. |
 | 0.1.2 | 2026-09-30 | Locked AC-012 Plan A voice/control pipeline: end-device wake word; post-wake audio to mini PC; STT + Speaker ID; OpenClaw reasoning; HA execution; EdgeTTS_Yasmin response returned to source device. Exact engines/protocols/codecs remain open. |
@@ -1056,5 +1151,6 @@ Maka tindakan semasa:
 - D-007 LOCKED: HA MCP primary; HA Conversation API then REST/WebSocket as fallbacks.
 - D-008 LOCKED: HA Device/Area Registry is authoritative; synced local mapping in Temaya/OpenClaw is fallback/cache.
 - D-009 LOCKED: 8-second follow-up window when reply is expected + optional hold-to-talk for smart speaker and future wearable/remote devices.
+- D-010 LOCKED: modular/reusable architecture — OpenClaw Core, AIoT Core and bridge remain independently operable; Temaya is the reference integration; OpenClaw-side design is reusable for KeraniClaw/Kerani AI and HA-side design for AIoT Core.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
-- Architecture keseluruhan remains PENDING CONFIRMATION; voice/control sub-architecture is increasingly LOCKED.
+- Architecture keseluruhan remains PENDING CONFIRMATION; several core architecture principles are now LOCKED.
