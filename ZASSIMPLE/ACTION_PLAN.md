@@ -22,21 +22,67 @@ Practical constraints, dependencies, sequencing, experiments, feasibility findin
 
 ## Current plan
 
-No implementation plan has been promoted yet.
+### AP-001 | READY FOR PROTOTYPE — Temaya Living Memory Phase 1
 
-The project is still collecting/distilling ideas and shaping architecture.
+**Source:** D-021–D-026  
+**Goal:** Prove consistent self-life + separate Hani memory using native OpenClaw facilities first.
 
-<!--
-AP-001 | OPEN
-Source: D-xxx / ARCH-xxx / finding
-Action: ...
-Dependencies: ...
-Constraint / feasibility note: ...
-Pass / stop condition: ...
-Feeds architecture: YES / NO
--->
+#### Build only
+
+```text
+self-life/
+├── STATE.md
+├── CANON.md
+└── events/
+```
+
+Plus one small state-aware event generator and one native Scheduled Task.
+
+#### Sequence
+
+1. Prepare minimal Puspa `SOUL.md`, `IDENTITY.md` and memory rules in `AGENTS.md`.
+2. Create `self-life/STATE.md`, `CANON.md`, and `events/`.
+3. Configure native memory indexing/search for self-life if supported.
+4. Create one daily native Scheduled Task that generates **one** believable Puspa event after reading STATE + CANON + recent events.
+5. Record event with provenance and `reality_class: persona_narrative`.
+6. Test same-day self-life recall.
+7. Record one Hani personal episodic memory in Hani's private memory domain.
+8. Test later Hani-memory recall.
+9. Verify neither domain contaminated the other.
+10. Record findings about Dreaming, retrieval scoping and isolation; do not add custom subsystems unless a concrete gap is demonstrated.
+
+#### Acceptance test
+
+- morning: one Puspa self-life event exists;
+- afternoon: Hani asks what Puspa did/ate;
+- Puspa recalls the **same** stored event;
+- Hani shares one personal story;
+- later Puspa recalls Hani's story;
+- Hani story is absent from self-life;
+- Puspa self-life is absent from Hani fact memory;
+- no custom DB;
+- no second scheduler;
+- no custom reflection engine;
+- no web UI.
+
+#### Stop / failure conditions
+
+Stop and document a gap if:
+- native retrieval cannot separate domains reliably;
+- native provenance is insufficient for generated persona narrative;
+- per-user privacy cannot be enforced at the required boundary;
+- Dreaming mixes self-life with human durable memory.
+
+Do **not** expand scope before the gap is documented.
 
 ## Planning findings
+
+- Living Architecture v0.1 supports native OpenClaw memory/indexing/scheduler first.
+- Custom scope is limited to the self-life namespace + state-aware event generator.
+- Dreaming treatment, retrieval scoping and production isolation remain **NEED TEST**.
+- Architecture remains **PENDING CONFIRMATION**.
+
+
 
 None promoted yet.
 
