@@ -2,14 +2,14 @@
 
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
-**Methodology:** ZASSIMPLE_MY v0.2.2  
+**Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.10  
+**Document version:** 0.1.11  
 **Date:** 2026-10-02  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
 
-> Fikir santai. Rekod yang penting. Setuju jadi calon. Lock jadi keputusan. Architecture hanya apabila disahkan.
+> Fikir santai. Rekod yang penting. Setuju jadi calon. PROCEED/LOCK jadi keputusan. Design hanya apabila disahkan; architecture ialah subtype teknikal apabila relevan.
 
 ---
 
@@ -22,23 +22,23 @@ Aturan:
 - Bezakan `EXPLICIT`, `INFERRED`, dan `UNKNOWN`.
 - Cadangan AI tidak menjadi keputusan secara senyap.
 - Persetujuan boleh menjadi `AC` jika sasaran jelas.
-- Hanya arahan `LOCK` / `LOCK DECISION` boleh menghasilkan `D-xxx | LOCKED`.
-- Architecture belum disahkan.
+- Hanya arahan `PROCEED/LOCK` boleh menghasilkan `D-xxx | LOCKED`; `LOCK` / `LOCK DECISION` kekal alias compatibility.
+- Design keseluruhan belum disahkan; architecture kekal subtype teknikal dalam design.
 - Fasa semasa: **lambak idea dahulu; bentuk kemungkinan padanan kemudian**.
 
-## ZASSIMPLE v0.2 PROJECT ARTIFACT MODEL
+## ZASSIMPLE v0.3 PROJECT ARTIFACT MODEL
 
-Temaya mengikuti ZASSIMPLE_MY v0.2.2 sambil mengekalkan `ZASS_Temaya.md` sebagai authoritative project-state / decision-lineage file.
+Temaya mengikuti ZASSIMPLE_MY v0.3.0 sambil mengekalkan `ZASS_Temaya.md` sebagai authoritative project-state / decision-lineage file.
 
 Supporting artifacts:
 - `ZASSIMPLE/ACTION_PLAN.md` — implementation planning dalaman; tidak mengatasi keputusan LOCKED;
-- `ZASSIMPLE/ARCHITECTURE.md` — draft/confirmed architecture; status kekal PENDING CONFIRMATION sehingga owner memberi `YA, CONFIRM ARCHITECTURE`;
+- `ZASSIMPLE/DESIGN.md` — draft/confirmed design; Temaya menggunakan architecture sebagai subtype teknikal; status kekal PENDING CONFIRMATION sehingga owner memberi `YA, CONFIRM DESIGN`;
 - `ZASSIMPLE/TASKS.md` — task slices untuk DO IT selepas architecture disahkan.
 
 Lifecycle method:
 `DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!`
 
-Implementation thought boleh feed dua hala antara Action Plan ↔ Architecture, tetapi tidak boleh menukar keputusan LOCKED secara senyap.
+Implementation thought boleh feed dua hala antara Action Plan ↔ Design, tetapi tidak boleh menukar keputusan LOCKED secara senyap.
 
 ---
 
@@ -1567,6 +1567,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.11 | 2026-10-02 | Migrated project method to official ZASSIMPLE_MY v0.3.0 DESIGN-first model: DESIGN.md replaces ARCHITECTURE.md as the support artifact, architecture retained as a technical subtype, PROCEED/LOCK and SAVE become primary command surfaces, and CONFIRM DESIGN becomes the primary confirmation gate. All existing LOCKED decisions preserved. |
 | 0.1.10 | 2026-10-02 | Locked D-021–D-026 for Temaya Living Architecture v0.1: self-life vs human-memory separation, OpenClaw-native-first, self-life store, state-aware event generator, per-user isolation, and minimal Phase 1 prototype. |
 | 0.1.9 | 2026-10-02 | Locked D-020 as an additive layer to Companion B without editing D-019: default periang/supportive, worldview (kebaikan→ALLAH, kejahatan→syaitan+Dajjal, usaha/pilihan→tanggungjawab manusia), occasional random life principles with suitable dalil, and strict non-fabrication rules for Quran/hadith/sirah. |
 | 0.1.8 | 2026-10-02 | Locked D-019: Companion B interpersonal personality inspired by the personal akhlak of Nabi Muhammad ﷺ — warm, calm, approachable, concise, forgiving, humble, helpful and lightly humorous — with explicit non-impersonation/religious-authority boundaries and excluding war, military strategy and politics. |
@@ -1582,8 +1583,8 @@ Maka tindakan semasa:
 
 # CURRENT CHECKPOINT
 
-- Method updated to official ZASSIMPLE_MY v0.2.2; DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED lifecycle applies.
-- ZASS_Temaya.md remains authoritative decision lineage; supporting ACTION_PLAN / ARCHITECTURE / TASKS artifacts introduced under `ZASSIMPLE/`.
+- Method updated to official ZASSIMPLE_MY v0.3.0; DESIGN-first semantics apply; architecture remains a technical subtype of DESIGN.
+- ZASS_Temaya.md remains authoritative decision lineage; supporting ACTION_PLAN / DESIGN / TASKS artifacts live under `ZASSIMPLE/`.
 - D-011 LOCKED: companion topology — Hani has Puspa only; Project Owner has Companion A (Idea/Technical) and Companion B (Borak/Personal).
 - OpenClaw direction captured.
 - Mandatory mini-PC direction captured.
@@ -1619,4 +1620,4 @@ Maka tindakan semasa:
 - D-025 LOCKED: per-user private memory isolation; prompt selection alone is not a security boundary.
 - D-026 LOCKED: Phase 1 proves consistent self-life + separate Hani memory only.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
-- Architecture keseluruhan remains PENDING CONFIRMATION; several core architecture principles are now LOCKED.
+- Design keseluruhan remains PENDING CONFIRMATION; Temaya Living Architecture remains its technical architecture subtype.
