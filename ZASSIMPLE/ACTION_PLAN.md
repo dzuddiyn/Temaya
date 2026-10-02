@@ -1,6 +1,6 @@
 # TEMAYA — ZASSIMPLE ACTION PLAN
 
-**Method:** ZASSIMPLE_MY v0.2.2  
+**Method:** ZASSIMPLE_MY v0.3.0  
 **Status:** INTERNAL WORKING ARTIFACT  
 **Authority:** Planning artifact only. It must not override `D-xxx | LOCKED` decisions in `ZASS_Temaya.md`.
 
@@ -8,17 +8,17 @@
 
 Capture implementation thinking discovered during DECIDE and DESIGN without burdening the owner.
 
-Planning may feed architecture and architecture may feed planning:
+Planning may feed design and design may feed planning:
 
 ```text
 DECISIONS
     ↓
 ACTION PLAN
     ↕
-ARCHITECTURE
+DESIGN
 ```
 
-Practical constraints, dependencies, sequencing, experiments, feasibility findings and later execution discoveries may refine the plan or architecture. They must never silently rewrite a LOCKED owner decision.
+Practical constraints, dependencies, sequencing, experiments, feasibility findings and later execution discoveries may refine the plan or design. They must never silently rewrite a LOCKED owner decision.
 
 ## Current plan
 
@@ -77,10 +77,10 @@ Do **not** expand scope before the gap is documented.
 
 ## Planning findings
 
-- Living Architecture v0.1 supports native OpenClaw memory/indexing/scheduler first.
+- Living Design v0.1 supports native OpenClaw memory/indexing/scheduler first.
 - Custom scope is limited to the self-life namespace + state-aware event generator.
 - Dreaming treatment, retrieval scoping and production isolation remain **NEED TEST**.
-- Architecture remains **PENDING CONFIRMATION**.
+- Design remains **PENDING CONFIRMATION**.
 
 
 
@@ -94,4 +94,4 @@ None promoted yet.
 - D-017: Companion A/B TTS baseline is `ms-MY-OsmanNeural` with their locked prosody/post-processing ranges.
 - D-018: Umar requires an English boy-robot voice; exact English TTS voice and processing remain open.
 
-These are planning constraints only; architecture remains unconfirmed.
+These are planning constraints only; design remains unconfirmed.
