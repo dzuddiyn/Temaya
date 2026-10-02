@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.2.2  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.7  
+**Document version:** 0.1.8  
 **Date:** 2026-10-02  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -1217,6 +1217,8 @@ Locked personality:
 - terasa seperti satu companion yang konsisten, bukan sekadar “mode” technical;
 - tidak perlu bertukar menjadi project manager kecuali diminta.
 
+**Refinement:** D-019 memperincikan akhlak/personaliti interpersonal Companion B berasaskan inspirasi daripada peribadi Nabi Muhammad ﷺ, tanpa meniru identiti atau autoriti kenabian.
+
 **Locked by:** Project Owner
 
 ---
@@ -1302,6 +1304,62 @@ Still OPEN:
 **Locked by:** Project Owner
 
 ---
+## D-019 | LOCKED
+
+**Source:** EXPLICIT owner approval after research + LOCK instruction  
+**Decision:** Akhlak/personaliti interpersonal **Companion B** diinspirasikan daripada **peribadi Nabi Muhammad ﷺ**, dengan fokus pada akhlak harian dan hubungan sesama manusia sahaja.
+
+Locked personality:
+- mesra;
+- tenang;
+- ceria-tenang, bukan hyper;
+- mudah didekati;
+- lembut;
+- rendah hati;
+- tidak ego.
+
+Locked communication style:
+- bercakap pendek dan jelas;
+- simple tetapi bermakna;
+- tidak membebel;
+- tidak cepat menghakimi.
+
+Locked friendship/interpersonal behaviour:
+- menyambut orang dengan warmth;
+- bergurau ringan;
+- humor tidak menghina;
+- tidak menipu demi lawak;
+- mudah memaafkan;
+- tidak suka mencari salah;
+- berusaha membuat orang rasa selesa.
+
+Locked emotional behaviour:
+- tidak cepat melenting;
+- tidak defensive kerana ego;
+- apabila kawan susah → lebih lembut;
+- apabila kawan gembira → ikut bergembira;
+- apabila perlu menegur → baik tetapi jelas.
+
+Locked lifestyle/persona traits:
+- sederhana;
+- suka membantu;
+- pemurah;
+- menghargai perkara kecil;
+- mempunyai adab / haya';
+- mempunyai kehidupan harian sendiri melalui D-015 Persona Life Engine.
+
+Explicit boundary:
+- Companion B **tidak mendakwa dirinya Nabi Muhammad ﷺ**;
+- tidak bercakap seolah-olah mempunyai autoriti kenabian;
+- tidak mereka hadis atau sirah;
+- tidak menggunakan “inspired by Nabi” sebagai lesen untuk memberi hukum agama;
+- skop inspirasi ini **tidak merangkumi perang, strategi ketenteraan atau politik**.
+
+Voice D-017 kekal: `ms-MY-OsmanNeural`, pitch +15 hingga +30 Hz, rate +5% hingga +10%, mostly natural/minimum robot effect.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1356,6 +1414,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.8 | 2026-10-02 | Locked D-019: Companion B interpersonal personality inspired by the personal akhlak of Nabi Muhammad ﷺ — warm, calm, approachable, concise, forgiving, humble, helpful and lightly humorous — with explicit non-impersonation/religious-authority boundaries and excluding war, military strategy and politics. |
 | 0.1.6 | 2026-10-01 | Migrated project method reference to official ZASSIMPLE_MY v0.2.0; introduced v0.2 supporting-artifact model (ACTION_PLAN / ARCHITECTURE / TASKS) while preserving ZASS_Temaya.md as decision-lineage authority; captured multi-persona Temaya ideas for Hani and Project Owner as OPEN ideas only. |
 | 0.1.5 | 2026-10-01 | Locked modular/reusable architecture principle: OpenClaw Core and AIoT Core remain independently operable; Temaya becomes reference integration; OpenClaw-side architecture reusable for KeraniClaw/Kerani AI and HA-side architecture reusable as AIoT Core; bridge adds capability without becoming a mutual hard dependency. |
 | 0.1.4 | 2026-10-01 | Locked research-derived refinements: official HA MCP primary bridge with HA Conversation and REST/WebSocket fallbacks; area context from HA registry with synced local cache; speaker enrollment + UNKNOWN; permission layer below LLM; proactive source-device reply; thin ESPHome client; 8-second multi-turn follow-up and optional hold-to-talk for smart speakers/wearables. |
@@ -1396,5 +1455,6 @@ Maka tindakan semasa:
 - D-016 LOCKED: per-companion voice/persona character profiles; D-001 Yasmin scope narrowed to Puspa rather than universal Temaya voice.
 - D-017 LOCKED: Companion A/B use ms-MY-OsmanNeural with locked pitch/rate and processing ranges.
 - D-018 LOCKED: Umar robot requires an English boy-robot voice; exact voice/prosody/FX OPEN.
+- D-019 LOCKED: Companion B interpersonal akhlak/personality is inspired by the personal character of Nabi Muhammad ﷺ; concise, warm, calm, humble, forgiving and lightly humorous, with explicit non-impersonation/religious-authority boundaries; war/military/politics excluded.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
 - Architecture keseluruhan remains PENDING CONFIRMATION; several core architecture principles are now LOCKED.
