@@ -1,6 +1,6 @@
 # TEMAYA — ZASSIMPLE TASKS
 
-**Method:** ZASSIMPLE_MY v0.2.0  
+**Method:** ZASSIMPLE_MY v0.2.2  
 **Status:** EXECUTION QUEUE — NOT STARTED  
 **Authority:** Tasks execute the confirmed plan. They do not rewrite LOCKED decisions or confirm architecture.
 

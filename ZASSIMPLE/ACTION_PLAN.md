@@ -1,6 +1,6 @@
 # TEMAYA — ZASSIMPLE ACTION PLAN
 
-**Method:** ZASSIMPLE_MY v0.2.0  
+**Method:** ZASSIMPLE_MY v0.2.2  
 **Status:** INTERNAL WORKING ARTIFACT  
 **Authority:** Planning artifact only. It must not override `D-xxx | LOCKED` decisions in `ZASS_Temaya.md`.
 
@@ -39,3 +39,13 @@ Feeds architecture: YES / NO
 ## Planning findings
 
 None promoted yet.
+
+
+## Locked persona/voice implementation constraints
+
+- D-012: Companion A proactive technical inspiration uses randomized ~1–2 week timing; exact scheduler implementation remains open.
+- D-015: Puspa + Companion B require daily persona-life generation constrained by profile/rules/canon; exact schema remains open.
+- D-017: Companion A/B TTS baseline is `ms-MY-OsmanNeural` with their locked prosody/post-processing ranges.
+- D-018: Umar requires an English boy-robot voice; exact English TTS voice and processing remain open.
+
+These are planning constraints only; architecture remains unconfirmed.

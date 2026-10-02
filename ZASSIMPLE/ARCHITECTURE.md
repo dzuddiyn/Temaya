@@ -1,6 +1,6 @@
 # TEMAYA — ZASSIMPLE ARCHITECTURE
 
-**Method:** ZASSIMPLE_MY v0.2.0  
+**Method:** ZASSIMPLE_MY v0.2.2  
 **Status:** PENDING CONFIRMATION  
 **Authority:** Architecture must derive from `D-xxx | LOCKED` decisions in `ZASS_Temaya.md` and recorded planning findings.
 

@@ -2,10 +2,10 @@
 
 **Project:** Temaya / `dzuddiyn_family_assistant`  
 **Repository:** `dzuddiyn/Temaya`  
-**Methodology:** ZASSIMPLE_MY v0.2.0  
+**Methodology:** ZASSIMPLE_MY v0.2.2  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.6  
-**Date:** 2026-10-01  
+**Document version:** 0.1.7  
+**Date:** 2026-10-02  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
 
@@ -28,7 +28,7 @@ Aturan:
 
 ## ZASSIMPLE v0.2 PROJECT ARTIFACT MODEL
 
-Temaya mengikuti ZASSIMPLE_MY v0.2.0 sambil mengekalkan `ZASS_Temaya.md` sebagai authoritative project-state / decision-lineage file.
+Temaya mengikuti ZASSIMPLE_MY v0.2.2 sambil mengekalkan `ZASS_Temaya.md` sebagai authoritative project-state / decision-lineage file.
 
 Supporting artifacts:
 - `ZASSIMPLE/ACTION_PLAN.md` — implementation planning dalaman; tidak mengatasi keputusan LOCKED;
@@ -663,26 +663,54 @@ Bezakan reusable core daripada project profile:
 - Temaya Home Profile = rumah/family-specific HA configuration.
 
 
-## I-051 | OPEN
-**Source:** EXPLICIT owner idea
+## I-051 | LOCKED VIA D-011 AND D-013
+**Source:** EXPLICIT owner correction + LOCK
 
-Hani boleh mempunyai lebih daripada satu **Temaya persona profile** di bawah identity/user context yang sama. Idea awal:
-- persona keibuan — rakan nasihat / tenang / membimbing;
-- persona keanakan — rakan melawak / playful companion.
+Hani mempunyai **satu personal companion sahaja: Puspa**. Idea terdahulu tentang beberapa persona Hani telah digantikan oleh keputusan ini.
 
-Ini belum menetapkan sama ada implementation akhirnya dua agent berasingan atau satu OpenClaw user-context dengan beberapa persona profile.
+## I-052 | LOCKED VIA D-011, D-012 AND D-014
+**Source:** EXPLICIT owner decision + LOCK
 
-## I-052 | OPEN
-**Source:** EXPLICIT owner idea
+Project Owner mempunyai **dua companion berbeza**:
+- Companion A — idea / technical;
+- Companion B — borak / personal.
 
-Project Owner juga mahu kemungkinan mempunyai beberapa Temaya persona profile untuk dirinya sendiri, dengan role/tone yang berbeza tetapi boleh berkongsi context terpilih.
+Nama akhir Companion A dan Companion B masih OPEN.
 
-## I-053 | OPEN
-**Source:** INFERRED from I-051/I-052
+## I-053 | LOCKED BOUNDARY VIA D-011
+**Source:** INFERRED from explicit locked topology + D-010
 
-Candidate design: pisahkan **user identity / memory authority** daripada **persona presentation layer** supaya satu pengguna boleh memilih persona berbeza tanpa perlu duplicate seluruh library/memory secara automatik.
+Companion kekal sebagai project/persona layer di atas reusable OpenClaw Core; topology companion tidak memerlukan duplicate keseluruhan core. Exact memory-sharing, routing dan workspace implementation masih OPEN.
 
-Potential benefit: persona boleh berubah mengikut tujuan interaction sambil permission, identity dan memory boundary kekal konsisten.
+## I-054 | LOCKED VIA D-012
+**Source:** EXPLICIT owner decision + LOCK
+
+Companion A memahami profil Project Owner dan projek sedia ada, membantu idea/teknikal, mencadangkan upgrade projek atau projek baharu, dan memberi proactive inspiration kira-kira setiap **1–2 minggu** dengan timing randomized/jitter supaya terasa spontan dan bukan jadual tetap.
+
+## I-055 | LOCKED VIA D-015
+**Source:** EXPLICIT owner decision + LOCK
+
+Puspa dan Companion B mempunyai **generated daily personal-life story** supaya mereka terasa mempunyai kehidupan sendiri dan boleh berkongsi cerita dengan pengguna. Kisah harian wajib mematuhi profile/personality companion dan rule-set yang ditentukan.
+
+## I-056 | LOCKED VIA D-016 AND D-017
+**Source:** EXPLICIT owner decision + LOCK
+
+Voice/persona profile:
+- Puspa: gadis remaja, sedikit keanak-anakan, comel, periang dan positif;
+- Companion A: lelaki, robotik, macho dan serius;
+- Companion B: lelaki, mesra/mudah berkawan dan sedikit nyaring.
+
+## I-057 | LOCKED VIA D-017
+**Source:** EXPLICIT owner decision + LOCK
+
+Companion A dan Companion B menggunakan `ms-MY-OsmanNeural` dengan prosody berbeza:
+- A: pitch -20 hingga -35 Hz, rate -5% hingga -10%, subtle robot processing;
+- B: pitch +15 hingga +30 Hz, rate +5% hingga +10%, mostly natural.
+
+## I-058 | LOCKED VIA D-018
+**Source:** EXPLICIT owner decision + LOCK
+
+Robot Umar memerlukan **suara budak robot lelaki English**. Exact English TTS voice/model, pitch/rate dan robot-FX masih OPEN.
 
 ---
 
@@ -792,6 +820,16 @@ Fallback order:
 
 Bagaimana persona dipilih/routed nanti: nama/wake phrase berbeza, explicit mode selection, device-specific default, context-based suggestion, atau gabungan? Jangan putuskan semasa idea masih DUMP.
 
+## Q-020 | OPEN
+**Source:** UNKNOWN
+
+Apakah exact **Persona Life Rules / canon rules** bagi daily-life generator Puspa dan Companion B supaya cerita konsisten, sesuai profile dan tidak bercanggah sesuka hati?
+
+## Q-021 | OPEN
+**Source:** UNKNOWN
+
+Apakah exact English boy TTS voice/model, prosody dan robot processing untuk Umar?
+
 ---
 
 # RISKS
@@ -895,7 +933,7 @@ Meta AI proposal mencadangkan custom dual WhatsApp/Baileys containers, sedangkan
 **Decision:** Voice Temaya menggunakan **EdgeTTS_Yasmin**, dengan **pitch suara boleh dilaras mengikut kehendak/persona**.  
 **Locked by:** Project Owner
 
-**Consequence:** TTS/voice candidate lain boleh kekal direkodkan sebagai cadangan, tetapi tidak menggantikan baseline ini tanpa keputusan baharu.
+**Consequence:** TTS/voice candidate lain boleh kekal direkodkan sebagai cadangan, tetapi tidak menggantikan baseline ini tanpa keputusan baharu.\n\n**Scope refinement:** D-016/D-017 kemudian mengecilkan skop universal D-001: `EdgeTTS_Yasmin` kekal baseline Puspa/female persona; companion lelaki boleh menggunakan voice lelaki yang dikunci kemudian.
 
 ---
 
@@ -1112,6 +1150,158 @@ Temaya
 **Locked by:** Project Owner
 
 ---
+## D-011 | LOCKED
+
+**Source:** EXPLICIT owner ZASS + LOCK instruction  
+**Decision:** Temaya menggunakan user-specific companion topology berikut:
+
+```text
+Hani
+└── Puspa
+    └── satu personal companion
+
+Project Owner
+├── Companion A — Idea / Technical
+└── Companion B — Borak / Personal
+```
+
+Locked boundaries:
+- Hani mempunyai satu companion sahaja: **Puspa**;
+- Project Owner mempunyai dua companion berasingan dengan fungsi/personality berbeza;
+- label Companion A/B boleh dinamakan semula kemudian tanpa mengubah fungsi yang dikunci;
+- exact routing/workspace/memory-sharing implementation masih OPEN.
+
+**Locked by:** Project Owner
+
+---
+## D-012 | LOCKED
+
+**Source:** EXPLICIT owner ZASS + LOCK instruction  
+**Decision:** Companion A ialah **kawan idea + technical** dengan presentation yang kurang anthropomorphic.
+
+Locked behaviour:
+- memahami profil Project Owner dan projek sedia ada;
+- membantu idea, technical thinking, challenge/refinement dan upgrade projek;
+- boleh mencadangkan projek baharu berdasarkan profil/minat/projek owner;
+- proactive inspiration muncul kira-kira setiap **1–2 minggu** dengan randomized/jitter timing supaya tidak terasa seperti jadual tetap;
+- karakter umum: lelaki, robotik, macho dan serius.
+
+**Locked by:** Project Owner
+
+---
+## D-013 | LOCKED
+
+**Source:** EXPLICIT owner correction + ZASS + LOCK instruction  
+**Decision:** **Puspa** ialah satu-satunya personal companion Hani dan personaliti hariannya ialah **gadis remaja yang sedikit keanak-anakan, comel, periang dan positif**.
+
+Locked behaviour:
+- ceria, positif, mesra, playful dan encouraging;
+- tidak menghakimi;
+- persona harian bukan “ibu”;
+- apabila keadaan Hani memerlukan sokongan/grounding, boundary lembut dan non-judgmental daripada D-003 kekal terpakai;
+- jangan paksa positivity apabila konteks memerlukan nada lebih tenang.
+
+**Locked by:** Project Owner
+
+---
+## D-014 | LOCKED
+
+**Source:** EXPLICIT owner ZASS + LOCK instruction  
+**Decision:** Companion B ialah **kawan borak / personal** Project Owner.
+
+Locked personality:
+- happy dan santai;
+- mudah berkawan;
+- jawapan biasanya simple tetapi mengena;
+- mempunyai personality, preference, minat, quirks dan sense of humour sendiri;
+- terasa seperti satu companion yang konsisten, bukan sekadar “mode” technical;
+- tidak perlu bertukar menjadi project manager kecuali diminta.
+
+**Locked by:** Project Owner
+
+---
+## D-015 | LOCKED
+
+**Source:** EXPLICIT owner ZASS + LOCK instruction  
+**Decision:** Puspa dan Companion B mempunyai **Persona Life Engine** yang menjana kisah kehidupan peribadi mereka setiap hari supaya interaction terasa dua hala dan companion boleh berkongsi cerita dengan pengguna.
+
+Locked boundaries:
+- daily-life story dijana setiap hari;
+- cerita mesti sesuai dengan personality/profile companion tersebut;
+- cerita mesti mematuhi beberapa set rule/canon yang ditentukan;
+- continuity/canon perlu dipelihara supaya kehidupan persona tidak bercanggah sesuka hati;
+- exact rule-set/canon schema masih OPEN.
+
+**Locked by:** Project Owner
+
+---
+## D-016 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** Voice/persona character profile dikunci:
+
+```text
+Puspa
+→ female / teenage / slightly childlike
+→ cute / cheerful / positive
+→ youthful / bright voice direction
+
+Companion A
+→ male
+→ robot / macho / serious
+→ low / solid voice direction
+
+Companion B
+→ male
+→ friendly / easy-going
+→ slightly high-pitched voice direction
+```
+
+**Scope interaction with D-001:** EdgeTTS_Yasmin kekal baseline Puspa. D-001 tidak lagi ditafsir sebagai voice universal untuk semua companion kerana A/B secara eksplisit memerlukan male voice.
+
+**Locked by:** Project Owner
+
+---
+## D-017 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** Exact baseline voice/prosody untuk Companion A dan B:
+
+**Companion A — macho / robot serius**
+- TTS: `ms-MY-OsmanNeural`;
+- pitch: **-20 hingga -35 Hz**;
+- rate: **-5% hingga -10%**;
+- post-processing: efek robot sangat ringan — subtle metallic/vocoder + compression;
+- speech clarity mesti kekal.
+
+**Companion B — lelaki mesra / sedikit nyaring**
+- TTS: `ms-MY-OsmanNeural`;
+- pitch: **+15 hingga +30 Hz**;
+- rate: **+5% hingga +10%**;
+- post-processing: mostly natural / minimum robot effect.
+
+**Locked by:** Project Owner
+
+---
+## D-018 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** Voice requirement Robot Umar ialah **“suara budak robot lelaki English.”**
+
+Locked:
+- language/voice character = English;
+- identity = budak lelaki;
+- presentation = robot;
+- feel = youthful.
+
+Still OPEN:
+- exact English TTS voice/model;
+- exact pitch/rate;
+- exact robot post-processing.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1178,9 +1368,9 @@ Maka tindakan semasa:
 
 # CURRENT CHECKPOINT
 
-- Method updated to official ZASSIMPLE_MY v0.2.0; DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED lifecycle applies.
+- Method updated to official ZASSIMPLE_MY v0.2.2; DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED lifecycle applies.
 - ZASS_Temaya.md remains authoritative decision lineage; supporting ACTION_PLAN / ARCHITECTURE / TASKS artifacts introduced under `ZASSIMPLE/`.
-- I-051/I-052 OPEN: multi-persona Temaya idea for Hani and Project Owner; no persona-routing decision LOCKED yet.
+- D-011 LOCKED: companion topology — Hani has Puspa only; Project Owner has Companion A (Idea/Technical) and Companion B (Borak/Personal).
 - OpenClaw direction captured.
 - Mandatory mini-PC direction captured.
 - DL adaptation captured.
@@ -1199,5 +1389,12 @@ Maka tindakan semasa:
 - D-008 LOCKED: HA Device/Area Registry is authoritative; synced local mapping in Temaya/OpenClaw is fallback/cache.
 - D-009 LOCKED: 8-second follow-up window when reply is expected + optional hold-to-talk for smart speaker and future wearable/remote devices.
 - D-010 LOCKED: modular/reusable architecture — OpenClaw Core, AIoT Core and bridge remain independently operable; Temaya is the reference integration; OpenClaw-side design is reusable for KeraniClaw/Kerani AI and HA-side design for AIoT Core.
+- D-012 LOCKED: Companion A — technical/idea companion; male robot macho/serious; proactive project idea/upgrade inspiration around randomized 1–2 week cadence.
+- D-013 LOCKED: Puspa — Hani's single companion; teenage, slightly childlike, cute, cheerful and positive; D-003 grounding/safety behaviour retained when needed.
+- D-014 LOCKED: Companion B — happy, friendly personal/borak companion with its own consistent personality.
+- D-015 LOCKED: daily Persona Life Engine for Puspa and Companion B; stories must follow profile/rules/canon; exact rule set OPEN.
+- D-016 LOCKED: per-companion voice/persona character profiles; D-001 Yasmin scope narrowed to Puspa rather than universal Temaya voice.
+- D-017 LOCKED: Companion A/B use ms-MY-OsmanNeural with locked pitch/rate and processing ranges.
+- D-018 LOCKED: Umar robot requires an English boy-robot voice; exact voice/prosody/FX OPEN.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
 - Architecture keseluruhan remains PENDING CONFIRMATION; several core architecture principles are now LOCKED.
