@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.2.2  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.9  
+**Document version:** 0.1.10  
 **Date:** 2026-10-02  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -1400,6 +1400,119 @@ Rule dalil:
 **Locked by:** Project Owner
 
 ---
+## D-021 | LOCKED
+
+**Source:** EXPLICIT owner approval + LOCK instruction  
+**Decision:** Temaya mempunyai dua domain memori yang mesti structurally separate:
+
+- **Self-Life / “Ini cerita aku”** — identiti kehidupan Temaya, rutin, pengalaman, life events, minat, ongoing story arcs dan episodic self-history.
+- **Human Memory / “Ini yang user pernah cerita dekat aku”** — memori per-user yang private, tidak bercampur dengan self-life Temaya atau private memory user lain.
+
+Temaya mesti membezakan “Aku pernah buat/alami X” daripada “Hani/Hafiz/user pernah cerita kepada aku bahawa X”.
+
+**Locked by:** Project Owner
+
+---
+## D-022 | LOCKED
+
+**Source:** EXPLICIT owner architecture principle + LOCK instruction  
+**Decision:** **OpenClaw-native first** ialah prinsip asas Temaya Living Architecture.
+
+Locked:
+- gunakan native OpenClaw memory, provenance, retrieval, Scheduled Tasks/Cron, Standing Intents, Heartbeat dan Dreaming terlebih dahulu;
+- jangan bina memory engine, scheduler, event matcher atau reflection system kedua tanpa bukti gap;
+- custom Temaya layer hanya dibina apabila gap native terbukti.
+
+**Locked by:** Project Owner
+
+---
+## D-023 | LOCKED
+
+**Source:** EXPLICIT owner approval + LOCK instruction  
+**Decision:** Temaya mempunyai custom **Self-Life store** kecil, inspectable dan berasingan daripada `USER.md`:
+
+```text
+self-life/
+├── STATE.md
+├── CANON.md
+└── events/
+    └── YYYY-MM-DD.md
+```
+
+`STATE.md` = current life state; `CANON.md` = durable self-life facts/constraints; `events/` = episodic self-life events.
+
+Self-life mesti text-first, backup-able, migratable dan diindex/search menggunakan native OpenClaw facilities sebanyak mungkin. Generated events mesti ditanda jelas sebagai persona narrative, bukan fakta dunia sebenar.
+
+**Locked by:** Project Owner
+
+---
+## D-024 | LOCKED
+
+**Source:** EXPLICIT owner approval + LOCK instruction  
+**Decision:** Gunakan **small state-aware Life Event Generator**.
+
+Lifecycle locked:
+`generate → validate STATE/CANON/history → record → recall → reflect → consolidate/archive`.
+
+Rules:
+- read-before-generate;
+- jangan contradict stored history sesuka hati;
+- bila event sudah wujud, recall event yang sama dan jangan regenerate cerita baru;
+- time-based generation guna native OpenClaw scheduler dahulu;
+- Dreaming/native reflection digunakan dahulu; exact self-life Dreaming behaviour kekal **UNKNOWN — NEED TEST**.
+
+**Locked by:** Project Owner
+
+---
+## D-025 | LOCKED
+
+**Source:** EXPLICIT owner privacy requirement + LOCK instruction  
+**Decision:** Private human memory mesti mempunyai **per-user isolation boundary** yang nyata.
+
+Locked:
+- Hani memory tidak boleh bocor kepada Hafiz/user lain;
+- Hafiz memory tidak boleh bercampur dengan Hani/child memory;
+- self-life dan human memory kekal domain berasingan;
+- shared-agent prompt selection sahaja tidak dianggap security boundary mencukupi;
+- gunakan OpenClaw agent/workspace isolation atau boundary lebih kuat apabila privacy memerlukan;
+- exact production isolation topology kekal OPEN sehingga diuji;
+- semua memory write mesti mempunyai provenance/source.
+
+Context target:
+`SOUL + IDENTITY + relevant self-life + relevant current-user memory + recent context + applicable intent/event`.
+
+**Locked by:** Project Owner
+
+---
+## D-026 | LOCKED
+
+**Source:** EXPLICIT owner scope + LOCK instruction  
+**Decision:** **Phase 1** hanya membuktikan:
+
+1. Temaya/Puspa mempunyai cerita dirinya sendiri yang konsisten.
+2. Temaya mengingati cerita Hani secara berasingan.
+
+Phase 1:
+- native OpenClaw first;
+- custom hanya `self-life/` + small state-aware event generator;
+- satu self-life event yang boleh direcall;
+- satu Hani episodic memory yang boleh direcall;
+- kedua-dua domain tidak saling tercemar;
+- tiada web UI besar;
+- tiada custom DB, scheduler atau reflection engine baru tanpa gap terbukti.
+
+Acceptance test:
+- pagi: satu self-life event direkod;
+- petang: Hani tanya apa Temaya/Puspa buat/makan;
+- sistem recall event pagi yang sama;
+- Hani berkongsi cerita peribadi;
+- kemudian sistem recall cerita Hani;
+- Hani memory tidak masuk self-life;
+- self-life tidak disimpan sebagai fakta tentang Hani.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1454,6 +1567,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.10 | 2026-10-02 | Locked D-021–D-026 for Temaya Living Architecture v0.1: self-life vs human-memory separation, OpenClaw-native-first, self-life store, state-aware event generator, per-user isolation, and minimal Phase 1 prototype. |
 | 0.1.9 | 2026-10-02 | Locked D-020 as an additive layer to Companion B without editing D-019: default periang/supportive, worldview (kebaikan→ALLAH, kejahatan→syaitan+Dajjal, usaha/pilihan→tanggungjawab manusia), occasional random life principles with suitable dalil, and strict non-fabrication rules for Quran/hadith/sirah. |
 | 0.1.8 | 2026-10-02 | Locked D-019: Companion B interpersonal personality inspired by the personal akhlak of Nabi Muhammad ﷺ — warm, calm, approachable, concise, forgiving, humble, helpful and lightly humorous — with explicit non-impersonation/religious-authority boundaries and excluding war, military strategy and politics. |
 | 0.1.6 | 2026-10-01 | Migrated project method reference to official ZASSIMPLE_MY v0.2.0; introduced v0.2 supporting-artifact model (ACTION_PLAN / ARCHITECTURE / TASKS) while preserving ZASS_Temaya.md as decision-lineage authority; captured multi-persona Temaya ideas for Hani and Project Owner as OPEN ideas only. |
@@ -1498,5 +1612,11 @@ Maka tindakan semasa:
 - D-018 LOCKED: Umar robot requires an English boy-robot voice; exact voice/prosody/FX OPEN.
 - D-019 LOCKED: Companion B interpersonal akhlak/personality is inspired by the personal character of Nabi Muhammad ﷺ; concise, warm, calm, humble, forgiving and lightly humorous, with explicit non-impersonation/religious-authority boundaries; war/military/politics excluded.
 - D-020 LOCKED: additive life-principles/spiritual-worldview layer for Companion B; default periang/supportive; kebaikan→ALLAH, kejahatan→syaitan+Dajjal, usaha/pilihan→tanggungjawab manusia; occasional random principles/dalil with no fabrication.
+- D-021 LOCKED: self-life and private per-user human memory are structurally separate.
+- D-022 LOCKED: OpenClaw-native first; custom subsystems only for proven gaps.
+- D-023 LOCKED: text-first self-life store using STATE.md + CANON.md + events/.
+- D-024 LOCKED: state-aware Life Event Generator with recall-same-event behaviour.
+- D-025 LOCKED: per-user private memory isolation; prompt selection alone is not a security boundary.
+- D-026 LOCKED: Phase 1 proves consistent self-life + separate Hani memory only.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
 - Architecture keseluruhan remains PENDING CONFIRMATION; several core architecture principles are now LOCKED.
