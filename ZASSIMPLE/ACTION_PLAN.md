@@ -2,7 +2,8 @@
 
 **Method:** ZASSIMPLE_MY v0.3.0  
 **Status:** INTERNAL WORKING ARTIFACT  
-**Authority:** Planning artifact only. It must not override `D-xxx | LOCKED` decisions in `ZASS_Temaya.md`.
+**Authority:** Planning artifact only. It must not override `D-xxx | LOCKED` decisions in `ZASS_Temaya.md`.  
+**Execution policy:** Repository root `/AGENTS.md` governs engineering execution. Any OpenClaw workspace `AGENTS.md` mentioned below is runtime/persona configuration, not the repository policy file.
 
 ## Purpose
 
@@ -40,7 +41,7 @@ Plus one small state-aware event generator and one native Scheduled Task.
 
 #### Sequence
 
-1. Prepare minimal Puspa `SOUL.md`, `IDENTITY.md` and memory rules in `AGENTS.md`.
+1. Prepare minimal Puspa `SOUL.md`, `IDENTITY.md` and memory rules in the **OpenClaw workspace `AGENTS.md`** (runtime config; not repository root `/AGENTS.md`).
 2. Create `self-life/STATE.md`, `CANON.md`, and `events/`.
 3. Configure native memory indexing/search for self-life if supported.
 4. Create one daily native Scheduled Task that generates **one** believable Puspa event after reading STATE + CANON + recent events.
@@ -81,6 +82,7 @@ Do **not** expand scope before the gap is documented.
 - Custom scope is limited to the self-life namespace + state-aware event generator.
 - Dreaming treatment, retrieval scoping and production isolation remain **NEED TEST**.
 - Design remains **PENDING CONFIRMATION**.
+- Repository execution policy is now explicit in root `/AGENTS.md`; this is an execution-governance clarification, not a new Temaya architecture decision.
 
 
 
