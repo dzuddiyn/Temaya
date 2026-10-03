@@ -67,6 +67,23 @@ Core elements are:
 
 Existing D-021–D-029 implementation constraints remain authoritative until explicitly revised.
 
+## Security staging principle
+
+Locked by D-035:
+
+**Security Baseline from Day 0; Security Hardening in Stage 3.**
+
+Stage 0/1 minimum:
+- no unnecessary public exposure;
+- authentication/access control where supported;
+- secrets stay out of Git and ordinary searchable memory/knowledge;
+- allowlists/explicit authorization for messaging where supported;
+- private workspaces/isolation boundaries respected;
+- recoverable configuration/state proportionate to the stage;
+- external exposure requires an explicit security review.
+
+Stage 3 performs deeper hardening, hosting exposure design, network segmentation, stronger secret management, audit/logging and mature recovery controls.
+
 ## Small-start architecture rule
 
 Temaya begins with a reversible **AP-000 Local Foundation** before the full design is confirmed, consistent with repository `/AGENTS.md`.
@@ -80,6 +97,18 @@ AP-000 intentionally contains only:
 AP-000 intentionally excludes all Phase 1 integrations.
 
 After AP-000, Phase 1 follows one linear critical path toward the locked **Minimum Useful Temaya** deliverable in D-032. Artificial Soul advanced implementation, robots and other optional R&D remain outside that critical path.
+
+## External-feed trust boundary
+
+Locked by D-036:
+
+WhatsApp/Telegram/group/channel content is an **external untrusted feed**.
+
+Temaya may read/summarize/classify permitted feeds, but any promotion into durable memory/library/archive/calendar/tasks/reminders or another consequential write/action requires user approval of:
+1. relevance/interpretation; and
+2. the proposed next action.
+
+No approval = no durable promotion/action. Provenance must be retained after approval.
 
 ## Architecture domains
 
@@ -109,6 +138,24 @@ Per-human private memory, provenance, retrieval scope and isolation. Human memor
 
 ### 5. Dzuddiyn Library / Knowledge
 Durable knowledge/document authority, personal/family/project knowledge and approved continuity records outside transient runtime state.
+
+Current agreed direction (AC-015):
+
+```text
+AUTHORITATIVE KNOWLEDGE
+Dzuddiyn Library
+        │
+        ├── storage/source
+        │    Google Drive / selected document store
+        │
+        ├── human access
+        │    Obsidian / phone / PC client
+        │
+        └── AI retrieval
+             OpenClaw index/cache/search
+```
+
+Obsidian or another client is an access surface, not a second authority. OpenClaw retrieval/index is derived, not canonical. Exact physical authoritative storage remains open until the relevant Stage-1 review.
 
 ### 6. Voice, Messaging & Interaction
 User-facing interaction surfaces:
@@ -503,4 +550,4 @@ D-030 keeps Artificial Soul as an official architecture domain. D-034 schedules 
 
 **Core architecture readiness:** SUFFICIENT FOR REVERSIBLE FOUNDATION WORK and the D-032 Minimum Useful Temaya Phase 1 path.
 
-**Confirmation readiness:** READY FOR CORE DESIGN REVIEW when the owner chooses. Artificial Soul detail, Dreaming behaviour, retrieval scoping, exact Gateway/host isolation, emotional-state implementation, agency mechanism and provenance details remain deferred/OPEN/NEED TEST unless explicitly locked.
+**Confirmation readiness:** AP-000 may execute first as reversible foundation work. After AP-000 PASS, AC-016 requires a `CONFIRM DESIGN` gate before broader private-memory exposure, messaging ingestion, Google writes or Home Assistant control. Artificial Soul detail, Dreaming behaviour, retrieval scoping, exact Gateway/host isolation, emotional-state implementation, agency mechanism and provenance details remain deferred/OPEN/NEED TEST unless explicitly locked.
