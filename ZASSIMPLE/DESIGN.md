@@ -45,11 +45,71 @@ Custom layers are allowed only for proven gaps.
 
 ## Main flow
 
-The primary flow is memory-domain selection → scoped recall/write → consistent reply.
+The primary interaction flow is:
+identity/persona selection → relevant Artificial Soul + current-user context → scoped recall/write → reasoning/action → consistent reply.
+
+Artificial Soul has its own internal continuity flow:
+identity/character → self-life continuity → emotional/appraisal state → bounded initiative → response/experience → validated continuity update.
 
 ## Main elements
 
-Core elements are OpenClaw persona/bootstrap files, self-life domain, per-user human-memory domains, native memory-core/retrieval, native scheduling, and the small Life Event Generator.
+Core elements are:
+- OpenClaw Core / orchestration runtime;
+- Identity & Persona;
+- Artificial Soul;
+- Human Memory & Privacy;
+- Dzuddiyn Library / Knowledge;
+- Voice & Interaction;
+- AIoT Core / Home Assistant;
+- Integration Bridge;
+- Infrastructure / Runtime;
+- Future Embodiment / Physical Companion interfaces.
+
+Existing D-021–D-029 implementation constraints remain authoritative until explicitly revised.
+
+## Architecture domains
+
+### 1. OpenClaw Core / Orchestration Runtime
+Reusable agent/orchestration runtime. It hosts persona execution, reasoning, tools and native capabilities while remaining separable from project-specific profiles.
+
+### 2. Identity & Persona
+Defines who each companion is: identity, character, communication style, values, role and persona-specific boundaries.
+
+### 3. Artificial Soul
+Official domain locked by D-030.
+
+```text
+Artificial Soul
+├── Identity / Character
+├── Self-Life Continuity
+├── Emotional Continuity
+├── Appraisal / Internal State Interpretation
+├── Agency / Initiative
+└── Soul Safety & Boundaries
+```
+
+Artificial Soul is a capability domain, not a single engine. OpenClaw-native-first remains authoritative. Exact implementation remains open pending domain review.
+
+### 4. Human Memory & Privacy
+Per-human private memory, provenance, retrieval scope and isolation. Human memory must remain separate from persona self-life.
+
+### 5. Dzuddiyn Library / Knowledge
+Durable knowledge/document authority, personal/family/project knowledge and approved continuity records outside transient runtime state.
+
+### 6. Voice & Interaction
+Wake word, STT, speaker identity, routing, TTS, multi-turn behaviour and source-device response.
+
+### 7. AIoT Core / Home Assistant
+Independent household automation and operational-state authority. It must continue functioning without Temaya/OpenClaw.
+
+### 8. Integration Bridge
+Controlled bridge between OpenClaw and Home Assistant/other operational systems, including authority enforcement and failure isolation.
+
+### 9. Infrastructure / Runtime
+Mini PC and related deployment, local services, network, storage, security boundaries, backup/recovery and optional compute extensions.
+
+### 10. Future Embodiment / Physical Companion
+Robots, smart speakers, stereo/depth vision, physical interaction and future embodied-AI capabilities. This is a future extension and is not a current blocker to the software core.
 
 ## Architecture (when applicable)
 
@@ -341,8 +401,10 @@ Acceptance:
 
 ## Design status
 
-Core decisions D-021–D-026 are LOCKED.
+Core decisions D-021–D-030 are LOCKED.
 
-Overall design remains **PENDING CONFIRMATION**. Core design coverage is 4/4 and D-027–D-029 resolve the previously identified isolation, authority and self-life-writer blockers.
+Overall design remains **PENDING CONFIRMATION**.
 
-**Confirmation readiness:** READY FOR `CONFIRM DESIGN` REVIEW. Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and provenance details remain `NEED TEST` during implementation and do not silently change LOCKED decisions.
+D-030 introduces Artificial Soul as an official architecture domain. Before opening final `CONFIRM DESIGN` review, this domain requires its own design review so identity, self-life, emotional continuity, appraisal and bounded agency can be reconciled with the existing implementation-heavy decisions D-015, D-023, D-024, D-026 and D-029.
+
+**Confirmation readiness:** HOLD FOR ARTIFICIAL SOUL DESIGN REVIEW. Dreaming behaviour, retrieval scoping, exact Gateway/host isolation, emotional-state implementation, agency mechanism and provenance details remain OPEN/NEED TEST unless explicitly locked.
