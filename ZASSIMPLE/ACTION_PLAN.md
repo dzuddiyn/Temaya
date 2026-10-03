@@ -86,7 +86,8 @@ Do **not** expand scope before the gap is documented.
 - D-028 resolves authority split: Dzuddiyn Library/document stores = knowledge, OpenClaw = persona/conversational memory, Home Assistant = operational household state.
 - D-029 resolves self-life ownership: one authoritative writer per persona.
 - Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and minimum provenance metadata remain **NEED TEST** during implementation.
-- Design remains **PENDING CONFIRMATION**, but current blocker review is cleared and the design is ready for CONFIRM DESIGN review.
+- D-030 adds Artificial Soul as an official design domain.
+- Design remains **PENDING CONFIRMATION** and final CONFIRM DESIGN review is now held until AP-DESIGN-001 Artificial Soul Domain Review is completed.
 - Repository execution policy is now explicit in root `/AGENTS.md`; this is an execution-governance clarification, not a new Temaya architecture decision.
 
 
@@ -135,4 +136,35 @@ When physical embodiment becomes active scope, compare integrated stereo/RGB-D c
 
 Research reference:
 `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
+
+
+## Pre-confirmation design work
+
+### AP-DESIGN-001 | ARTIFICIAL SOUL DOMAIN REVIEW
+
+**Source:** D-030  
+**Status:** REQUIRED BEFORE FINAL `CONFIRM DESIGN` REVIEW
+
+Goal:
+- define Artificial Soul as a coherent OpenClaw-first capability domain for Puspa and Companion B;
+- preserve locked persona/privacy/authority intent while reopening only implementation details where evidence supports a better architecture.
+
+Review dimensions:
+1. Identity / Character authority.
+2. Self-Life Continuity.
+3. Emotional Continuity.
+4. Appraisal / Internal State Interpretation.
+5. Agency / Initiative.
+6. Soul Safety & Boundaries.
+
+Decisions explicitly flagged for review of implementation detail:
+- D-015 — persistent self-life intent vs mandatory daily/custom engine mechanism;
+- D-023 — self-life separation/inspectability vs exact filesystem schema;
+- D-024 — history-aware continuity vs exact custom Life Event Generator implementation;
+- D-026 — Phase 1 outcome/acceptance vs implementation prescription;
+- D-029 — single authoritative self-life write authority vs exact writer implementation;
+- D-020 — keep worldview/behaviour, review exact random-trigger mechanism only if needed.
+
+Do not modify any LOCKED decision during this review without an explicit owner decision gate.
 
