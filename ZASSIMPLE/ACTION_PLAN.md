@@ -23,9 +23,294 @@ Practical constraints, dependencies, sequencing, experiments, feasibility findin
 
 ## Current plan
 
-### AP-001 | READY FOR PROTOTYPE — Temaya Living Memory Phase 1
+### Critical path — one linear path
 
-**Source:** D-021–D-026  
+```text
+AP-000 Local Foundation
+        ↓
+AP-100 Minimum Useful Temaya — Stage 1
+        ↓
+AP-200 Artificial Soul Development — Stage 2
+        ↓
+Stabilization / Portability Gate
+        ↓
+Stage 3 Security + Hosting / Private-Cloud Hybrid
+```
+
+Within AP-100, milestones execute **sequentially**. They are acceptance milestones, not parallel architecture branches.
+
+### Pre-execution audit gate
+
+**Status:** OWNER AUDIT COMPLETED FOR PLANNING — PRE-ARCHITECTURE READY.
+
+`ZASSIMPLE/PRE_EXECUTION_AUDIT.md` now contains the owner's responses. Later-stage items remain intentionally deferred until their due gate.
+
+Remaining execution-time check:
+- exact CPU model / virtualization capability / storage health / NIC / usable RAM must be inspected before installing the accepted hypervisor topology.
+
+Audit output:
+`AUDIT → pre-architecture refinement → ACTION_PLAN sequencing → task slicing → execution evidence`.
+
+### AP-000 | READY — Local OpenClaw + HA Foundation
+
+**Source:** D-033, D-035, D-038 + owner pre-execution audit  
+**Type:** FOUNDATION / REVERSIBLE IMPLEMENTATION  
+**Goal:** learn and prove the minimum real runtimes on the mini PC before Stage-1 integrations.
+
+#### Accepted provisional topology
+
+```text
+Mini PC
+└── Hypervisor
+    ├── HAOS VM
+    └── Linux VM
+        └── OpenClaw
+```
+
+The topology is **provisional until T-F001 hardware inspection passes**. Do not force it if the real machine cannot safely support it.
+
+#### AP-000 sequence
+
+1. **T-F001 — Hardware / firmware inspection**
+   - exact CPU model;
+   - x86-64 / virtualization support;
+   - RAM availability;
+   - storage type/health/free capacity;
+   - NIC;
+   - UEFI/BIOS state.
+
+2. **T-F002 — Preserve / prepare host**
+   - protect any existing data;
+   - establish rollback/backup point;
+   - decide hypervisor install path only after T-F001 PASS.
+
+3. **T-F003 — Hypervisor foundation**
+   - install/configure selected hypervisor;
+   - LAN/private only;
+   - no public exposure.
+
+4. **T-F004 — Home Assistant**
+   - create HAOS VM;
+   - assign conservative resources;
+   - start HA successfully;
+   - record VM/config/storage location.
+
+5. **T-F005 — Linux/OpenClaw VM**
+   - create minimal Linux VM;
+   - install supported Node/OpenClaw runtime;
+   - create one minimal OpenClaw agent/workspace.
+
+6. **T-F006 — ChatGPT/OpenAI foundation auth**
+   - use the owner-selected ChatGPT/OpenAI route for AP-000;
+   - verify the actual OAuth/model availability and allowance from the connected account;
+   - do not assume unlimited free usage;
+   - keep architecture provider-agnostic.
+
+7. **T-F007 — Day-0 security**
+   - apply D-035;
+   - inspect Arcadyan AW1000/OpenWrt relevant firewall/WAN/admin/UPnP/port-forward posture;
+   - keep OpenClaw/HA private/LAN-only unless a reviewed secure access path is explicitly enabled;
+   - secrets outside Git/searchable memory.
+
+8. **T-F008 — Restart / recovery proof**
+   - reboot/restart;
+   - prove HA returns;
+   - prove OpenClaw returns;
+   - prove one basic Temaya/OpenClaw conversation;
+   - record state/config locations and recovery steps.
+
+9. **GATE-C001 — CONFIRM DESIGN**
+   - mandatory after AP-000 PASS;
+   - use actual AP-000 evidence to review core design;
+   - no broader Stage-1 exposure/writes/control until explicit confirmation.
+
+#### Explicitly excluded from AP-000
+
+- Artificial Soul implementation;
+- Emotion Engine/AICO;
+- custom self-life generator;
+- OpenClaw ↔ HA control bridge;
+- WhatsApp/Telegram production ingestion;
+- Google writes;
+- Dzuddiyn Library migration/integration;
+- voice/STT/TTS/smart-speaker pipeline;
+- multi-agent family rollout;
+- robot/embodiment.
+
+#### AP-000 PASS
+
+- T-F001–T-F008 pass with evidence;
+- accepted deployment topology is either validated or reconciled to a simpler evidence-supported alternative;
+- OpenClaw and HA start/recover reliably enough for design confirmation;
+- D-035 security baseline is verified;
+- one basic Temaya/OpenClaw conversation works;
+- no unnecessary custom subsystem is required.
+
+#### Exit
+
+AP-000 exits only into **GATE-C001 — CONFIRM DESIGN**.
+
+---
+
+### AP-100 | LOCKED-SCOPE PLAN — Minimum Useful Temaya Phase 1
+
+**Source:** D-032  
+**Goal:** Deliver the smallest Temaya that is genuinely useful to the family, while preserving one linear execution path.
+
+#### Milestone order
+
+```text
+M1  Basic Temaya companion
+ ↓
+M2  Per-user privacy/isolation baseline
+ ↓
+M3  Telegram + group reader
+ ↓
+M4  WhatsApp + group reader
+ ↓
+M5  Google Tasks + Calendar + Drive
+    + Apps Script helper only where useful
+ ↓
+M6  Dzuddiyn Library practical access
+    + simple PC/phone surface such as Obsidian where appropriate
+ ↓
+M7  Home Assistant basic bridge
+    following AIoT Core / premises authority
+ ↓
+M8  Smart speaker
+    convenient family/Hani voice interface
+ ↓
+M9  D-026 Living Memory proof
+    self-life vs human-memory separation
+ ↓
+M10 End-to-end Phase 1 verification
+```
+
+#### M1 — Basic Temaya companion
+
+- evolve AP-000 agent into a usable Temaya/Puspa baseline;
+- keep OpenClaw-native orchestration;
+- no advanced Artificial Soul requirement;
+- before Companion A/B are instantiated or routed, complete **GATE-N001 — final names for Companion A and Companion B**. Puspa work does not need to wait for those names.
+
+**Pass:** ordinary companion interaction is reliable enough to continue integration work.
+
+#### M2 — Privacy / isolation baseline
+
+- establish the D-027 per-user isolation mechanism before broad multi-user exposure;
+- keep cross-user access deny-by-default;
+- document actual OpenClaw isolation behaviour discovered in the runtime.
+
+**Pass:** owner/Hani private contexts can be separated at the chosen baseline boundary.
+
+#### M3 — Telegram integration + group reader
+
+- connect Temaya to Telegram;
+- enforce D-036: permitted group content is untrusted feed data; summarization/classification may occur, but durable promotion or consequential actions require explicit user approval of interpretation/relevance and next action;
+- default approved destinations should follow the owner UX: TASK / LIBRARY / ARCHIVE / NOTHING; avoid asking Calendar-vs-Task as a normal choice.
+- support relevant group/channel reading within platform permissions and explicit privacy rules;
+- begin with read/summarize/useful extraction before adding unnecessary write automation.
+
+**Pass:** Temaya can ingest and use selected Telegram group information reliably.
+
+#### M4 — WhatsApp integration + group reader
+
+- connect Temaya to WhatsApp using the simplest maintainable supported route;
+- enforce D-036 human approval before any group-derived information becomes memory/library/archive/calendar/task/reminder or triggers another durable/consequential action;
+- support relevant group reading where the actual platform/integration permits it;
+- preserve privacy and source provenance.
+
+**Pass:** Temaya can ingest/use the required WhatsApp information path at a basic useful level.
+
+#### M5 — Google services
+
+Required user-facing model:
+- **Google Tasks = primary capture doorway** for ACTION / TO-DO / EVENT-like items;
+- **Google Drive = document/file integration**;
+- **Dzuddiyn Library = reference/durable knowledge authority**.
+
+Google Calendar:
+- do not make the owner choose Calendar vs Task during normal capture;
+- dated Tasks may appear in Calendar naturally;
+- the Google Tasks public API currently cannot persist due time-of-day, so M5 must test the actual OpenClaw/Google integration path;
+- if exact time-of-day cannot be represented through Tasks, use the smallest compatibility mechanism necessary while preserving Tasks-first UX and avoiding duplicate canonical intent.
+
+Apps Script:
+- allowed as a deterministic helper where Google-specific work is easier/cleaner with it;
+- not mandatory middleware;
+- do not recreate the old serverless-sprawl architecture.
+
+Write rules:
+- direct authenticated user request may write once permission/identity is clear;
+- external-feed-derived data obeys D-036 approval first;
+- important writes require read-back verification.
+
+**Pass:** the owner can capture normal to-do/event intent through one Tasks-first interaction model; date-only and exact-time cases behave predictably; Drive workflows work; important writes verify correctly.
+
+#### M6 — Dzuddiyn Library practical access
+
+- Temaya can access/retrieve from the authoritative Dzuddiyn Library path selected for Phase 1;
+- owner has a practical direct PC/phone access surface;
+- Obsidian or another simple client may be integrated if it improves usability without becoming a new authority layer;
+- do not reorganize the entire legacy library merely to begin;
+- before choosing local canonical storage, verify storage health/reliability; the owner's old HDD must not become the sole durable copy;
+- evaluate SSD/storage/RAM upgrade and a second backup copy (local or cloud) at this milestone, without changing D-037 authority semantics.
+
+**Pass:** owner and Temaya can both reach the library through practical, understandable paths.
+
+#### M7 — Home Assistant basic bridge
+
+- integrate OpenClaw/Temaya with HA at a basic level;
+- follow D-007/D-008/D-010/D-028;
+- HA remains premises/device/automation authority;
+- AIoT Core remains independently operable.
+
+**Pass:** Temaya can read a small verified HA state set and perform one controlled basic action without making HA dependent on OpenClaw.
+
+#### M8 — Smart speaker
+
+- provide a convenient voice interface for Hani/family;
+- follow existing ESPHome / voice-gateway / OpenClaw architecture direction;
+- choose the simplest reliable Phase 1 hardware implementation;
+- no robot/embodiment requirement;
+- wearable smart-speaker/earpiece chain (I-061) stays optional/future and must not delay the fixed smart-speaker PASS.
+
+**Pass:** a family member can invoke Temaya from the smart-speaker path and receive the reply on the source device.
+
+#### M9 — D-026 Living Memory milestone
+
+D-026 remains the locked memory/privacy acceptance milestone inside the broader Phase 1 scope.
+
+Use AP-001 below as the detailed sub-plan unless/until its implementation details are explicitly revised.
+
+#### M10 — End-to-end Phase 1 verification
+
+Phase 1 is DELIVERED only when:
+- AP-000 foundation remains stable;
+- required messaging paths work;
+- Google integrations work;
+- Dzuddiyn Library path is practical;
+- HA basic bridge works without breaking HA independence;
+- smart speaker works;
+- D-026 memory/privacy proof passes;
+- important writes/actions are independently verified;
+- evidence and current architecture findings are recorded.
+
+#### Not on the Phase 1 critical path
+
+- advanced Artificial Soul;
+- Emotion Engine/AICO;
+- robots/stereo vision/VLA;
+- cloud migration;
+- custom UI/dashboard unless a real usability gap appears;
+- optional integrations not required by D-032.
+
+---
+
+### AP-001 | DEFERRED WITHIN AP-100 M9 — Living Memory Proof
+
+**Source:** D-021–D-026, D-032  
+**Role:** Detailed sub-plan for AP-100 Milestone M9. D-026 remains authoritative for this milestone but no longer defines the whole Phase 1 deliverable.  
 **Goal:** Prove consistent self-life + separate Hani memory using native OpenClaw facilities first.
 
 #### Build only
@@ -71,7 +356,9 @@ Plus one small state-aware event generator and one native Scheduled Task.
 Stop and document a gap if:
 - native retrieval cannot separate domains reliably;
 - native provenance is insufficient for generated persona narrative;
-- per-user privacy cannot be enforced at the required boundary;
+- D-027 per-user isolation cannot be enforced at the required boundary;
+- D-028 authority boundaries would require duplicated/conflicting canonical state;
+- D-029 single-writer self-life ownership cannot be maintained;
 - Dreaming mixes self-life with human durable memory.
 
 Do **not** expand scope before the gap is documented.
@@ -80,8 +367,16 @@ Do **not** expand scope before the gap is documented.
 
 - Living Design v0.1 supports native OpenClaw memory/indexing/scheduler first.
 - Custom scope is limited to the self-life namespace + state-aware event generator.
-- Dreaming treatment, retrieval scoping and production isolation remain **NEED TEST**.
-- Design remains **PENDING CONFIRMATION**.
+- D-027 resolves the minimum per-user isolation baseline: private agent/workspace or equivalent boundary, deny-by-default cross-agent access.
+- D-028 resolves authority split: Dzuddiyn Library/document stores = knowledge, OpenClaw = persona/conversational memory, Home Assistant = operational household state.
+- D-029 resolves self-life ownership: one authoritative writer per persona.
+- Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and minimum provenance metadata remain **NEED TEST** during implementation.
+- D-030 keeps Artificial Soul as an official design domain; D-034 schedules AP-DESIGN-001/AP-200 in Stage 2, after Minimum Useful Temaya.
+- D-031 fixes the deployment progression: local mini-PC baseline → stabilized portable runtime → future private-cloud OpenClaw with local HA hybrid.
+- D-032 defines the Phase 1 Minimum Useful Temaya deliverable and removes ambiguity that D-026 was the whole Phase 1.
+- D-033 keeps AP-000 intentionally small: install/run OpenClaw + HA and learn the real runtimes.
+- The architecture is sufficient for AP-000 reversible foundation work and the linear AP-100 Phase 1 integration path before full confirmation.
+- Design remains **PENDING CONFIRMATION**; final confirmation is no longer blocked by completing Artificial Soul detail first.
 - Repository execution policy is now explicit in root `/AGENTS.md`; this is an execution-governance clarification, not a new Temaya architecture decision.
 
 
@@ -97,3 +392,127 @@ None promoted yet.
 - D-018: Umar requires an English boy-robot voice; exact English TTS voice and processing remain open.
 
 These are planning constraints only; design remains unconfirmed.
+
+
+### AP-200 | PLANNED — Artificial Soul Development
+
+**Source:** D-030, D-034  
+**Stage:** 2 — begins only after AP-100 Minimum Useful Temaya is delivered.
+
+Goal:
+- develop Artificial Soul for Puspa and Companion B on top of the working OpenClaw-based Temaya;
+- improve trusted companionship, continuity, positivity and safe/private emotional expression without making Stage 1 depend on advanced soul machinery.
+
+Scope to review when Stage 2 starts:
+1. Identity / Character.
+2. Self-Life Continuity.
+3. Emotional Continuity.
+4. Appraisal / Internal State Interpretation.
+5. Agency / Initiative.
+6. Soul Safety & Boundaries.
+
+Implementation principle:
+- OpenClaw-first;
+- reuse the already-working Stage 1 runtime;
+- optional Emotion Engine/AICO-inspired components only if evidence shows value;
+- review implementation-heavy D-015/D-023/D-024/D-026/D-029 details before adding custom machinery;
+- no hosting/cloud migration inside AP-200.
+
+Exit:
+- Artificial Soul behaviour is useful, bounded, private, testable and regression-safe;
+- no contamination of human/private memory;
+- Stage 1 functions remain intact.
+
+### Stabilization / Portability Gate
+
+Runs after AP-200 and before Stage 3.
+
+Required:
+- backup/recovery;
+- configuration and secret separation;
+- regression testing across Stage 1 + Stage 2;
+- operational hardening;
+- runtime portability and migration readiness.
+
+### Stage 3 — Security + Hosting / Hybrid Cloud
+
+Only after stabilization.
+
+Scope:
+- deeper security hardening;
+- secure remote/private access;
+- hosting/server architecture;
+- private-cloud OpenClaw/Temaya when feasible;
+- secure bridge back to local Home Assistant;
+- preserve HA premises authority and independent operation.
+
+---
+
+## Research candidates — not execution tasks
+
+These items are preserved for later evaluation and **do not enter the current execution queue**.
+
+### RC-001 — Artificial Soul emotional continuity POC
+
+**Source:** AC-013  
+**Status:** PARKED UNTIL CORE MEMORY/PRIVACY VERTICAL SLICE IS STABLE
+
+Candidate:
+- OpenClaw remains runtime/persona/factual-memory authority;
+- optional third-party Emotion Engine may provide compact emotional continuity;
+- evaluate only through a reversible POC;
+- no AICO/Mem0/custom memory replacement.
+
+Pass concept:
+- continuity persists across sessions;
+- persona remains within LOCKED profile;
+- factual/user memory remains separate;
+- no cross-user leakage;
+- decay returns state toward persona baseline.
+
+### RC-002 — Embodiment / Robot Vision benchmark
+
+**Source:** AC-014  
+**Status:** FUTURE R&D — NOT A CURRENT DESIGN BLOCKER
+
+When physical embodiment becomes active scope, compare integrated stereo/RGB-D candidates before selecting hardware.
+
+Research reference:
+`ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
+
+
+## Pre-confirmation design work
+
+### AP-DESIGN-001 | ARTIFICIAL SOUL DOMAIN REVIEW
+
+**Source:** D-030, D-034  
+**Status:** DEFERRED TO AP-200 / STAGE 2 — NOT ON STAGE 0/1 CRITICAL PATH
+
+Goal when resumed:
+- define Artificial Soul as a coherent OpenClaw-first capability domain for Puspa and Companion B;
+- preserve locked persona/privacy/authority intent while reopening only implementation details where evidence supports a better architecture.
+
+Deferral rule:
+- OpenClaw alone is sufficient for current foundation and basic companion operation;
+- do not let Artificial Soul implementation block core learning, privacy proof, memory proof or HA integration;
+- resume only when the core companion works and there is a demonstrated need for richer emotional/self-life continuity.
+
+Review dimensions:
+1. Identity / Character authority.
+2. Self-Life Continuity.
+3. Emotional Continuity.
+4. Appraisal / Internal State Interpretation.
+5. Agency / Initiative.
+6. Soul Safety & Boundaries.
+
+Decisions explicitly flagged for review of implementation detail:
+- D-015 — persistent self-life intent vs mandatory daily/custom engine mechanism;
+- D-023 — self-life separation/inspectability vs exact filesystem schema;
+- D-024 — history-aware continuity vs exact custom Life Event Generator implementation;
+- D-026 — Phase 1 outcome/acceptance vs implementation prescription;
+- D-029 — single authoritative self-life write authority vs exact writer implementation;
+- D-020 — keep worldview/behaviour, review exact random-trigger mechanism only if needed.
+
+Do not modify any LOCKED decision during this review without an explicit owner decision gate.
+

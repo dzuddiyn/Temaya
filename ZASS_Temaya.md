@@ -4,8 +4,8 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.12  
-**Date:** 2026-10-03  
+**Document version:** 0.1.19  
+**Date:** 2026-10-04  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
 
@@ -363,6 +363,95 @@ Locked boundary:
 - audio response dihantar balik ke source robot/smart speaker.
 
 Exact engine, protocol dan codec masih OPEN.
+
+
+## AC-013 | AGREED
+**Source:** EXPLICIT owner `ZASS & Proceed` instruction — NO LOCK
+
+**Artificial Soul direction:** explore an **optional emotional-continuity layer on top of OpenClaw**, without creating a second companion platform.
+
+Agreed boundaries:
+- LOCKED persona / `SOUL.md` / `IDENTITY.md` remain identity authority;
+- OpenClaw memory + Temaya self-life remain factual continuity authority;
+- Emotion Engine is a **third-party OpenClaw-compatible research candidate**, not native OpenClaw core and not a memory authority;
+- emotional state may influence tone/warmth/energy/concern/boundary expression;
+- emotional state must not rewrite LOCKED persona, factual memory, safety rules, or per-user privacy boundaries;
+- no production dependency is selected yet;
+- prove value through a small reversible POC before adoption.
+
+Detailed research: `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
+## AC-014 | AGREED
+**Source:** EXPLICIT owner `ZASS & Proceed` instruction — NO LOCK
+
+**Embodiment / Robot Vision direction:** preserve stereo/depth/robot-learning research as a **future R&D workstream**, separate from current Temaya core-design blockers.
+
+Research candidates include:
+- stereo vision;
+- OAK-D / DepthAI family;
+- RealSense-class RGB-D;
+- ROS stereo processing;
+- MoveIt hand-eye calibration;
+- monocular depth / active vision;
+- H2O / OmniH2O;
+- OpenVLA;
+- GR00T / LeRobot;
+- Isaac Lab and related sim-to-real references.
+
+No camera, VLA model, humanoid stack, or physical embodiment dependency is selected or LOCKED.
+
+Detailed research: `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
+## AC-015 | AGREED
+**Source:** EXPLICIT owner agreement — NOT LOCKED
+
+**Dzuddiyn Library authoritative-knowledge architecture:**
+
+```text
+AUTHORITATIVE KNOWLEDGE
+Dzuddiyn Library
+        │
+        ├── storage/source
+        │    Google Drive / selected document store
+        │
+        ├── human access
+        │    Obsidian / phone / PC client
+        │
+        └── AI retrieval
+             OpenClaw index/cache/search
+```
+
+Agreed direction:
+- Dzuddiyn Library remains the knowledge authority;
+- Obsidian/other PC-phone clients are access surfaces, not new canonical authorities;
+- OpenClaw index/cache/search is a derived retrieval layer, not a canonical replacement;
+- exact authoritative physical storage location remains OPEN until M6/its prerequisite review.
+
+## AC-016 | AGREED
+**Source:** EXPLICIT owner agreement — NOT LOCKED
+
+**CONFIRM DESIGN gate:** AP-000 may execute as reversible foundation work before full design confirmation. After AP-000 passes, `CONFIRM DESIGN` becomes a mandatory ZASS gate **before** broader exposure such as:
+- private multi-user memory;
+- WhatsApp/Telegram production ingestion;
+- Google writes;
+- Home Assistant control.
+
+The execution workflow must surface this gate to the owner when AP-000 reaches PASS.
+
+
+## AC-017 | AGREED
+**Source:** EXPLICIT owner preference + verified Google Tasks API constraint — NOT LOCKED
+
+**Google Tasks-first capture direction:**
+- Google Tasks is the preferred single entry point for ACTION / TO-DO / EVENT-like items during first implementation;
+- dated tasks should be visible through Google Calendar where Google supports this;
+- REFERENCE / durable information goes to Dzuddiyn Library;
+- avoid asking the user to choose Task vs Calendar as a normal capture decision.
+
+**Important current API constraint:** Google Tasks public REST API can read/write a task due **date**, but discards the time-of-day portion of the `due` field. Therefore exact timed-event automation cannot yet be locked to Tasks-only through the public Tasks API.
+
+M5 must test the actual OpenClaw/Google integration path. If exact time-of-day cannot be written to Tasks through that path, use the smallest compatibility mechanism that preserves the Tasks-first UX without duplicating canonical intent unnecessarily.
+
 
 ---
 
@@ -725,6 +814,43 @@ Companion A dan Companion B menggunakan `ms-MY-OsmanNeural` dengan prosody berbe
 
 Robot Umar memerlukan **suara budak robot lelaki English**. Exact English TTS voice/model, pitch/rate dan robot-FX masih OPEN.
 
+
+## I-059 | AGREED VIA AC-013
+**Source:** EXTERNAL RESEARCH + owner PROCEED
+
+PioneerJeff Labs Emotion Engine is retained as a **third-party OpenClaw-compatible candidate** for compact emotional continuity (PAD/trust/decay/appraisal/log state). It must remain subordinate to Temaya persona, memory, privacy and safety authority.
+
+## I-060 | AGREED VIA AC-014
+**Source:** EXTERNAL RESEARCH + owner PROCEED
+
+Stereo/depth vision and embodied-AI projects are retained as future robot/embodiment research references. They do not enter current Phase 1 or block Temaya Living Design confirmation.
+
+
+---
+
+---
+
+# CURRENT SELECTION MATRIX
+
+| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
+|---|---|---|---|---|---|
+| OpenClaw + optional Emotion Engine emotional-continuity layer | PASS | Small/reversible; preserves OpenClaw as core runtime and factual memory authority | Third-party dependency; value/security fit still needs POC | Emotion Engine capability verified; Temaya integration untested | AC-013 |
+| Full AICO companion/runtime adoption | FAIL for current core | Rich memory/emotion/agency reference architecture | Duplicates OpenClaw/memory/runtime responsibilities; overbuild risk | Useful as reference, not required | PARKED REFERENCE |
+| Stereo/depth/robot vision workstream | PASS for future embodiment; NOT REQUIRED now | Preserves strong hardware/robotics options without blocking software core | Hardware/model choice premature | Candidates researched; no benchmark/procurement test | AC-014 |
+
+**Current direction:** keep Temaya core simple and OpenClaw-first; test emotional continuity later as an optional POC; keep robot vision as a separate future embodiment workstream.
+
+
+## I-061 | OPEN
+**Source:** EXPLICIT owner idea
+
+**Companion chain / wearable interaction idea:**
+- wearable smart-speaker / wearable companion interface;
+- option to connect to an earpiece/earbud device;
+- goal: convenient continuous/private access to Temaya beyond fixed smart speakers.
+
+This is an interaction/embodiment candidate only. Exact wearable hardware, Bluetooth/audio path, wake/hold-to-talk method, privacy behaviour and routing remain OPEN and should not interrupt Stage 0/1 unless explicitly promoted.
+
 ---
 
 # OPEN QUESTIONS
@@ -744,58 +870,41 @@ Apakah boundary sebenar antara direct OpenClaw library access dan Apps Script he
 
 Di manakah authoritative personal library akan berada: Google Drive, local storage, atau combination?
 
-## Q-004 | OPEN
-**Source:** UNKNOWN
+## Q-004 | RESOLVED VIA D-027
+**Decision:** Setiap manusia mesti mempunyai private OpenClaw agent/workspace atau isolation boundary yang setara. Exact separate Gateway/host topology kekal OPEN dan hanya dieskalasi jika baseline isolation terbukti tidak mencukupi.
 
-Adakah setiap ahli keluarga perlu mempunyai agent/workspace sendiri?
+## Q-005 | PARTIALLY RESOLVED VIA D-027 AND D-028
+**Decision:** Private per-user memory menggunakan isolation boundary D-027; operational household state berada di bawah Home Assistant authority D-028. Exact boundary untuk family-shared, children-specific dan school-information stores masih OPEN.
 
-## Q-005 | OPEN
-**Source:** UNKNOWN
+## Q-006 | RESOLVED VIA D-032
+**Decision:** WhatsApp integration is a Stage-1 AP-100 milestone (M4), after Telegram M3 and required privacy/confirmation gates.
 
-Apakah privacy boundary antara personal, family shared, children, school information dan Home Assistant?
+## Q-007 | AGREED DIRECTION — OWNER AUDIT
+**Decision status:** NOT LOCKED.
 
-## Q-006 | OPEN
-**Source:** UNKNOWN
+Interpret local-first pragmatically: keep important authority/control local where appropriate, while allowing cloud reasoning/services. Temaya does not require all inference to run locally.
 
-Bila WhatsApp patut masuk scope implementasi?
+## Q-008 | AGREED DIRECTION — OWNER AUDIT
+**Decision status:** NOT LOCKED.
 
-## Q-007 | OPEN
-**Source:** UNKNOWN
+Ryzen workstation is an optional compute extension, not a Temaya core requirement.
 
-Apakah maksud sebenar local-first bagi Temaya: data local, voice/memory local, atau semua inference local?
+## Q-009 | RESOLVED VIA D-032
+**Decision:** Smart speaker is a vital Stage-1 interface (M8). Robot/other embodiment work remains later.
 
-## Q-008 | OPEN
-**Source:** UNKNOWN
+## Q-010 | AGREED DIRECTION — OWNER AUDIT
+**Decision status:** NOT LOCKED.
 
-Adakah Ryzen workstation sebahagian architecture Temaya atau optional extension?
+Robot companions are future peripheral/subproject work after the smart-speaker/core Temaya value path is proven.
 
-## Q-009 | OPEN
-**Source:** UNKNOWN
+## Q-011 | PARTIALLY RESOLVED VIA D-028
+**Decision:** OpenClaw ialah persona/reasoning/conversational-memory layer; Home Assistant ialah authority bagi household state/device/automation execution. Exact split antara HA native automation, deterministic helper logic dan higher-level OpenClaw reasoning masih boleh diperhalus semasa implementation.
 
-Adakah Puspa smart speaker prototype physical pertama?
-
-## Q-010 | OPEN
-**Source:** UNKNOWN
-
-Adakah ball robots core Temaya atau peripheral/subproject kemudian?
-
-## Q-011 | OPEN
-**Source:** INFERRED
-
-Nanti perlu tentukan:
-- apa OpenClaw patut fikir;
-- apa Home Assistant patut execute;
-- apa automation biasa patut buat.
-
-**Jangan selesaikan semasa idea-dump phase.**
-
-## Q-012 | OPEN
-**Source:** INFERRED
-
-Nanti perlu tentukan sama ada tiga jenis data berikut memang perlu boundary berbeza:
-1. Knowledge / Library
-2. Personal / conversational memory
-3. Operational household state
+## Q-012 | RESOLVED VIA D-028
+**Decision:** Ya. Tiga authority domain dipisahkan:
+1. Knowledge / Library → Dzuddiyn Library / document stores
+2. Persona + conversational memory → OpenClaw
+3. Operational household state → Home Assistant
 
 
 ## Q-013 | OPEN
@@ -867,15 +976,15 @@ Credentials, voice embeddings, auth state atau private notes boleh terdedah jika
 
 Speaker identification sahaja mungkin tidak stabil sebagai sole identity mechanism.
 
-## R-005 | OPEN
+## R-005 | MITIGATED VIA D-034
 **Source:** INFERRED
 
-Meta AI proposal mencampurkan terlalu banyak subsystem serentak dan boleh menyebabkan overbuild.
+Linear stage sequencing prevents optional subsystems from becoming parallel critical-path work.
 
-## R-006 | OPEN
+## R-006 | MITIGATED VIA D-031/D-032
 **Source:** INFERRED
 
-Apps Script sebagai mandatory middleware untuk semua library operation boleh mewujudkan maintenance layer yang tidak perlu.
+Apps Script is an optional deterministic Google-specific helper, not mandatory Temaya middleware.
 
 ## R-007 | OPEN
 **Source:** INFERRED — perlu hardware validation
@@ -887,10 +996,10 @@ Ball-robot dimensions/components daripada Meta AI proposal mungkin mempunyai com
 
 Colour e-Paper dan fast partial-refresh animation mungkin mempunyai hardware trade-off.
 
-## R-009 | OPEN
+## R-009 | MITIGATED VIA D-028/D-034
 **Source:** INFERRED
 
-Fungsi boleh overlap antara OpenClaw, HA LLM, Node-RED, Apps Script dan external agent framework.
+Authority domains and linear development sequencing reduce subsystem overlap; add new orchestration layers only on proven need.
 
 ## R-010 | OPEN
 **Source:** INFERRED
@@ -918,11 +1027,9 @@ Mitigation locked:
 
 # CONFLICT / DISAGREEMENT LOG
 
-## CF-001 | OPEN
+## CF-001 | RESOLVED VIA D-031 AND D-034
 
-Meta AI proposal menyifatkan sistem sebagai bukan cloud assistant tetapi turut mencadangkan komponen yang mungkin menggunakan cloud/external provider.
-
-**Decision:** NONE.
+Local Mini PC is the current baseline; cloud reasoning/services are allowed; future private-cloud OpenClaw + local HA hybrid is a later stage.
 
 ## CF-002 | OPEN
 
@@ -930,11 +1037,9 @@ Meta AI proposal meletakkan voice embedding dalam DL, sedangkan candidate lain m
 
 **Decision:** NONE.
 
-## CF-003 | OPEN
+## CF-003 | RESOLVED DIRECTION — OWNER AUDIT
 
-Meta AI proposal mencadangkan custom dual WhatsApp/Baileys containers, sedangkan candidate lain ialah cuba native OpenClaw routing dahulu.
-
-**Decision:** NONE.
+Use the simplest native/maintainable OpenClaw-supported WhatsApp route first. Custom WhatsApp bridge/container work requires a proven gap.
 
 ---
 
@@ -1526,6 +1631,386 @@ Acceptance test:
 **Locked by:** Project Owner
 
 ---
+## D-027 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Per-user Isolation Baseline**.
+
+Locked baseline:
+- setiap manusia mempunyai private OpenClaw agent/workspace atau isolation boundary yang setara;
+- private memory tidak boleh cross-user secara default;
+- cross-agent access = **deny by default**;
+- explicit allow hanya apabila capability itu benar-benar diperlukan dan dibenarkan;
+- exact separate Gateway/host topology kekal OPEN;
+- stronger Gateway/host separation hanya perlu dipromote jika per-agent/workspace isolation terbukti tidak mencukupi.
+
+**Locked by:** Project Owner
+
+---
+## D-028 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Data Authority Boundary** Temaya dibahagikan kepada tiga authority domain utama:
+
+```text
+Knowledge / Library
+→ Dzuddiyn Library / document stores
+
+Persona + conversational memory
+→ OpenClaw
+
+Operational household state
+→ Home Assistant
+```
+
+Locked rules:
+- jangan duplicate authoritative state tanpa sebab;
+- OpenClaw boleh membaca, menafsir atau mengarah Home Assistant melalui integration layer yang dibenarkan;
+- Home Assistant kekal authority bagi device state, area/device registry, household automation dan operational home state;
+- Dzuddiyn Library/document stores kekal authority bagi durable knowledge/document records mengikut governance projek;
+- OpenClaw kekal authority bagi persona/runtime conversational memory mengikut D-021–D-025.
+
+**Locked by:** Project Owner
+
+---
+## D-029 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Self-Life Ownership** menggunakan satu authoritative writer bagi setiap persona.
+
+Locked baseline:
+- setiap persona mempunyai **SATU authoritative self-life writer**;
+- **Puspa agent** ialah authoritative writer bagi canonical Puspa self-life;
+- **Companion B agent** ialah authoritative writer bagi canonical Companion B self-life;
+- agent lain boleh membaca self-life hanya jika dibenarkan;
+- agent lain tidak boleh menulis canonical self-life persona tersebut tanpa explicit write authority;
+- jika shared self-life digunakan merentas agent pada masa depan, single-writer rule mesti dikekalkan.
+
+**Locked by:** Project Owner
+
+---
+## D-030 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Artificial Soul is an official Temaya DESIGN / architecture domain.**
+
+Artificial Soul is **not one engine, model, skill, or third-party product**. It is a capability domain that gives each applicable Temaya companion a coherent sense of identity, continuity, internal affective state and bounded initiative over time.
+
+Locked domain composition:
+
+```text
+Artificial Soul
+├── Identity / Character
+├── Self-Life Continuity
+├── Emotional Continuity
+├── Appraisal / Internal State Interpretation
+├── Agency / Initiative
+└── Soul Safety & Boundaries
+```
+
+Locked principles:
+- persona identity / character remains governed by the applicable LOCKED decisions and OpenClaw persona configuration;
+- self-life continuity remains structurally distinct from private human memory;
+- emotional continuity is distinct from factual memory and must not silently rewrite identity or facts;
+- agency / initiative must remain bounded by persona, privacy, safety and project authority;
+- OpenClaw-native-first from D-022 remains the implementation principle;
+- third-party components such as Emotion Engine may be evaluated as optional implementations of a sub-capability, but cannot become Artificial Soul authority merely by being installed;
+- Artificial Soul implementations must remain modular, inspectable and replaceable where practical;
+- exact implementation, storage schema, emotional model, appraisal mechanism, cadence, scheduler, skill/plugin choice and agency mechanism remain OPEN until design/research/testing resolves them.
+
+Applies initially to:
+- **Puspa** — Artificial Soul shaped by D-003, D-013 and related Puspa decisions;
+- **Companion B** — Artificial Soul shaped by D-014, D-019, D-020 and related Companion B decisions.
+
+Companion A may adopt only the Artificial Soul capabilities later determined useful for its technical role; no full Artificial Soul requirement for Companion A is created by this decision.
+
+**Locked by:** Project Owner
+
+---
+## D-031 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Deployment Portability + Future Hybrid Mapping Principle**.
+
+Temaya core must be designed so the runtime can move between deployment targets without redesigning the core identity, memory, knowledge or integration architecture.
+
+Locked principle:
+
+```text
+NOW
+Local Mini PC
+├── OpenClaw
+└── Home Assistant
+
+FUTURE
+Private Cloud / Private Server
+└── OpenClaw / Temaya runtime
+          │
+          └── secure bridge
+                 │
+                 ▼
+          Local Home Assistant
+          devices / sensors / automations
+```
+
+Locked boundaries:
+- Mini PC is the **current deployment baseline**, not the identity of Temaya;
+- OpenClaw/Temaya runtime should remain portable enough to migrate later to a private cloud/server when affordable and operationally desirable;
+- Home Assistant remains local-premises operational authority unless a future explicit decision changes it;
+- local HA must continue to operate independently of cloud/OpenClaw failure where practical;
+- cloud migration is a **future development stage**, not a current Phase 1 task;
+- avoid architecture choices that unnecessarily hard-code persona, memory authority, knowledge authority or integration contracts to one physical host;
+- Apps Script/serverless remains an optional helper for suitable Google-specific deterministic work, not the mandatory Temaya runtime or universal middleware;
+- future hybrid operation should preserve D-010 modularity and D-028 authority boundaries.
+
+**Locked by:** Project Owner
+
+---
+## D-032 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Phase 1 final deliverable = Minimum Useful Temaya**, not only the earlier Living Memory proof.
+
+This decision **supersedes D-026 only for the overall Phase 1 scope**.  
+D-026 remains valid as the **Living Memory / privacy acceptance milestone inside Phase 1**, but no longer defines the complete Phase 1 deliverable.
+
+Phase 1 is not complete until the following are integrated and verified at a basic useful level:
+
+1. **OpenClaw core companion**
+   - working hosted OpenClaw;
+   - basic Temaya/Puspa persona operation;
+   - LLM orchestration sufficient for normal companion interaction.
+
+2. **Messaging**
+   - WhatsApp integration;
+   - Telegram integration;
+   - group-reader capability for relevant groups/channels, subject to platform permissions and privacy rules.
+
+3. **Google services**
+   - Tasks;
+   - Calendar;
+   - Drive;
+   - Apps Script helper where it materially simplifies deterministic Google-specific workflows.
+
+4. **Dzuddiyn Library**
+   - usable Temaya access to Dzuddiyn Library;
+   - practical access path for the owner from PC and phone;
+   - Obsidian or another suitably simple software/app integration may be used where it improves direct library access without creating a new authority layer.
+
+5. **Home Assistant basic**
+   - basic Temaya ↔ Home Assistant integration;
+   - aligned with the reusable AIoT Core / premises architecture;
+   - HA remains independently functional and authoritative for household operational state.
+
+6. **Smart speaker**
+   - smart-speaker path is a **vital Phase 1 interface**, especially for convenient use by Hani and the family;
+   - implementation should follow existing voice/ESPHome/OpenClaw direction and may start with the simplest reliable hardware path.
+
+7. **Memory/privacy proof**
+   - D-026 acceptance remains required as a Phase 1 milestone;
+   - Hani/user private memory separation and self-life separation must be verified according to D-021–D-027.
+
+Phase 1 planning rule:
+- implement these as **one linear critical path with milestones**, not parallel architecture branches;
+- each milestone should build on the previous stable state;
+- avoid optional subsystems until the required deliverable path is working;
+- Artificial Soul advanced implementation is not required for Phase 1 completion unless later explicitly promoted.
+
+**Locked by:** Project Owner
+
+---
+## D-033 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **AP-000 is the Local Foundation stage.**
+
+AP-000 must remain intentionally small and practical:
+
+```text
+Mini PC
+├── install + host OpenClaw
+└── install + start Home Assistant
+```
+
+AP-000 goals:
+- owner learns the basic OpenClaw operational model by using the real runtime;
+- OpenClaw starts and can perform a basic LLM-orchestrated conversation;
+- Home Assistant is installed and running;
+- host/runtime locations, configuration, startup and basic recovery are understood;
+- no attempt is made in AP-000 to finish the full Phase 1 integrations.
+
+AP-000 exits when both OpenClaw and Home Assistant are running reliably enough to proceed to the Phase 1 integration milestones.
+
+**Locked by:** Project Owner
+
+---
+## D-034 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Development Stage Sequence** is linear and must not branch unnecessarily.
+
+Locked progression:
+
+```text
+STAGE 0 — LOCAL FOUNDATION
+OpenClaw + Home Assistant installed/running
+          ↓
+STAGE 1 — MINIMUM USEFUL TEMAYA
+D-032 Phase 1 deliverable
+          ↓
+STAGE 2 — ARTIFICIAL SOUL DEVELOPMENT
+Puspa + Companion B soul-domain development
+          ↓
+STABILIZATION / PORTABILITY GATE
+backup / recovery / config discipline
+runtime portability / regression / operational hardening
+          ↓
+STAGE 3 — SECURITY + HOSTING / HYBRID CLOUD
+security hardening
+remote/private access
+private server / cloud-hosted OpenClaw when feasible
+secure bridge to local Home Assistant
+```
+
+Locked principles:
+- Artificial Soul development is intentionally **after** Minimum Useful Temaya, not before it;
+- Artificial Soul remains non-blocking for Stage 0 and Stage 1;
+- stabilization happens after Artificial Soul development and before Stage 3 hosting/cloud expansion;
+- Stage 3 owns the heavier security, remote-access, server/hosting and private-cloud/hybrid concerns;
+- local Home Assistant remains premises authority under D-028/D-031;
+- the action plan should preserve this progression as one critical path rather than parallel workstreams;
+- optional future research must not interrupt the current stage unless a real blocker requires it.
+
+**Locked by:** Project Owner
+
+---
+## D-035 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Security Baseline from Day 0; Security Hardening in Stage 3.**
+
+Locked principle:
+- security is never postponed entirely until Stage 3;
+- Stage 0 and Stage 1 must apply the minimum security controls required to prevent avoidable exposure while keeping implementation simple;
+- Stage 3 owns deeper hardening, remote/private access, hosting/server exposure, network segmentation and mature operational security.
+
+Minimum Day-0/Stage-1 baseline:
+- no unnecessary public Internet exposure of OpenClaw/Home Assistant;
+- authentication/access control enabled where supported;
+- secrets/credentials/tokens/private keys must not be committed to Git or mixed into ordinary searchable knowledge/memory;
+- private workspaces and per-user isolation rules from D-025/D-027 are respected;
+- messaging/channel access uses allowlists/explicit authorization where supported;
+- important configuration/state has a recoverable backup/rollback path proportionate to the current stage;
+- least-privilege and deny-by-default are preferred for sensitive capabilities;
+- any intentional external exposure requires an explicit security review before activation.
+
+Stage 3 hardening may include:
+- private cloud/server exposure architecture;
+- hardened ingress/remote access;
+- network segmentation;
+- stronger secret management;
+- audit/logging;
+- stronger tenant/cell isolation where required;
+- disaster-recovery and mature operational controls.
+
+**Locked by:** Project Owner
+
+---
+## D-036 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Group / external messages are untrusted external feeds and cannot become durable personal/family knowledge or trigger consequential actions automatically.**
+
+Applies to:
+- WhatsApp groups;
+- Telegram groups/channels;
+- school/community groups;
+- other external/shared message feeds added later.
+
+Locked behaviour:
+1. Temaya may read, summarize, classify and surface candidate information from an explicitly permitted feed.
+2. Feed content is **not personal memory by default** and must not automatically become a fact about Hafiz, Hani, children or the family.
+3. Before any candidate information is promoted into durable state or triggers a write/action, Temaya must ask the appropriate user for approval.
+4. Approval must cover both:
+   - **relevance/interpretation** — e.g. “adakah ini memang berkaitan dengan keluarga kita?” / “adakah interpretasi Temaya betul?”;
+   - **next action** — what should happen to the approved information.
+5. Without approval, Temaya must not automatically:
+   - write it into Dzuddiyn Library;
+   - archive/promote it as canonical family knowledge;
+   - write it into personal/human memory;
+   - create/update Google Calendar events;
+   - create/update Tasks/reminders;
+   - perform other external writes or consequential actions based on that feed.
+6. Approved actions must retain source/provenance so the origin of the information remains traceable.
+7. If context is ambiguous, Temaya asks rather than infers a durable family fact.
+8. External feed content must be treated as potentially noisy, misleading or adversarial; it does not override system/project authority.
+
+**Locked by:** Project Owner
+
+---
+## D-037 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction promoting AC-015  
+**Decision:** **Dzuddiyn Library is the authoritative knowledge domain; storage, human-access clients and AI retrieval are separate roles.**
+
+Locked architecture:
+
+```text
+AUTHORITATIVE KNOWLEDGE
+Dzuddiyn Library
+        │
+        ├── storage/source
+        │    selected canonical document/file stores
+        │
+        ├── human access
+        │    Obsidian / phone / PC clients
+        │
+        └── AI retrieval
+             OpenClaw index/cache/search
+```
+
+Locked principles:
+- Dzuddiyn Library remains the knowledge authority;
+- Obsidian and other PC/phone applications are access surfaces, not independent canonical authorities;
+- OpenClaw index/cache/search is derived and rebuildable, not the canonical source;
+- derived retrieval must preserve provenance/linkage to authoritative source material;
+- exact physical canonical storage topology may be selected/refined during the M6 prerequisite review without changing this authority model;
+- do not create unnecessary bidirectional reconciliation between multiple authorities.
+
+**Locked by:** Project Owner
+
+---
+## D-038 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction promoting AC-016  
+**Decision:** **CONFIRM DESIGN is a mandatory execution gate after AP-000 PASS and before Stage-1 exposure/writes/control.**
+
+Locked sequence:
+
+```text
+AP-000 FOUNDATION
+      ↓ PASS
+GATE-C001 — CONFIRM DESIGN
+      ↓ explicit owner confirmation
+AP-100 / Stage 1 exposure + integrations
+```
+
+Until GATE-C001 is explicitly completed, execution must not proceed into production-like:
+- private multi-user memory rollout;
+- WhatsApp/Telegram ingestion beyond reversible test scaffolding;
+- Google Tasks/Drive/other external writes;
+- Home Assistant control actions.
+
+The gate must use actual AP-000 evidence to refine the core design before confirmation.
+
+ZASS discipline:
+- completing AP-000 does not silently confirm design;
+- the owner must explicitly complete the project confirmation command/gate;
+- the agent must surface/remind the owner when AP-000 reaches PASS.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1580,6 +2065,13 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.19 | 2026-10-04 | Locked D-037 Dzuddiyn Library authoritative-knowledge architecture and D-038 mandatory CONFIRM DESIGN gate after AP-000. Recorded AC-017 Tasks-first capture direction with verified Tasks API time-of-day limitation; added wearable/earpiece companion idea; applied owner-approved stale-item cleanup. |
+| 0.1.18 | 2026-10-04 | Locked D-035 Day-0 security baseline / Stage-3 hardening and D-036 human-approval gate for all durable promotion/actions from group/external feeds. Recorded AC-015 Dzuddiyn Library authoritative-knowledge surfaces and AC-016 CONFIRM DESIGN gate after AP-000 and before broad exposure/writes/control. |
+| 0.1.17 | 2026-10-04 | Locked D-034: linear development order is Stage 0 Local Foundation → Stage 1 Minimum Useful Temaya → Stage 2 Artificial Soul Development → Stabilization/Portability Gate → Stage 3 Security + Hosting/Private-Cloud Hybrid. |
+| 0.1.16 | 2026-10-04 | Locked D-031–D-033: deployment portability and future private-cloud OpenClaw/local-HA hybrid mapping; broadened Phase 1 to Minimum Useful Temaya with messaging, Google services, Dzuddiyn Library, HA basic, smart speaker and memory/privacy milestones; AP-000 fixed as local OpenClaw+HA install/start foundation. D-026 remains a Phase 1 memory/privacy milestone but no longer defines the entire Phase 1 scope. |
+| 0.1.15 | 2026-10-04 | Locked D-030: Artificial Soul becomes an official Temaya design/architecture domain comprising identity/character, self-life continuity, emotional continuity, appraisal, bounded agency/initiative, and soul safety/boundaries. Implementation remains OpenClaw-first and deliberately open. |
+| 0.1.14 | 2026-10-04 | Locked D-027–D-029: per-user isolation baseline, three-domain data authority boundary, and single authoritative self-life writer per persona. Resolved Q-004/Q-012 and partially resolved Q-005/Q-011. Design remains PENDING CONFIRMATION. |
+| 0.1.13 | 2026-10-04 | PROCEED without LOCK: recorded AC-013 Artificial Soul as an optional OpenClaw-compatible emotional-continuity research direction and AC-014 Embodiment/Robot Vision as a future R&D workstream; added research selection matrix and linked detailed research note. No D-xxx LOCKED decision changed. |
 | 0.1.12 | 2026-10-03 | Added root AGENTS.md as canonical repository execution policy; clarified authority split between execution policy, ZASS decision lineage, DESIGN/ACTION_PLAN/TASKS, and OpenClaw runtime AGENTS.md. No D-xxx LOCKED decision changed. |
 | 0.1.11 | 2026-10-02 | Migrated project method to official ZASSIMPLE_MY v0.3.0 DESIGN-first model: DESIGN.md replaces ARCHITECTURE.md as the support artifact, architecture retained as a technical subtype, PROCEED/LOCK and SAVE become primary command surfaces, and CONFIRM DESIGN becomes the primary confirmation gate. All existing LOCKED decisions preserved. |
 | 0.1.10 | 2026-10-02 | Locked D-021–D-026 for Temaya Living Architecture v0.1: self-life vs human-memory separation, OpenClaw-native-first, self-life store, state-aware event generator, per-user isolation, and minimal Phase 1 prototype. |
@@ -1596,6 +2088,19 @@ Maka tindakan semasa:
 ---
 
 # CURRENT CHECKPOINT
+- D-037 LOCKED: Dzuddiyn Library remains authoritative knowledge; clients are access surfaces and OpenClaw retrieval is derived/rebuildable.
+- D-038 LOCKED: after AP-000 PASS, GATE-C001 CONFIRM DESIGN is mandatory before broader private memory, messaging ingestion, Google writes or HA control.
+- AC-017 AGREED: Google Tasks is the preferred single capture surface, but the public Tasks API currently cannot read/write due time-of-day, so exact timed-item implementation remains an M5 compatibility test.
+- I-061 OPEN: wearable smart-speaker / earpiece companion chain is recorded as a future interaction candidate.
+- D-035 LOCKED: minimum security baseline starts Day 0; deeper hardening remains Stage 3.
+- D-036 LOCKED: group/external messages are untrusted feeds; user must approve relevance/interpretation and the next durable write/action before promotion to memory/library/archive/calendar/tasks/reminders or other consequential state.
+- AC-015 AGREED: Dzuddiyn Library is authoritative knowledge; Obsidian/PC-phone apps are human access surfaces and OpenClaw index/cache is derived retrieval.
+- AC-016 AGREED: AP-000 may run before full confirmation; after AP-000 PASS, CONFIRM DESIGN is mandatory before broader private memory, messaging ingestion, Google writes or HA control.
+- D-034 LOCKED: development remains linear — Stage 0 foundation → Stage 1 Minimum Useful Temaya → Stage 2 Artificial Soul → stabilization/portability gate → Stage 3 security + hosting/private-cloud hybrid.
+- D-031 LOCKED: local Mini PC is the current deployment baseline; future target is portable OpenClaw/Temaya on a private cloud/server with secure hybrid connection to local Home Assistant.
+- D-032 LOCKED: Phase 1 final deliverable is Minimum Useful Temaya — OpenClaw companion + WhatsApp/Telegram group reader + Google Tasks/Calendar/Drive/Apps Script helper + Dzuddiyn Library practical access + HA basic + smart speaker + D-026 memory/privacy proof.
+- D-033 LOCKED: AP-000 is only the local foundation — install/host OpenClaw and install/start Home Assistant on the mini PC until both run reliably enough for integration work.
+- D-030 LOCKED: Artificial Soul is now an official Temaya design/architecture domain; it is a capability domain rather than one engine/product, and its implementation remains OpenClaw-first and open to evidence-driven refinement.
 
 - Root `/AGENTS.md` now defines canonical repository engineering/execution behaviour; it does not override `D-xxx | LOCKED` decisions.
 - Repository `/AGENTS.md` and any OpenClaw workspace `AGENTS.md` are explicitly separate artifacts/authorities.
@@ -1635,5 +2140,11 @@ Maka tindakan semasa:
 - D-024 LOCKED: state-aware Life Event Generator with recall-same-event behaviour.
 - D-025 LOCKED: per-user private memory isolation; prompt selection alone is not a security boundary.
 - D-026 LOCKED: Phase 1 proves consistent self-life + separate Hani memory only.
+- D-027 LOCKED: per-user private OpenClaw agent/workspace or equivalent isolation boundary; cross-agent access deny by default; exact Gateway/host topology remains open.
+- D-028 LOCKED: authority split — Dzuddiyn Library/document stores for knowledge, OpenClaw for persona/conversational memory, Home Assistant for operational household state.
+- D-029 LOCKED: each persona has one authoritative self-life writer; Puspa agent writes Puspa self-life and Companion B agent writes Companion B self-life.
+- AC-013 AGREED, NOT LOCKED: Artificial Soul is explored as an optional emotional-continuity layer over OpenClaw; Emotion Engine is a third-party research candidate, not identity/factual-memory authority.
+- AC-014 AGREED, NOT LOCKED: stereo/depth/robot vision is preserved as a future embodiment R&D workstream and does not block current Temaya Design confirmation.
+- Detailed research saved in `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
 - Design keseluruhan remains PENDING CONFIRMATION; Temaya Living Architecture remains its technical architecture subtype.
