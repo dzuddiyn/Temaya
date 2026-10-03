@@ -7,21 +7,26 @@
 
 ## Current task
 
-None.
+### T-F000 | READY — AP-000 Local Foundation
 
-Execution task slicing begins after design is confirmed and the latest Action Plan is re-planned.
+**Type:** FOUNDATION / REVERSIBLE IMPLEMENTATION  
+**Source:** D-033 / AP-000  
+**Do:** Prepare the mini PC deployment and prove OpenClaw + Home Assistant both install, start and recover to a known running state.  
+**Why:** Learn the real runtimes before building integrations; avoid branching/backward redesign.  
+**Pass:**
+- OpenClaw starts reliably;
+- one basic Temaya/OpenClaw LLM conversation works;
+- minimal workspace/bootstrap files are loaded;
+- Home Assistant starts reliably;
+- basic restart/recovery is demonstrated;
+- runtime/config/state locations are recorded;
+- no Phase 1 integration is pulled into the foundation prematurely.
 
-<!--
-T-001 | READY
-Source: AP-xxx
-Decision / Design lineage: D-xxx / DESIGN-xxx
-Do: ...
-Why: ...
-Pass: ...
-If blocked: ...
-Then: T-xxx / next-step label
-Result: ...
--->
+**If blocked:** record the exact runtime/deployment blocker and update ACTION_PLAN/DESIGN only from evidence.  
+**Then:** AP-100 M1 — Basic Temaya companion.
+
+**Design gate note:** This task is permitted before full DESIGN confirmation because repository `/AGENTS.md` explicitly allows reversible FOUNDATION / proof work that does not silently lock unresolved architecture.
+
 
 ## Queue
 
