@@ -28,11 +28,13 @@ Practical constraints, dependencies, sequencing, experiments, feasibility findin
 ```text
 AP-000 Local Foundation
         ↓
-AP-100 Minimum Useful Temaya — Phase 1
+AP-100 Minimum Useful Temaya — Stage 1
         ↓
-Stage 2 Stabilize + Portable
+AP-200 Artificial Soul Development — Stage 2
         ↓
-Stage 3 Private Cloud OpenClaw + Local HA Hybrid
+Stabilization / Portability Gate
+        ↓
+Stage 3 Security + Hosting / Private-Cloud Hybrid
 ```
 
 Within AP-100, milestones execute **sequentially**. They are acceptance milestones, not parallel architecture branches.
@@ -284,7 +286,7 @@ Do **not** expand scope before the gap is documented.
 - D-028 resolves authority split: Dzuddiyn Library/document stores = knowledge, OpenClaw = persona/conversational memory, Home Assistant = operational household state.
 - D-029 resolves self-life ownership: one authoritative writer per persona.
 - Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and minimum provenance metadata remain **NEED TEST** during implementation.
-- D-030 keeps Artificial Soul as an official design domain, but AP-DESIGN-001 is deferred and removed from the current critical path.
+- D-030 keeps Artificial Soul as an official design domain; D-034 schedules AP-DESIGN-001/AP-200 in Stage 2, after Minimum Useful Temaya.
 - D-031 fixes the deployment progression: local mini-PC baseline → stabilized portable runtime → future private-cloud OpenClaw with local HA hybrid.
 - D-032 defines the Phase 1 Minimum Useful Temaya deliverable and removes ambiguity that D-026 was the whole Phase 1.
 - D-033 keeps AP-000 intentionally small: install/run OpenClaw + HA and learn the real runtimes.
@@ -306,6 +308,60 @@ None promoted yet.
 
 These are planning constraints only; design remains unconfirmed.
 
+
+### AP-200 | PLANNED — Artificial Soul Development
+
+**Source:** D-030, D-034  
+**Stage:** 2 — begins only after AP-100 Minimum Useful Temaya is delivered.
+
+Goal:
+- develop Artificial Soul for Puspa and Companion B on top of the working OpenClaw-based Temaya;
+- improve trusted companionship, continuity, positivity and safe/private emotional expression without making Stage 1 depend on advanced soul machinery.
+
+Scope to review when Stage 2 starts:
+1. Identity / Character.
+2. Self-Life Continuity.
+3. Emotional Continuity.
+4. Appraisal / Internal State Interpretation.
+5. Agency / Initiative.
+6. Soul Safety & Boundaries.
+
+Implementation principle:
+- OpenClaw-first;
+- reuse the already-working Stage 1 runtime;
+- optional Emotion Engine/AICO-inspired components only if evidence shows value;
+- review implementation-heavy D-015/D-023/D-024/D-026/D-029 details before adding custom machinery;
+- no hosting/cloud migration inside AP-200.
+
+Exit:
+- Artificial Soul behaviour is useful, bounded, private, testable and regression-safe;
+- no contamination of human/private memory;
+- Stage 1 functions remain intact.
+
+### Stabilization / Portability Gate
+
+Runs after AP-200 and before Stage 3.
+
+Required:
+- backup/recovery;
+- configuration and secret separation;
+- regression testing across Stage 1 + Stage 2;
+- operational hardening;
+- runtime portability and migration readiness.
+
+### Stage 3 — Security + Hosting / Hybrid Cloud
+
+Only after stabilization.
+
+Scope:
+- deeper security hardening;
+- secure remote/private access;
+- hosting/server architecture;
+- private-cloud OpenClaw/Temaya when feasible;
+- secure bridge back to local Home Assistant;
+- preserve HA premises authority and independent operation.
+
+---
 
 ## Research candidates — not execution tasks
 
@@ -345,8 +401,8 @@ Research reference:
 
 ### AP-DESIGN-001 | ARTIFICIAL SOUL DOMAIN REVIEW
 
-**Source:** D-030  
-**Status:** DEFERRED — NOT ON CURRENT CRITICAL PATH
+**Source:** D-030, D-034  
+**Status:** DEFERRED TO AP-200 / STAGE 2 — NOT ON STAGE 0/1 CRITICAL PATH
 
 Goal when resumed:
 - define Artificial Soul as a coherent OpenClaw-first capability domain for Puspa and Companion B;
