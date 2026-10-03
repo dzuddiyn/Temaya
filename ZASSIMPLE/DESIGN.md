@@ -67,6 +67,20 @@ Core elements are:
 
 Existing D-021–D-029 implementation constraints remain authoritative until explicitly revised.
 
+## Small-start architecture rule
+
+Temaya may begin with a reversible OpenClaw foundation before the full design is confirmed, consistent with repository `/AGENTS.md`.
+
+Current critical path intentionally excludes:
+- Artificial Soul implementation;
+- custom self-life engine work beyond what is required by later Phase 1;
+- Home Assistant integration;
+- voice hardware;
+- robots/embodiment;
+- WhatsApp and other channels.
+
+The foundation must teach the project how OpenClaw actually behaves before additional architecture is committed.
+
 ## Architecture domains
 
 ### 1. OpenClaw Core / Orchestration Runtime
@@ -405,6 +419,8 @@ Core decisions D-021–D-030 are LOCKED.
 
 Overall design remains **PENDING CONFIRMATION**.
 
-D-030 introduces Artificial Soul as an official architecture domain. Before opening final `CONFIRM DESIGN` review, this domain requires its own design review so identity, self-life, emotional continuity, appraisal and bounded agency can be reconciled with the existing implementation-heavy decisions D-015, D-023, D-024, D-026 and D-029.
+D-030 keeps Artificial Soul as an official architecture domain, but the owner has deferred its detailed domain review. Artificial Soul is not on the current critical path and does not block a small OpenClaw-first foundation.
 
-**Confirmation readiness:** HOLD FOR ARTIFICIAL SOUL DESIGN REVIEW. Dreaming behaviour, retrieval scoping, exact Gateway/host isolation, emotional-state implementation, agency mechanism and provenance details remain OPEN/NEED TEST unless explicitly locked.
+**Core architecture readiness:** SUFFICIENT FOR REVERSIBLE FOUNDATION WORK.
+
+**Confirmation readiness:** READY FOR CORE DESIGN REVIEW when the owner chooses. Artificial Soul detail, Dreaming behaviour, retrieval scoping, exact Gateway/host isolation, emotional-state implementation, agency mechanism and provenance details remain deferred/OPEN/NEED TEST unless explicitly locked.
