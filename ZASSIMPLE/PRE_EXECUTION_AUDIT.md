@@ -8,6 +8,69 @@
 
 ---
 
+# OWNER RESPONSE SNAPSHOT — 2026-10-04
+
+## NOW / AP-000
+- **A1 Host topology:** ACCEPT recommendation — Hypervisor → HAOS VM + Linux VM for OpenClaw.
+- **A2 Hardware known so far:** Intel Core i3 circa 2018, 8 GB RAM, 500 GB storage, no discrete GPU. Exact CPU model, virtualization support, storage health and NIC details to be inspected as the first T-F000 step before installation.
+- **A3 LLM/provider for AP-000:** ChatGPT/OpenAI route preferred. Architecture remains provider-agnostic. Actual OAuth/model/allowance availability must be verified during OpenClaw onboarding.
+- **A4 Security:** ACCEPT D-035 baseline. Router is Arcadyan AW1000 running OpenWrt; inspect existing router/firewall/security posture during AP-000 security setup.
+
+## AFTER AP-000 / CONFIRM DESIGN
+- **B1:** Keep the chosen topology if AP-000 evidence shows it is stable/manageable.
+- **B2:** ACCEPT mandatory post-AP-000 CONFIRM DESIGN gate. This is now D-038.
+
+## PRIVACY
+- **C1:** ACCEPT separate agent/workspace + private memory per human; deny cross-agent by default; escalate isolation only on evidence.
+- **C2:** ACCEPT four data classes: PRIVATE-HUMAN / FAMILY-SHARED / EXTERNAL-FEED / SYSTEM-OPERATIONAL.
+
+## MESSAGING
+- **D1:** ACCEPT human approval UX. D-036 remains authoritative: group/external data must be approved for relevance/interpretation and next action before durable promotion/action.
+- **D2:** ACCEPT routing baseline: Hani → Puspa; Hafiz personal → Companion B; Hafiz technical → Companion A; group reader is ingestion function. **Open prerequisite:** choose final names for Companion A and B before persona build/routing is finalized.
+- **D3:** ACCEPT one-by-one channel allowlist first.
+
+## GOOGLE
+- **E1:** Owner prefers **Google Tasks as the single user-facing capture doorway** for ACTION / TO-DO / EVENT/TIME-COMMITMENT; REFERENCE → Dzuddiyn Library. Verified constraint: the Google Tasks public REST API currently discards due time-of-day and supports due date only. Therefore Tasks-first UX is AGREED (AC-017) but exact timed-item implementation remains an M5 compatibility test rather than a LOCK.
+- **E2:** ACCEPT direct-user write vs D-036 external-feed approval + read-back verification.
+- **E3:** ACCEPT Apps Script as optional deterministic Google helper only.
+
+## DZUDDIYN LIBRARY
+- **F1:** Existing material is distributed across Google Drive, HDD, PC and other cloud storage. Owner preference is to move toward local mini-PC-attached storage to reduce cloud subscription dependency, but current old HDD reliability is insufficient. Candidate future paths: health/upgrade mini-PC storage/RAM; use a larger SSD; optionally upload/backup gradually to Google Drive. **Decision remains due at M6**; D-037 authority model is already locked.
+- **F2:** ACCEPT simple PC/phone access first; Obsidian where it materially improves UX.
+- **F3:** ACCEPT OpenClaw retrieval as rebuildable derived index/cache with provenance.
+
+## HOME ASSISTANT
+- **G1:** ACCEPT deterministic HA + higher-level OpenClaw split. Preserve previously locked HA area/device localization cache/fallback contracts (D-007/D-008).
+
+## SMART SPEAKER
+- **H1/H2/H3:** DEFER to M8.
+
+## ARTIFICIAL SOUL
+- **I1:** DEFER to Stage 2.
+
+## SERVER / CLOUD
+- **J1/J2:** DEFER to Stage 3 beyond D-035 Day-0 baseline.
+
+## NON-BLOCKING
+- **Local-first:** ACCEPT pragmatic local authority/control with cloud reasoning/services allowed. A normal internet-connected mini PC can make outbound provider calls; inbound remote access to the OpenClaw Gateway is a separate secure-access concern.
+- **Ryzen workstation:** ACCEPT as optional compute extension only.
+- **Robot companions:** ACCEPT as future subproject after core/smart-speaker value.
+- **Persona Life Rules:** DEFER to Stage 2.
+- **Umar exact robot voice:** DEFER until relevant device work.
+
+## STALE ITEM CLEANUP
+- ACCEPT proposed cleanup of Q-006, Q-009, CF-001, CF-003, R-005, R-006 and R-009.
+
+## NEW IDEA
+- Companion-chain / wearable interface: wearable smart speaker with optional earpiece/earbud connection. Saved as OPEN idea I-061; not on Stage 0/1 critical path.
+
+## AUDIT RESULT
+**PRE-ARCHITECTURE READY WITH ONE EXECUTION-TIME HARDWARE CHECK.**
+
+The remaining NOW uncertainty is not an architecture decision: T-F000 must inspect exact CPU model, virtualization capability, storage health, NIC and available RAM before committing the hypervisor/VM installation. If the mini-PC cannot safely host the accepted topology, stop and reconcile rather than forcing it.
+
+---
+
 # HOW TO FILL
 
 For each item, fill only:
