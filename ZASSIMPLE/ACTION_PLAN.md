@@ -26,61 +26,204 @@ Practical constraints, dependencies, sequencing, experiments, feasibility findin
 ### Critical path — one linear path
 
 ```text
-AP-000 OpenClaw Foundation
+AP-000 Local Foundation
         ↓
-AP-001 Living Memory Phase 1
+AP-100 Minimum Useful Temaya — Phase 1
         ↓
-Privacy/isolation validation
+Stage 2 Stabilize + Portable
         ↓
-Home Assistant bridge proof
-        ↓
-expand only from evidence
+Stage 3 Private Cloud OpenClaw + Local HA Hybrid
 ```
 
-No parallel Artificial Soul, robot, voice-hardware, WhatsApp, VLA or custom-memory work is on the current critical path.
+Within AP-100, milestones execute **sequentially**. They are acceptance milestones, not parallel architecture branches.
 
-### AP-000 | READY — OpenClaw Foundation
+### AP-000 | READY — Local OpenClaw + HA Foundation
 
+**Source:** D-033  
 **Type:** FOUNDATION / REVERSIBLE IMPLEMENTATION  
-**Goal:** Learn and prove the minimum real OpenClaw runtime before adding Temaya-specific complexity.
+**Goal:** Learn and prove the minimum real runtimes on the mini PC before integration work.
 
 #### Build only
 
-1. One OpenClaw agent/workspace.
-2. Minimal `SOUL.md`, `IDENTITY.md`, runtime `AGENTS.md`, and `USER.md`.
-3. Basic LLM orchestration/reply loop.
-4. Native session/memory behaviour only.
-5. Private workspace and backup discipline.
+1. Prepare the mini PC host safely.
+2. Install and run OpenClaw.
+3. Create one minimal OpenClaw agent/workspace.
+4. Minimal `SOUL.md`, `IDENTITY.md`, runtime `AGENTS.md`, and `USER.md`.
+5. Prove a basic LLM orchestration/reply loop.
+6. Understand native session/memory state locations at a basic operational level.
+7. Install and start Home Assistant.
+8. Verify both OpenClaw and HA can restart/recover to a known running state.
 
-#### Explicitly excluded
+#### Explicitly excluded from AP-000
 
 - Artificial Soul implementation;
 - Emotion Engine/AICO;
 - custom self-life generator;
-- Home Assistant bridge;
-- voice/STT/TTS hardware pipeline;
+- OpenClaw ↔ HA bridge;
+- WhatsApp/Telegram;
+- Google services;
+- Dzuddiyn Library integration;
+- voice/STT/TTS/smart-speaker pipeline;
 - multi-agent family routing;
-- robot/embodiment;
-- WhatsApp.
+- robot/embodiment.
 
-#### Pass
+#### PASS
 
-- agent starts reliably;
+- OpenClaw starts reliably on the mini PC;
+- one basic Temaya/OpenClaw conversation works;
 - persona/bootstrap files are actually loaded;
-- ordinary conversation works across restart/session boundaries as OpenClaw supports;
-- workspace/state locations are understood and inspectable;
-- no new custom subsystem is required just to make Temaya converse;
-- findings are recorded before AP-001 is refined.
+- OpenClaw workspace/runtime locations are understood and inspectable;
+- Home Assistant starts reliably on the same premises platform according to the chosen deployment layout;
+- basic restart/recovery for both is demonstrated;
+- no unnecessary custom subsystem is required just to make the foundation run.
 
-#### Why first
+#### Exit
 
-The owner is still learning OpenClaw. This foundation converts assumptions into evidence and prevents ACTION_PLAN from branching or forcing backward redesign.
+AP-000 ends when OpenClaw and Home Assistant are both running reliably enough to begin AP-100 integration milestones.
 
+---
 
+### AP-100 | LOCKED-SCOPE PLAN — Minimum Useful Temaya Phase 1
 
-### AP-001 | READY FOR PROTOTYPE — Temaya Living Memory Phase 1
+**Source:** D-032  
+**Goal:** Deliver the smallest Temaya that is genuinely useful to the family, while preserving one linear execution path.
 
-**Source:** D-021–D-026  
+#### Milestone order
+
+```text
+M1  Basic Temaya companion
+ ↓
+M2  Per-user privacy/isolation baseline
+ ↓
+M3  Telegram + group reader
+ ↓
+M4  WhatsApp + group reader
+ ↓
+M5  Google Tasks + Calendar + Drive
+    + Apps Script helper only where useful
+ ↓
+M6  Dzuddiyn Library practical access
+    + simple PC/phone surface such as Obsidian where appropriate
+ ↓
+M7  Home Assistant basic bridge
+    following AIoT Core / premises authority
+ ↓
+M8  Smart speaker
+    convenient family/Hani voice interface
+ ↓
+M9  D-026 Living Memory proof
+    self-life vs human-memory separation
+ ↓
+M10 End-to-end Phase 1 verification
+```
+
+#### M1 — Basic Temaya companion
+
+- evolve AP-000 agent into a usable Temaya/Puspa baseline;
+- keep OpenClaw-native orchestration;
+- no advanced Artificial Soul requirement.
+
+**Pass:** ordinary companion interaction is reliable enough to continue integration work.
+
+#### M2 — Privacy / isolation baseline
+
+- establish the D-027 per-user isolation mechanism before broad multi-user exposure;
+- keep cross-user access deny-by-default;
+- document actual OpenClaw isolation behaviour discovered in the runtime.
+
+**Pass:** owner/Hani private contexts can be separated at the chosen baseline boundary.
+
+#### M3 — Telegram integration + group reader
+
+- connect Temaya to Telegram;
+- support relevant group/channel reading within platform permissions and explicit privacy rules;
+- begin with read/summarize/useful extraction before adding unnecessary write automation.
+
+**Pass:** Temaya can ingest and use selected Telegram group information reliably.
+
+#### M4 — WhatsApp integration + group reader
+
+- connect Temaya to WhatsApp using the simplest maintainable supported route;
+- support relevant group reading where the actual platform/integration permits it;
+- preserve privacy and source provenance.
+
+**Pass:** Temaya can ingest/use the required WhatsApp information path at a basic useful level.
+
+#### M5 — Google services
+
+Required:
+- Google Tasks;
+- Google Calendar;
+- Google Drive.
+
+Apps Script:
+- allowed as a deterministic helper where Google-specific work is easier/cleaner with it;
+- not mandatory middleware;
+- do not recreate the old serverless-sprawl architecture.
+
+**Pass:** Temaya can perform the agreed useful read/write workflows for Tasks/Calendar/Drive, with verification of important writes.
+
+#### M6 — Dzuddiyn Library practical access
+
+- Temaya can access/retrieve from the authoritative Dzuddiyn Library path selected for Phase 1;
+- owner has a practical direct PC/phone access surface;
+- Obsidian or another simple client may be integrated if it improves usability without becoming a new authority layer;
+- do not reorganize the entire legacy library merely to begin.
+
+**Pass:** owner and Temaya can both reach the library through practical, understandable paths.
+
+#### M7 — Home Assistant basic bridge
+
+- integrate OpenClaw/Temaya with HA at a basic level;
+- follow D-007/D-008/D-010/D-028;
+- HA remains premises/device/automation authority;
+- AIoT Core remains independently operable.
+
+**Pass:** Temaya can read a small verified HA state set and perform one controlled basic action without making HA dependent on OpenClaw.
+
+#### M8 — Smart speaker
+
+- provide a convenient voice interface for Hani/family;
+- follow existing ESPHome / voice-gateway / OpenClaw architecture direction;
+- choose the simplest reliable Phase 1 hardware implementation;
+- no robot/embodiment requirement.
+
+**Pass:** a family member can invoke Temaya from the smart-speaker path and receive the reply on the source device.
+
+#### M9 — D-026 Living Memory milestone
+
+D-026 remains the locked memory/privacy acceptance milestone inside the broader Phase 1 scope.
+
+Use AP-001 below as the detailed sub-plan unless/until its implementation details are explicitly revised.
+
+#### M10 — End-to-end Phase 1 verification
+
+Phase 1 is DELIVERED only when:
+- AP-000 foundation remains stable;
+- required messaging paths work;
+- Google integrations work;
+- Dzuddiyn Library path is practical;
+- HA basic bridge works without breaking HA independence;
+- smart speaker works;
+- D-026 memory/privacy proof passes;
+- important writes/actions are independently verified;
+- evidence and current architecture findings are recorded.
+
+#### Not on the Phase 1 critical path
+
+- advanced Artificial Soul;
+- Emotion Engine/AICO;
+- robots/stereo vision/VLA;
+- cloud migration;
+- custom UI/dashboard unless a real usability gap appears;
+- optional integrations not required by D-032.
+
+---
+
+### AP-001 | DEFERRED WITHIN AP-100 M9 — Living Memory Proof
+
+**Source:** D-021–D-026, D-032  
+**Role:** Detailed sub-plan for AP-100 Milestone M9. D-026 remains authoritative for this milestone but no longer defines the whole Phase 1 deliverable.  
 **Goal:** Prove consistent self-life + separate Hani memory using native OpenClaw facilities first.
 
 #### Build only
@@ -142,7 +285,10 @@ Do **not** expand scope before the gap is documented.
 - D-029 resolves self-life ownership: one authoritative writer per persona.
 - Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and minimum provenance metadata remain **NEED TEST** during implementation.
 - D-030 keeps Artificial Soul as an official design domain, but AP-DESIGN-001 is deferred and removed from the current critical path.
-- The architecture is sufficient for AP-000 reversible OpenClaw Foundation work before full confirmation.
+- D-031 fixes the deployment progression: local mini-PC baseline → stabilized portable runtime → future private-cloud OpenClaw with local HA hybrid.
+- D-032 defines the Phase 1 Minimum Useful Temaya deliverable and removes ambiguity that D-026 was the whole Phase 1.
+- D-033 keeps AP-000 intentionally small: install/run OpenClaw + HA and learn the real runtimes.
+- The architecture is sufficient for AP-000 reversible foundation work and the linear AP-100 Phase 1 integration path before full confirmation.
 - Design remains **PENDING CONFIRMATION**; final confirmation is no longer blocked by completing Artificial Soul detail first.
 - Repository execution policy is now explicit in root `/AGENTS.md`; this is an execution-governance clarification, not a new Temaya architecture decision.
 
