@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.16  
+**Document version:** 0.1.17  
 **Date:** 2026-10-04  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -1789,6 +1789,46 @@ AP-000 exits when both OpenClaw and Home Assistant are running reliably enough t
 **Locked by:** Project Owner
 
 ---
+## D-034 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Development Stage Sequence** is linear and must not branch unnecessarily.
+
+Locked progression:
+
+```text
+STAGE 0 — LOCAL FOUNDATION
+OpenClaw + Home Assistant installed/running
+          ↓
+STAGE 1 — MINIMUM USEFUL TEMAYA
+D-032 Phase 1 deliverable
+          ↓
+STAGE 2 — ARTIFICIAL SOUL DEVELOPMENT
+Puspa + Companion B soul-domain development
+          ↓
+STABILIZATION / PORTABILITY GATE
+backup / recovery / config discipline
+runtime portability / regression / operational hardening
+          ↓
+STAGE 3 — SECURITY + HOSTING / HYBRID CLOUD
+security hardening
+remote/private access
+private server / cloud-hosted OpenClaw when feasible
+secure bridge to local Home Assistant
+```
+
+Locked principles:
+- Artificial Soul development is intentionally **after** Minimum Useful Temaya, not before it;
+- Artificial Soul remains non-blocking for Stage 0 and Stage 1;
+- stabilization happens after Artificial Soul development and before Stage 3 hosting/cloud expansion;
+- Stage 3 owns the heavier security, remote-access, server/hosting and private-cloud/hybrid concerns;
+- local Home Assistant remains premises authority under D-028/D-031;
+- the action plan should preserve this progression as one critical path rather than parallel workstreams;
+- optional future research must not interrupt the current stage unless a real blocker requires it.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1843,6 +1883,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.17 | 2026-10-04 | Locked D-034: linear development order is Stage 0 Local Foundation → Stage 1 Minimum Useful Temaya → Stage 2 Artificial Soul Development → Stabilization/Portability Gate → Stage 3 Security + Hosting/Private-Cloud Hybrid. |
 | 0.1.16 | 2026-10-04 | Locked D-031–D-033: deployment portability and future private-cloud OpenClaw/local-HA hybrid mapping; broadened Phase 1 to Minimum Useful Temaya with messaging, Google services, Dzuddiyn Library, HA basic, smart speaker and memory/privacy milestones; AP-000 fixed as local OpenClaw+HA install/start foundation. D-026 remains a Phase 1 memory/privacy milestone but no longer defines the entire Phase 1 scope. |
 | 0.1.15 | 2026-10-04 | Locked D-030: Artificial Soul becomes an official Temaya design/architecture domain comprising identity/character, self-life continuity, emotional continuity, appraisal, bounded agency/initiative, and soul safety/boundaries. Implementation remains OpenClaw-first and deliberately open. |
 | 0.1.14 | 2026-10-04 | Locked D-027–D-029: per-user isolation baseline, three-domain data authority boundary, and single authoritative self-life writer per persona. Resolved Q-004/Q-012 and partially resolved Q-005/Q-011. Design remains PENDING CONFIRMATION. |
@@ -1863,6 +1904,7 @@ Maka tindakan semasa:
 ---
 
 # CURRENT CHECKPOINT
+- D-034 LOCKED: development remains linear — Stage 0 foundation → Stage 1 Minimum Useful Temaya → Stage 2 Artificial Soul → stabilization/portability gate → Stage 3 security + hosting/private-cloud hybrid.
 - D-031 LOCKED: local Mini PC is the current deployment baseline; future target is portable OpenClaw/Temaya on a private cloud/server with secure hybrid connection to local Home Assistant.
 - D-032 LOCKED: Phase 1 final deliverable is Minimum Useful Temaya — OpenClaw companion + WhatsApp/Telegram group reader + Google Tasks/Calendar/Drive/Apps Script helper + Dzuddiyn Library practical access + HA basic + smart speaker + D-026 memory/privacy proof.
 - D-033 LOCKED: AP-000 is only the local foundation — install/host OpenClaw and install/start Home Assistant on the mini PC until both run reliably enough for integration work.
