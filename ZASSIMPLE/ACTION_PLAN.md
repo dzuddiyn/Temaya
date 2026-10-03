@@ -23,6 +23,61 @@ Practical constraints, dependencies, sequencing, experiments, feasibility findin
 
 ## Current plan
 
+### Critical path — one linear path
+
+```text
+AP-000 OpenClaw Foundation
+        ↓
+AP-001 Living Memory Phase 1
+        ↓
+Privacy/isolation validation
+        ↓
+Home Assistant bridge proof
+        ↓
+expand only from evidence
+```
+
+No parallel Artificial Soul, robot, voice-hardware, WhatsApp, VLA or custom-memory work is on the current critical path.
+
+### AP-000 | READY — OpenClaw Foundation
+
+**Type:** FOUNDATION / REVERSIBLE IMPLEMENTATION  
+**Goal:** Learn and prove the minimum real OpenClaw runtime before adding Temaya-specific complexity.
+
+#### Build only
+
+1. One OpenClaw agent/workspace.
+2. Minimal `SOUL.md`, `IDENTITY.md`, runtime `AGENTS.md`, and `USER.md`.
+3. Basic LLM orchestration/reply loop.
+4. Native session/memory behaviour only.
+5. Private workspace and backup discipline.
+
+#### Explicitly excluded
+
+- Artificial Soul implementation;
+- Emotion Engine/AICO;
+- custom self-life generator;
+- Home Assistant bridge;
+- voice/STT/TTS hardware pipeline;
+- multi-agent family routing;
+- robot/embodiment;
+- WhatsApp.
+
+#### Pass
+
+- agent starts reliably;
+- persona/bootstrap files are actually loaded;
+- ordinary conversation works across restart/session boundaries as OpenClaw supports;
+- workspace/state locations are understood and inspectable;
+- no new custom subsystem is required just to make Temaya converse;
+- findings are recorded before AP-001 is refined.
+
+#### Why first
+
+The owner is still learning OpenClaw. This foundation converts assumptions into evidence and prevents ACTION_PLAN from branching or forcing backward redesign.
+
+
+
 ### AP-001 | READY FOR PROTOTYPE — Temaya Living Memory Phase 1
 
 **Source:** D-021–D-026  
@@ -86,8 +141,9 @@ Do **not** expand scope before the gap is documented.
 - D-028 resolves authority split: Dzuddiyn Library/document stores = knowledge, OpenClaw = persona/conversational memory, Home Assistant = operational household state.
 - D-029 resolves self-life ownership: one authoritative writer per persona.
 - Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and minimum provenance metadata remain **NEED TEST** during implementation.
-- D-030 adds Artificial Soul as an official design domain.
-- Design remains **PENDING CONFIRMATION** and final CONFIRM DESIGN review is now held until AP-DESIGN-001 Artificial Soul Domain Review is completed.
+- D-030 keeps Artificial Soul as an official design domain, but AP-DESIGN-001 is deferred and removed from the current critical path.
+- The architecture is sufficient for AP-000 reversible OpenClaw Foundation work before full confirmation.
+- Design remains **PENDING CONFIRMATION**; final confirmation is no longer blocked by completing Artificial Soul detail first.
 - Repository execution policy is now explicit in root `/AGENTS.md`; this is an execution-governance clarification, not a new Temaya architecture decision.
 
 
@@ -144,11 +200,16 @@ Research reference:
 ### AP-DESIGN-001 | ARTIFICIAL SOUL DOMAIN REVIEW
 
 **Source:** D-030  
-**Status:** REQUIRED BEFORE FINAL `CONFIRM DESIGN` REVIEW
+**Status:** DEFERRED — NOT ON CURRENT CRITICAL PATH
 
-Goal:
+Goal when resumed:
 - define Artificial Soul as a coherent OpenClaw-first capability domain for Puspa and Companion B;
 - preserve locked persona/privacy/authority intent while reopening only implementation details where evidence supports a better architecture.
+
+Deferral rule:
+- OpenClaw alone is sufficient for current foundation and basic companion operation;
+- do not let Artificial Soul implementation block core learning, privacy proof, memory proof or HA integration;
+- resume only when the core companion works and there is a demonstrated need for richer emotional/self-life continuity.
 
 Review dimensions:
 1. Identity / Character authority.
