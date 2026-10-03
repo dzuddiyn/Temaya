@@ -7,30 +7,33 @@
 
 ## Current task
 
-### T-F001 | READY — Inspect Mini-PC Hardware / Firmware
+### T-F001 | BLOCKED — Inspect Mini-PC Hardware / Firmware
 
 **Type:** FOUNDATION / REVERSIBLE INSPECTION  
 **Source:** D-033 / D-035 / AP-000 / PRE_EXECUTION_AUDIT  
-**Do:** Inspect the actual mini-PC before any install:
+**Evidence:** `ZASSIMPLE/EVIDENCE/T-F001_2026-10-04.md`
+
+**Current state:** PARTIAL / BLOCKED — TARGET HOST NOT REACHABLE.
+
+The only connected Desktop Commander device was verified as an Acer Nitro laptop with Intel Core i5-13420H, not the owner-declared Intel Core i3 circa-2018 mini PC. LAN observation identified existing Home Assistant and SMLIGHT/SLZB endpoints but did not provide inspectable access to the target mini PC.
+
+**Do when target becomes reachable:** inspect:
 - exact CPU model;
 - x86-64 and virtualization support;
 - RAM total/usable;
-- storage type, health and free capacity;
+- storage type/health/free capacity;
 - NIC;
 - BIOS/UEFI/virtualization state.
 
-**Known owner input:** Intel Core i3 circa 2018, 8 GB RAM, 500 GB storage, no discrete GPU.
-
-**Why:** The accepted Hypervisor → HAOS VM + Linux/OpenClaw topology is provisional. Do not install it blindly on insufficient hardware.
-
 **Pass:**
-- exact hardware facts recorded;
+- exact target mini-PC hardware facts recorded;
 - virtualization viability known;
 - storage health known;
 - a safe resource allocation for HAOS + Linux/OpenClaw is plausible.
 
-**If blocked/fail:** stop before installation and reconcile a simpler topology or hardware upgrade.  
-**Then:** T-F002.
+**Blocker:** target mini PC must become remotely inspectable.  
+**Do not proceed:** T-F002/T-F003 remain blocked.  
+**Then after PASS:** T-F002.
 
 ## Queue
 
