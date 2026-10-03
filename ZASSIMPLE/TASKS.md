@@ -14,6 +14,7 @@
 **Do:** Prepare the mini PC deployment and prove OpenClaw + Home Assistant both install, start and recover to a known running state.  
 **Why:** Learn the real runtimes before building integrations; avoid branching/backward redesign.  
 **Pass:**
+- D-035 Day-0 security baseline is verified;
 - OpenClaw starts reliably;
 - one basic Temaya/OpenClaw LLM conversation works;
 - minimal workspace/bootstrap files are loaded;
@@ -23,12 +24,22 @@
 - no Phase 1 integration is pulled into the foundation prematurely.
 
 **If blocked:** record the exact runtime/deployment blocker and update ACTION_PLAN/DESIGN only from evidence.  
-**Then:** AP-100 M1 — Basic Temaya companion.
+**Then:** **GATE-C001 — CONFIRM DESIGN**. AP-100 integration tasks must not be promoted until the owner completes this ZASS gate.
 
 **Design gate note:** This task is permitted before full DESIGN confirmation because repository `/AGENTS.md` explicitly allows reversible FOUNDATION / proof work that does not silently lock unresolved architecture.
 
 
 ## Queue
+
+### GATE-C001 | BLOCKED UNTIL T-F000 PASS — CONFIRM DESIGN
+
+**Source:** AC-016 / ZASSIMPLE v0.3 confirmation discipline  
+**Trigger:** T-F000/AP-000 reaches PASS.  
+**Owner action required then:** review the evidence-informed core design and explicitly complete the project confirmation command/gate before production-like Stage-1 exposure/writes/control.  
+**Blocks:** private multi-user memory rollout, WhatsApp/Telegram production ingestion, Google writes, HA control.  
+**Reminder:** surface this gate immediately when T-F000 passes; do not silently continue.
+
+
 
 Stage sequence: AP-000 → AP-100 → AP-200 → Stabilization/Portability Gate → Stage 3 Security + Hosting/Hybrid Cloud.
 
