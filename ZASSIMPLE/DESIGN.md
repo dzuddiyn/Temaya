@@ -181,21 +181,29 @@ OpenClaw companion
 + Obsidian/other simple PC-phone library surface
 + HA basic integration
 + smart speaker
++ D-026 memory/privacy proof
 + end-to-end verification
           ↓
-STAGE 2 — STABILIZE + PORTABLE
+STAGE 2 — ARTIFICIAL SOUL DEVELOPMENT
+Puspa + Companion B
+identity/self-life/emotional continuity/appraisal/bounded agency
+OpenClaw-first; add optional components only from evidence
+          ↓
+STABILIZATION / PORTABILITY GATE
 backup / recovery
 config + secret separation
+regression / operational hardening
 runtime portability
-secure remote-access readiness
           ↓
-STAGE 3 — HYBRID
-Private Cloud OpenClaw / Temaya
+STAGE 3 — SECURITY + HOSTING / HYBRID CLOUD
+security hardening
+secure remote/private access
+private server/cloud OpenClaw when feasible
           ↕ secure bridge
-Local Home Assistant / premises
+local Home Assistant / premises
 ```
 
-Cloud migration is future work and must not branch or delay Stage 0/1.
+Stage 3 hosting/cloud work must not branch or delay Stage 0/1/2. Home Assistant remains local-premises operational authority unless explicitly changed later.
 
 ## Architecture (when applicable)
 
@@ -487,11 +495,11 @@ Acceptance:
 
 ## Design status
 
-Core decisions D-021–D-033 are LOCKED.
+Core decisions D-021–D-034 are LOCKED.
 
 Overall design remains **PENDING CONFIRMATION**.
 
-D-030 keeps Artificial Soul as an official architecture domain, but the owner has deferred its detailed domain review. Artificial Soul is not on the current critical path and does not block a small OpenClaw-first foundation.
+D-030 keeps Artificial Soul as an official architecture domain. D-034 schedules its detailed development deliberately in Stage 2, after Minimum Useful Temaya is delivered. It does not block Stage 0 or Stage 1.
 
 **Core architecture readiness:** SUFFICIENT FOR REVERSIBLE FOUNDATION WORK and the D-032 Minimum Useful Temaya Phase 1 path.
 
