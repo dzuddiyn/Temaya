@@ -71,7 +71,9 @@ Plus one small state-aware event generator and one native Scheduled Task.
 Stop and document a gap if:
 - native retrieval cannot separate domains reliably;
 - native provenance is insufficient for generated persona narrative;
-- per-user privacy cannot be enforced at the required boundary;
+- D-027 per-user isolation cannot be enforced at the required boundary;
+- D-028 authority boundaries would require duplicated/conflicting canonical state;
+- D-029 single-writer self-life ownership cannot be maintained;
 - Dreaming mixes self-life with human durable memory.
 
 Do **not** expand scope before the gap is documented.
@@ -80,8 +82,11 @@ Do **not** expand scope before the gap is documented.
 
 - Living Design v0.1 supports native OpenClaw memory/indexing/scheduler first.
 - Custom scope is limited to the self-life namespace + state-aware event generator.
-- Dreaming treatment, retrieval scoping and production isolation remain **NEED TEST**.
-- Design remains **PENDING CONFIRMATION**.
+- D-027 resolves the minimum per-user isolation baseline: private agent/workspace or equivalent boundary, deny-by-default cross-agent access.
+- D-028 resolves authority split: Dzuddiyn Library/document stores = knowledge, OpenClaw = persona/conversational memory, Home Assistant = operational household state.
+- D-029 resolves self-life ownership: one authoritative writer per persona.
+- Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and minimum provenance metadata remain **NEED TEST** during implementation.
+- Design remains **PENDING CONFIRMATION**, but current blocker review is cleared and the design is ready for CONFIRM DESIGN review.
 - Repository execution policy is now explicit in root `/AGENTS.md`; this is an execution-governance clarification, not a new Temaya architecture decision.
 
 
