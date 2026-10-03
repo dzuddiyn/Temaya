@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.14  
+**Document version:** 0.1.15  
 **Date:** 2026-10-04  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -1634,6 +1634,44 @@ Locked baseline:
 **Locked by:** Project Owner
 
 ---
+## D-030 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Artificial Soul is an official Temaya DESIGN / architecture domain.**
+
+Artificial Soul is **not one engine, model, skill, or third-party product**. It is a capability domain that gives each applicable Temaya companion a coherent sense of identity, continuity, internal affective state and bounded initiative over time.
+
+Locked domain composition:
+
+```text
+Artificial Soul
+├── Identity / Character
+├── Self-Life Continuity
+├── Emotional Continuity
+├── Appraisal / Internal State Interpretation
+├── Agency / Initiative
+└── Soul Safety & Boundaries
+```
+
+Locked principles:
+- persona identity / character remains governed by the applicable LOCKED decisions and OpenClaw persona configuration;
+- self-life continuity remains structurally distinct from private human memory;
+- emotional continuity is distinct from factual memory and must not silently rewrite identity or facts;
+- agency / initiative must remain bounded by persona, privacy, safety and project authority;
+- OpenClaw-native-first from D-022 remains the implementation principle;
+- third-party components such as Emotion Engine may be evaluated as optional implementations of a sub-capability, but cannot become Artificial Soul authority merely by being installed;
+- Artificial Soul implementations must remain modular, inspectable and replaceable where practical;
+- exact implementation, storage schema, emotional model, appraisal mechanism, cadence, scheduler, skill/plugin choice and agency mechanism remain OPEN until design/research/testing resolves them.
+
+Applies initially to:
+- **Puspa** — Artificial Soul shaped by D-003, D-013 and related Puspa decisions;
+- **Companion B** — Artificial Soul shaped by D-014, D-019, D-020 and related Companion B decisions.
+
+Companion A may adopt only the Artificial Soul capabilities later determined useful for its technical role; no full Artificial Soul requirement for Companion A is created by this decision.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1688,6 +1726,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.15 | 2026-10-04 | Locked D-030: Artificial Soul becomes an official Temaya design/architecture domain comprising identity/character, self-life continuity, emotional continuity, appraisal, bounded agency/initiative, and soul safety/boundaries. Implementation remains OpenClaw-first and deliberately open. |
 | 0.1.14 | 2026-10-04 | Locked D-027–D-029: per-user isolation baseline, three-domain data authority boundary, and single authoritative self-life writer per persona. Resolved Q-004/Q-012 and partially resolved Q-005/Q-011. Design remains PENDING CONFIRMATION. |
 | 0.1.13 | 2026-10-04 | PROCEED without LOCK: recorded AC-013 Artificial Soul as an optional OpenClaw-compatible emotional-continuity research direction and AC-014 Embodiment/Robot Vision as a future R&D workstream; added research selection matrix and linked detailed research note. No D-xxx LOCKED decision changed. |
 | 0.1.12 | 2026-10-03 | Added root AGENTS.md as canonical repository execution policy; clarified authority split between execution policy, ZASS decision lineage, DESIGN/ACTION_PLAN/TASKS, and OpenClaw runtime AGENTS.md. No D-xxx LOCKED decision changed. |
@@ -1706,6 +1745,7 @@ Maka tindakan semasa:
 ---
 
 # CURRENT CHECKPOINT
+- D-030 LOCKED: Artificial Soul is now an official Temaya design/architecture domain; it is a capability domain rather than one engine/product, and its implementation remains OpenClaw-first and open to evidence-driven refinement.
 
 - Root `/AGENTS.md` now defines canonical repository engineering/execution behaviour; it does not override `D-xxx | LOCKED` decisions.
 - Repository `/AGENTS.md` and any OpenClaw workspace `AGENTS.md` are explicitly separate artifacts/authorities.
