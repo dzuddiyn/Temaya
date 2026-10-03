@@ -39,6 +39,13 @@ Stage 3 Security + Hosting / Private-Cloud Hybrid
 
 Within AP-100, milestones execute **sequentially**. They are acceptance milestones, not parallel architecture branches.
 
+### Pre-execution audit gate
+
+Before executing T-F000/AP-000, complete `ZASSIMPLE/PRE_EXECUTION_AUDIT.md` sufficiently to resolve **NOW** items only. Later-stage items stay open until their listed due gate; do not force premature decisions.
+
+Audit output feeds:
+`AUDIT → pre-architecture refinement → ACTION_PLAN sequencing → task slicing → execution evidence`.
+
 ### AP-000 | READY — Local OpenClaw + HA Foundation
 
 **Source:** D-033  
@@ -71,6 +78,7 @@ Within AP-100, milestones execute **sequentially**. They are acceptance mileston
 
 #### PASS
 
+- D-035 Day-0 security baseline is applied: no unnecessary public exposure, auth/access controls enabled where supported, secrets kept out of Git/searchable memory, and basic recovery path recorded;
 - OpenClaw starts reliably on the mini PC;
 - one basic Temaya/OpenClaw conversation works;
 - persona/bootstrap files are actually loaded;
@@ -81,7 +89,9 @@ Within AP-100, milestones execute **sequentially**. They are acceptance mileston
 
 #### Exit
 
-AP-000 ends when OpenClaw and Home Assistant are both running reliably enough to begin AP-100 integration milestones.
+AP-000 ends when OpenClaw and Home Assistant are both running reliably enough for design review.
+
+**Mandatory next gate:** `CONFIRM DESIGN` (AC-016). Do not proceed into broader private-memory exposure, Telegram/WhatsApp ingestion, Google writes or Home Assistant control until the owner completes the ZASS confirmation gate.
 
 ---
 
@@ -138,6 +148,7 @@ M10 End-to-end Phase 1 verification
 #### M3 — Telegram integration + group reader
 
 - connect Temaya to Telegram;
+- enforce D-036: permitted group content is untrusted feed data; summarization/classification may occur, but durable promotion or consequential actions require explicit user approval of interpretation/relevance and next action;
 - support relevant group/channel reading within platform permissions and explicit privacy rules;
 - begin with read/summarize/useful extraction before adding unnecessary write automation.
 
@@ -146,6 +157,7 @@ M10 End-to-end Phase 1 verification
 #### M4 — WhatsApp integration + group reader
 
 - connect Temaya to WhatsApp using the simplest maintainable supported route;
+- enforce D-036 human approval before any group-derived information becomes memory/library/archive/calendar/task/reminder or triggers another durable/consequential action;
 - support relevant group reading where the actual platform/integration permits it;
 - preserve privacy and source provenance.
 
