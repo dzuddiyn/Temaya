@@ -4,7 +4,8 @@
 **Design:** Temaya Living Design v0.1  
 **Status:** DRAFT — PENDING CONFIRMATION
 **Design Progress:** 4/4 — purpose / main flow / main elements / relevant LOCKED decisions  
-**Authority:** Derived from LOCKED decisions in `ZASS_Temaya.md`.
+**Authority:** Derived from LOCKED decisions in `ZASS_Temaya.md`.  
+**Execution policy:** Repository root `/AGENTS.md` governs engineering execution and does not override LOCKED decisions.
 
 > This is a working design draft. Temaya is a technical/system project, so architecture is retained as a subtype of DESIGN. It is not confirmed until the owner completes the ZASSIMPLE confirmation gate with `YA, CONFIRM DESIGN`.
 
@@ -18,12 +19,21 @@ SELF-LIFE — "Ini cerita aku"
 HUMAN MEMORY — "Ini yang user pernah cerita dekat aku"
 ```
 
+## AGENTS.md naming boundary
+
+Two different artifacts may share the filename `AGENTS.md`:
+
+- Repository root `/AGENTS.md` — engineering/agent execution policy for building and verifying Temaya.
+- OpenClaw workspace `AGENTS.md` — runtime/persona operating and memory rules used by OpenClaw.
+
+They are separate authorities and must not overwrite or be silently copied into each other.
+
 ## Core principle
 
 **OpenClaw-native first.**
 
 Use native OpenClaw capabilities before custom Temaya machinery:
-- `SOUL.md`, `IDENTITY.md`, `AGENTS.md`, `USER.md`;
+- `SOUL.md`, `IDENTITY.md`, OpenClaw workspace `AGENTS.md`, `USER.md`;
 - `MEMORY.md` and `memory/YYYY-MM-DD.md`;
 - memory-core / SQLite index, recall and provenance;
 - Scheduled Tasks / Cron;
@@ -48,7 +58,7 @@ Core elements are OpenClaw persona/bootstrap files, self-life domain, per-user h
                           │
         ┌─────────────────┼──────────────────┐
         │                 │                  │
-    SOUL.md          IDENTITY.md         AGENTS.md
+    SOUL.md          IDENTITY.md      runtime AGENTS.md
  personality         identity          operating rules
  boundaries                             memory rules
         └─────────────────┬──────────────────┘
@@ -77,7 +87,7 @@ Core elements are OpenClaw persona/bootstrap files, self-life domain, per-user h
 |---|---|---|
 | Personality/tone/boundaries | NATIVE OPENCLAW — USE AS-IS | `SOUL.md` |
 | Identity basics | NATIVE OPENCLAW — USE AS-IS | `IDENTITY.md` |
-| Operating/memory rules | NATIVE OPENCLAW — CONFIGURE/EXTEND | `AGENTS.md` |
+| Operating/memory rules | NATIVE OPENCLAW — CONFIGURE/EXTEND | OpenClaw workspace `AGENTS.md` |
 | Stable user model | NATIVE OPENCLAW — USE AS-IS | `USER.md` |
 | Human episodic memory | NATIVE OPENCLAW — USE AS-IS | `memory/YYYY-MM-DD.md` |
 | Durable human memory | NATIVE OPENCLAW — CONFIGURE/EXTEND | `MEMORY.md` + native consolidation |
@@ -270,7 +280,7 @@ PUSPA — PHASE 1
 Native OpenClaw:
 SOUL.md
 IDENTITY.md
-AGENTS.md
+OpenClaw workspace AGENTS.md
 USER.md
 MEMORY.md
 memory/

@@ -4,8 +4,8 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.11  
-**Date:** 2026-10-02  
+**Document version:** 0.1.12  
+**Date:** 2026-10-03  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
 
@@ -15,7 +15,17 @@
 
 ## SOURCE OF TRUTH STATUS
 
-Fail ini ialah source of truth perbincangan projek Temaya selepas commit pertama.
+Fail ini ialah source of truth perbincangan/decision-lineage projek Temaya selepas commit pertama.
+
+Repository authority split:
+- `/AGENTS.md` = canonical engineering/agent execution policy for how project work is performed.
+- `ZASS_Temaya.md` = authoritative project decision lineage, including `D-xxx | LOCKED`.
+- `ZASSIMPLE/DESIGN.md` = current design artifact; architecture is its technical subtype.
+- `ZASSIMPLE/ACTION_PLAN.md` = planning artifact.
+- `ZASSIMPLE/TASKS.md` = execution queue.
+- OpenClaw workspace `AGENTS.md` = runtime/persona configuration and is NOT the same authority as repository root `/AGENTS.md`.
+
+`/AGENTS.md` may govern execution behaviour, verification and tooling, but it must not silently override LOCKED decisions in this file.
 
 Aturan:
 - Jangan invent fakta.
@@ -29,6 +39,9 @@ Aturan:
 ## ZASSIMPLE v0.3 PROJECT ARTIFACT MODEL
 
 Temaya mengikuti ZASSIMPLE_MY v0.3.0 sambil mengekalkan `ZASS_Temaya.md` sebagai authoritative project-state / decision-lineage file.
+
+Execution policy:
+- `/AGENTS.md` — repository engineering/agent execution policy; tidak mengatasi keputusan LOCKED.
 
 Supporting artifacts:
 - `ZASSIMPLE/ACTION_PLAN.md` — implementation planning dalaman; tidak mengatasi keputusan LOCKED;
@@ -1567,6 +1580,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.12 | 2026-10-03 | Added root AGENTS.md as canonical repository execution policy; clarified authority split between execution policy, ZASS decision lineage, DESIGN/ACTION_PLAN/TASKS, and OpenClaw runtime AGENTS.md. No D-xxx LOCKED decision changed. |
 | 0.1.11 | 2026-10-02 | Migrated project method to official ZASSIMPLE_MY v0.3.0 DESIGN-first model: DESIGN.md replaces ARCHITECTURE.md as the support artifact, architecture retained as a technical subtype, PROCEED/LOCK and SAVE become primary command surfaces, and CONFIRM DESIGN becomes the primary confirmation gate. All existing LOCKED decisions preserved. |
 | 0.1.10 | 2026-10-02 | Locked D-021–D-026 for Temaya Living Architecture v0.1: self-life vs human-memory separation, OpenClaw-native-first, self-life store, state-aware event generator, per-user isolation, and minimal Phase 1 prototype. |
 | 0.1.9 | 2026-10-02 | Locked D-020 as an additive layer to Companion B without editing D-019: default periang/supportive, worldview (kebaikan→ALLAH, kejahatan→syaitan+Dajjal, usaha/pilihan→tanggungjawab manusia), occasional random life principles with suitable dalil, and strict non-fabrication rules for Quran/hadith/sirah. |
@@ -1583,6 +1597,8 @@ Maka tindakan semasa:
 
 # CURRENT CHECKPOINT
 
+- Root `/AGENTS.md` now defines canonical repository engineering/execution behaviour; it does not override `D-xxx | LOCKED` decisions.
+- Repository `/AGENTS.md` and any OpenClaw workspace `AGENTS.md` are explicitly separate artifacts/authorities.
 - Method updated to official ZASSIMPLE_MY v0.3.0; DESIGN-first semantics apply; architecture remains a technical subtype of DESIGN.
 - ZASS_Temaya.md remains authoritative decision lineage; supporting ACTION_PLAN / DESIGN / TASKS artifacts live under `ZASSIMPLE/`.
 - D-011 LOCKED: companion topology — Hani has Puspa only; Project Owner has Companion A (Idea/Technical) and Companion B (Borak/Personal).

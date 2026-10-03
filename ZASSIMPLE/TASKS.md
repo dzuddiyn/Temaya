@@ -2,7 +2,8 @@
 
 **Method:** ZASSIMPLE_MY v0.3.0  
 **Status:** EXECUTION QUEUE  
-**Authority:** Tasks execute the plan. They do not rewrite LOCKED decisions.
+**Authority:** Tasks execute the plan. They do not rewrite LOCKED decisions.  
+**Execution policy:** Repository root `/AGENTS.md` applies to all engineering/execution work.
 
 ## Current task
 
