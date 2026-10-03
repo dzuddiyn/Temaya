@@ -41,57 +41,114 @@ Within AP-100, milestones execute **sequentially**. They are acceptance mileston
 
 ### Pre-execution audit gate
 
-Before executing T-F000/AP-000, complete `ZASSIMPLE/PRE_EXECUTION_AUDIT.md` sufficiently to resolve **NOW** items only. Later-stage items stay open until their listed due gate; do not force premature decisions.
+**Status:** OWNER AUDIT COMPLETED FOR PLANNING — PRE-ARCHITECTURE READY.
 
-Audit output feeds:
+`ZASSIMPLE/PRE_EXECUTION_AUDIT.md` now contains the owner's responses. Later-stage items remain intentionally deferred until their due gate.
+
+Remaining execution-time check:
+- exact CPU model / virtualization capability / storage health / NIC / usable RAM must be inspected before installing the accepted hypervisor topology.
+
+Audit output:
 `AUDIT → pre-architecture refinement → ACTION_PLAN sequencing → task slicing → execution evidence`.
 
 ### AP-000 | READY — Local OpenClaw + HA Foundation
 
-**Source:** D-033  
+**Source:** D-033, D-035, D-038 + owner pre-execution audit  
 **Type:** FOUNDATION / REVERSIBLE IMPLEMENTATION  
-**Goal:** Learn and prove the minimum real runtimes on the mini PC before integration work.
+**Goal:** learn and prove the minimum real runtimes on the mini PC before Stage-1 integrations.
 
-#### Build only
+#### Accepted provisional topology
 
-1. Prepare the mini PC host safely.
-2. Install and run OpenClaw.
-3. Create one minimal OpenClaw agent/workspace.
-4. Minimal `SOUL.md`, `IDENTITY.md`, runtime `AGENTS.md`, and `USER.md`.
-5. Prove a basic LLM orchestration/reply loop.
-6. Understand native session/memory state locations at a basic operational level.
-7. Install and start Home Assistant.
-8. Verify both OpenClaw and HA can restart/recover to a known running state.
+```text
+Mini PC
+└── Hypervisor
+    ├── HAOS VM
+    └── Linux VM
+        └── OpenClaw
+```
+
+The topology is **provisional until T-F001 hardware inspection passes**. Do not force it if the real machine cannot safely support it.
+
+#### AP-000 sequence
+
+1. **T-F001 — Hardware / firmware inspection**
+   - exact CPU model;
+   - x86-64 / virtualization support;
+   - RAM availability;
+   - storage type/health/free capacity;
+   - NIC;
+   - UEFI/BIOS state.
+
+2. **T-F002 — Preserve / prepare host**
+   - protect any existing data;
+   - establish rollback/backup point;
+   - decide hypervisor install path only after T-F001 PASS.
+
+3. **T-F003 — Hypervisor foundation**
+   - install/configure selected hypervisor;
+   - LAN/private only;
+   - no public exposure.
+
+4. **T-F004 — Home Assistant**
+   - create HAOS VM;
+   - assign conservative resources;
+   - start HA successfully;
+   - record VM/config/storage location.
+
+5. **T-F005 — Linux/OpenClaw VM**
+   - create minimal Linux VM;
+   - install supported Node/OpenClaw runtime;
+   - create one minimal OpenClaw agent/workspace.
+
+6. **T-F006 — ChatGPT/OpenAI foundation auth**
+   - use the owner-selected ChatGPT/OpenAI route for AP-000;
+   - verify the actual OAuth/model availability and allowance from the connected account;
+   - do not assume unlimited free usage;
+   - keep architecture provider-agnostic.
+
+7. **T-F007 — Day-0 security**
+   - apply D-035;
+   - inspect Arcadyan AW1000/OpenWrt relevant firewall/WAN/admin/UPnP/port-forward posture;
+   - keep OpenClaw/HA private/LAN-only unless a reviewed secure access path is explicitly enabled;
+   - secrets outside Git/searchable memory.
+
+8. **T-F008 — Restart / recovery proof**
+   - reboot/restart;
+   - prove HA returns;
+   - prove OpenClaw returns;
+   - prove one basic Temaya/OpenClaw conversation;
+   - record state/config locations and recovery steps.
+
+9. **GATE-C001 — CONFIRM DESIGN**
+   - mandatory after AP-000 PASS;
+   - use actual AP-000 evidence to review core design;
+   - no broader Stage-1 exposure/writes/control until explicit confirmation.
 
 #### Explicitly excluded from AP-000
 
 - Artificial Soul implementation;
 - Emotion Engine/AICO;
 - custom self-life generator;
-- OpenClaw ↔ HA bridge;
-- WhatsApp/Telegram;
-- Google services;
-- Dzuddiyn Library integration;
+- OpenClaw ↔ HA control bridge;
+- WhatsApp/Telegram production ingestion;
+- Google writes;
+- Dzuddiyn Library migration/integration;
 - voice/STT/TTS/smart-speaker pipeline;
-- multi-agent family routing;
+- multi-agent family rollout;
 - robot/embodiment.
 
-#### PASS
+#### AP-000 PASS
 
-- D-035 Day-0 security baseline is applied: no unnecessary public exposure, auth/access controls enabled where supported, secrets kept out of Git/searchable memory, and basic recovery path recorded;
-- OpenClaw starts reliably on the mini PC;
+- T-F001–T-F008 pass with evidence;
+- accepted deployment topology is either validated or reconciled to a simpler evidence-supported alternative;
+- OpenClaw and HA start/recover reliably enough for design confirmation;
+- D-035 security baseline is verified;
 - one basic Temaya/OpenClaw conversation works;
-- persona/bootstrap files are actually loaded;
-- OpenClaw workspace/runtime locations are understood and inspectable;
-- Home Assistant starts reliably on the same premises platform according to the chosen deployment layout;
-- basic restart/recovery for both is demonstrated;
-- no unnecessary custom subsystem is required just to make the foundation run.
+- no unnecessary custom subsystem is required.
 
 #### Exit
 
-AP-000 ends when OpenClaw and Home Assistant are both running reliably enough for design review.
-
-**Mandatory next gate:** `CONFIRM DESIGN` (AC-016). Do not proceed into broader private-memory exposure, Telegram/WhatsApp ingestion, Google writes or Home Assistant control until the owner completes the ZASS confirmation gate.
+AP-000 exits only into **GATE-C001 — CONFIRM DESIGN**.
 
 ---
 
@@ -133,7 +190,8 @@ M10 End-to-end Phase 1 verification
 
 - evolve AP-000 agent into a usable Temaya/Puspa baseline;
 - keep OpenClaw-native orchestration;
-- no advanced Artificial Soul requirement.
+- no advanced Artificial Soul requirement;
+- before Companion A/B are instantiated or routed, complete **GATE-N001 — final names for Companion A and Companion B**. Puspa work does not need to wait for those names.
 
 **Pass:** ordinary companion interaction is reliable enough to continue integration work.
 
@@ -149,6 +207,7 @@ M10 End-to-end Phase 1 verification
 
 - connect Temaya to Telegram;
 - enforce D-036: permitted group content is untrusted feed data; summarization/classification may occur, but durable promotion or consequential actions require explicit user approval of interpretation/relevance and next action;
+- default approved destinations should follow the owner UX: TASK / LIBRARY / ARCHIVE / NOTHING; avoid asking Calendar-vs-Task as a normal choice.
 - support relevant group/channel reading within platform permissions and explicit privacy rules;
 - begin with read/summarize/useful extraction before adding unnecessary write automation.
 
@@ -165,24 +224,37 @@ M10 End-to-end Phase 1 verification
 
 #### M5 — Google services
 
-Required:
-- Google Tasks;
-- Google Calendar;
-- Google Drive.
+Required user-facing model:
+- **Google Tasks = primary capture doorway** for ACTION / TO-DO / EVENT-like items;
+- **Google Drive = document/file integration**;
+- **Dzuddiyn Library = reference/durable knowledge authority**.
+
+Google Calendar:
+- do not make the owner choose Calendar vs Task during normal capture;
+- dated Tasks may appear in Calendar naturally;
+- the Google Tasks public API currently cannot persist due time-of-day, so M5 must test the actual OpenClaw/Google integration path;
+- if exact time-of-day cannot be represented through Tasks, use the smallest compatibility mechanism necessary while preserving Tasks-first UX and avoiding duplicate canonical intent.
 
 Apps Script:
 - allowed as a deterministic helper where Google-specific work is easier/cleaner with it;
 - not mandatory middleware;
 - do not recreate the old serverless-sprawl architecture.
 
-**Pass:** Temaya can perform the agreed useful read/write workflows for Tasks/Calendar/Drive, with verification of important writes.
+Write rules:
+- direct authenticated user request may write once permission/identity is clear;
+- external-feed-derived data obeys D-036 approval first;
+- important writes require read-back verification.
+
+**Pass:** the owner can capture normal to-do/event intent through one Tasks-first interaction model; date-only and exact-time cases behave predictably; Drive workflows work; important writes verify correctly.
 
 #### M6 — Dzuddiyn Library practical access
 
 - Temaya can access/retrieve from the authoritative Dzuddiyn Library path selected for Phase 1;
 - owner has a practical direct PC/phone access surface;
 - Obsidian or another simple client may be integrated if it improves usability without becoming a new authority layer;
-- do not reorganize the entire legacy library merely to begin.
+- do not reorganize the entire legacy library merely to begin;
+- before choosing local canonical storage, verify storage health/reliability; the owner's old HDD must not become the sole durable copy;
+- evaluate SSD/storage/RAM upgrade and a second backup copy (local or cloud) at this milestone, without changing D-037 authority semantics.
 
 **Pass:** owner and Temaya can both reach the library through practical, understandable paths.
 
@@ -200,7 +272,8 @@ Apps Script:
 - provide a convenient voice interface for Hani/family;
 - follow existing ESPHome / voice-gateway / OpenClaw architecture direction;
 - choose the simplest reliable Phase 1 hardware implementation;
-- no robot/embodiment requirement.
+- no robot/embodiment requirement;
+- wearable smart-speaker/earpiece chain (I-061) stays optional/future and must not delay the fixed smart-speaker PASS.
 
 **Pass:** a family member can invoke Temaya from the smart-speaker path and receive the reply on the source device.
 
