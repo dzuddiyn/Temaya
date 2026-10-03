@@ -69,17 +69,17 @@ Existing D-021–D-029 implementation constraints remain authoritative until exp
 
 ## Small-start architecture rule
 
-Temaya may begin with a reversible OpenClaw foundation before the full design is confirmed, consistent with repository `/AGENTS.md`.
+Temaya begins with a reversible **AP-000 Local Foundation** before the full design is confirmed, consistent with repository `/AGENTS.md`.
 
-Current critical path intentionally excludes:
-- Artificial Soul implementation;
-- custom self-life engine work beyond what is required by later Phase 1;
-- Home Assistant integration;
-- voice hardware;
-- robots/embodiment;
-- WhatsApp and other channels.
+AP-000 intentionally contains only:
+- install/host OpenClaw on the mini PC;
+- prove a basic LLM-orchestrated companion conversation;
+- install/start Home Assistant;
+- learn the real runtime, configuration, startup and recovery paths.
 
-The foundation must teach the project how OpenClaw actually behaves before additional architecture is committed.
+AP-000 intentionally excludes all Phase 1 integrations.
+
+After AP-000, Phase 1 follows one linear critical path toward the locked **Minimum Useful Temaya** deliverable in D-032. Artificial Soul advanced implementation, robots and other optional R&D remain outside that critical path.
 
 ## Architecture domains
 
@@ -110,20 +110,92 @@ Per-human private memory, provenance, retrieval scope and isolation. Human memor
 ### 5. Dzuddiyn Library / Knowledge
 Durable knowledge/document authority, personal/family/project knowledge and approved continuity records outside transient runtime state.
 
-### 6. Voice & Interaction
-Wake word, STT, speaker identity, routing, TTS, multi-turn behaviour and source-device response.
+### 6. Voice, Messaging & Interaction
+User-facing interaction surfaces:
+- smart speaker / voice path;
+- wake word, STT, speaker identity, routing, TTS and multi-turn behaviour;
+- WhatsApp;
+- Telegram;
+- group-reader capability where platform permission/privacy allows it.
+
+The smart speaker is a Phase 1 vital interface for convenient family use, especially for Hani. Robots and richer physical embodiment remain future extensions.
 
 ### 7. AIoT Core / Home Assistant
 Independent household automation and operational-state authority. It must continue functioning without Temaya/OpenClaw.
 
-### 8. Integration Bridge
-Controlled bridge between OpenClaw and Home Assistant/other operational systems, including authority enforcement and failure isolation.
+### 8. Integration Bridge & External Services
+Controlled integrations between OpenClaw and external/operational systems while preserving authority and failure isolation.
+
+Phase 1 vital integrations include:
+- Home Assistant;
+- Google Tasks;
+- Google Calendar;
+- Google Drive;
+- Apps Script only where a deterministic Google-specific helper is useful;
+- Dzuddiyn Library access surfaces, including Obsidian or another simple PC/phone access path when appropriate;
+- messaging channel adapters for WhatsApp/Telegram.
+
+Apps Script/serverless is not the Temaya runtime and is not mandatory universal middleware.
 
 ### 9. Infrastructure / Runtime
-Mini PC and related deployment, local services, network, storage, security boundaries, backup/recovery and optional compute extensions.
+Current baseline:
+- local mini PC hosts OpenClaw and Home Assistant.
+
+Architecture must preserve deployment portability so the OpenClaw/Temaya runtime can later move to a private cloud/server without redesigning identity, memory, knowledge or integration contracts.
+
+Future target:
+
+```text
+Private Cloud / Private Server
+└── OpenClaw / Temaya
+        │
+        └── secure bridge
+               │
+               ▼
+        Local Home Assistant
+        devices / sensors / automations
+```
+
+Home Assistant remains local-premises operational authority unless explicitly changed later.
 
 ### 10. Future Embodiment / Physical Companion
-Robots, smart speakers, stereo/depth vision, physical interaction and future embodied-AI capabilities. This is a future extension and is not a current blocker to the software core.
+Robots, stereo/depth vision, physical manipulation and richer embodied-AI capabilities. This is a future extension and is not required for Phase 1. The smart speaker is no longer classified here because it is a Phase 1 Voice/Interaction deliverable.
+
+## Development mapping
+
+The project advances as one directional progression rather than parallel architecture branches:
+
+```text
+STAGE 0 — LOCAL FOUNDATION
+Mini PC
+├── OpenClaw installed/running
+└── Home Assistant installed/running
+          ↓
+STAGE 1 — MINIMUM USEFUL TEMAYA
+OpenClaw companion
++ privacy/memory baseline
++ Telegram + WhatsApp group-reader integration
++ Google Tasks/Calendar/Drive
++ Apps Script helper where useful
++ Dzuddiyn Library practical access
++ Obsidian/other simple PC-phone library surface
++ HA basic integration
++ smart speaker
++ end-to-end verification
+          ↓
+STAGE 2 — STABILIZE + PORTABLE
+backup / recovery
+config + secret separation
+runtime portability
+secure remote-access readiness
+          ↓
+STAGE 3 — HYBRID
+Private Cloud OpenClaw / Temaya
+          ↕ secure bridge
+Local Home Assistant / premises
+```
+
+Cloud migration is future work and must not branch or delay Stage 0/1.
 
 ## Architecture (when applicable)
 
@@ -415,12 +487,12 @@ Acceptance:
 
 ## Design status
 
-Core decisions D-021–D-030 are LOCKED.
+Core decisions D-021–D-033 are LOCKED.
 
 Overall design remains **PENDING CONFIRMATION**.
 
 D-030 keeps Artificial Soul as an official architecture domain, but the owner has deferred its detailed domain review. Artificial Soul is not on the current critical path and does not block a small OpenClaw-first foundation.
 
-**Core architecture readiness:** SUFFICIENT FOR REVERSIBLE FOUNDATION WORK.
+**Core architecture readiness:** SUFFICIENT FOR REVERSIBLE FOUNDATION WORK and the D-032 Minimum Useful Temaya Phase 1 path.
 
 **Confirmation readiness:** READY FOR CORE DESIGN REVIEW when the owner chooses. Artificial Soul detail, Dreaming behaviour, retrieval scoping, exact Gateway/host isolation, emotional-state implementation, agency mechanism and provenance details remain deferred/OPEN/NEED TEST unless explicitly locked.
