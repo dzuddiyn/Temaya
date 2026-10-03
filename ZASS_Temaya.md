@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.12  
+**Document version:** 0.1.13  
 **Date:** 2026-10-03  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -363,6 +363,44 @@ Locked boundary:
 - audio response dihantar balik ke source robot/smart speaker.
 
 Exact engine, protocol dan codec masih OPEN.
+
+
+## AC-013 | AGREED
+**Source:** EXPLICIT owner `ZASS & Proceed` instruction — NO LOCK
+
+**Artificial Soul direction:** explore an **optional emotional-continuity layer on top of OpenClaw**, without creating a second companion platform.
+
+Agreed boundaries:
+- LOCKED persona / `SOUL.md` / `IDENTITY.md` remain identity authority;
+- OpenClaw memory + Temaya self-life remain factual continuity authority;
+- Emotion Engine is a **third-party OpenClaw-compatible research candidate**, not native OpenClaw core and not a memory authority;
+- emotional state may influence tone/warmth/energy/concern/boundary expression;
+- emotional state must not rewrite LOCKED persona, factual memory, safety rules, or per-user privacy boundaries;
+- no production dependency is selected yet;
+- prove value through a small reversible POC before adoption.
+
+Detailed research: `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
+## AC-014 | AGREED
+**Source:** EXPLICIT owner `ZASS & Proceed` instruction — NO LOCK
+
+**Embodiment / Robot Vision direction:** preserve stereo/depth/robot-learning research as a **future R&D workstream**, separate from current Temaya core-design blockers.
+
+Research candidates include:
+- stereo vision;
+- OAK-D / DepthAI family;
+- RealSense-class RGB-D;
+- ROS stereo processing;
+- MoveIt hand-eye calibration;
+- monocular depth / active vision;
+- H2O / OmniH2O;
+- OpenVLA;
+- GR00T / LeRobot;
+- Isaac Lab and related sim-to-real references.
+
+No camera, VLA model, humanoid stack, or physical embodiment dependency is selected or LOCKED.
+
+Detailed research: `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
 
 ---
 
@@ -725,7 +763,32 @@ Companion A dan Companion B menggunakan `ms-MY-OsmanNeural` dengan prosody berbe
 
 Robot Umar memerlukan **suara budak robot lelaki English**. Exact English TTS voice/model, pitch/rate dan robot-FX masih OPEN.
 
+
+## I-059 | AGREED VIA AC-013
+**Source:** EXTERNAL RESEARCH + owner PROCEED
+
+PioneerJeff Labs Emotion Engine is retained as a **third-party OpenClaw-compatible candidate** for compact emotional continuity (PAD/trust/decay/appraisal/log state). It must remain subordinate to Temaya persona, memory, privacy and safety authority.
+
+## I-060 | AGREED VIA AC-014
+**Source:** EXTERNAL RESEARCH + owner PROCEED
+
+Stereo/depth vision and embodied-AI projects are retained as future robot/embodiment research references. They do not enter current Phase 1 or block Temaya Living Design confirmation.
+
+
 ---
+
+---
+
+# CURRENT SELECTION MATRIX
+
+| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
+|---|---|---|---|---|---|
+| OpenClaw + optional Emotion Engine emotional-continuity layer | PASS | Small/reversible; preserves OpenClaw as core runtime and factual memory authority | Third-party dependency; value/security fit still needs POC | Emotion Engine capability verified; Temaya integration untested | AC-013 |
+| Full AICO companion/runtime adoption | FAIL for current core | Rich memory/emotion/agency reference architecture | Duplicates OpenClaw/memory/runtime responsibilities; overbuild risk | Useful as reference, not required | PARKED REFERENCE |
+| Stereo/depth/robot vision workstream | PASS for future embodiment; NOT REQUIRED now | Preserves strong hardware/robotics options without blocking software core | Hardware/model choice premature | Candidates researched; no benchmark/procurement test | AC-014 |
+
+**Current direction:** keep Temaya core simple and OpenClaw-first; test emotional continuity later as an optional POC; keep robot vision as a separate future embodiment workstream.
+
 
 # OPEN QUESTIONS
 
@@ -1580,6 +1643,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.13 | 2026-10-04 | PROCEED without LOCK: recorded AC-013 Artificial Soul as an optional OpenClaw-compatible emotional-continuity research direction and AC-014 Embodiment/Robot Vision as a future R&D workstream; added research selection matrix and linked detailed research note. No D-xxx LOCKED decision changed. |
 | 0.1.12 | 2026-10-03 | Added root AGENTS.md as canonical repository execution policy; clarified authority split between execution policy, ZASS decision lineage, DESIGN/ACTION_PLAN/TASKS, and OpenClaw runtime AGENTS.md. No D-xxx LOCKED decision changed. |
 | 0.1.11 | 2026-10-02 | Migrated project method to official ZASSIMPLE_MY v0.3.0 DESIGN-first model: DESIGN.md replaces ARCHITECTURE.md as the support artifact, architecture retained as a technical subtype, PROCEED/LOCK and SAVE become primary command surfaces, and CONFIRM DESIGN becomes the primary confirmation gate. All existing LOCKED decisions preserved. |
 | 0.1.10 | 2026-10-02 | Locked D-021–D-026 for Temaya Living Architecture v0.1: self-life vs human-memory separation, OpenClaw-native-first, self-life store, state-aware event generator, per-user isolation, and minimal Phase 1 prototype. |
@@ -1635,5 +1699,8 @@ Maka tindakan semasa:
 - D-024 LOCKED: state-aware Life Event Generator with recall-same-event behaviour.
 - D-025 LOCKED: per-user private memory isolation; prompt selection alone is not a security boundary.
 - D-026 LOCKED: Phase 1 proves consistent self-life + separate Hani memory only.
+- AC-013 AGREED, NOT LOCKED: Artificial Soul is explored as an optional emotional-continuity layer over OpenClaw; Emotion Engine is a third-party research candidate, not identity/factual-memory authority.
+- AC-014 AGREED, NOT LOCKED: stereo/depth/robot vision is preserved as a future embodiment R&D workstream and does not block current Temaya Design confirmation.
+- Detailed research saved in `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
 - Exact STT/Speaker-ID engines, transport, codec and HA-native wake word remain OPEN.
 - Design keseluruhan remains PENDING CONFIRMATION; Temaya Living Architecture remains its technical architecture subtype.
