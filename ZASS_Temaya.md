@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.17  
+**Document version:** 0.1.18  
 **Date:** 2026-10-04  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -401,6 +401,43 @@ Research candidates include:
 No camera, VLA model, humanoid stack, or physical embodiment dependency is selected or LOCKED.
 
 Detailed research: `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
+## AC-015 | AGREED
+**Source:** EXPLICIT owner agreement — NOT LOCKED
+
+**Dzuddiyn Library authoritative-knowledge architecture:**
+
+```text
+AUTHORITATIVE KNOWLEDGE
+Dzuddiyn Library
+        │
+        ├── storage/source
+        │    Google Drive / selected document store
+        │
+        ├── human access
+        │    Obsidian / phone / PC client
+        │
+        └── AI retrieval
+             OpenClaw index/cache/search
+```
+
+Agreed direction:
+- Dzuddiyn Library remains the knowledge authority;
+- Obsidian/other PC-phone clients are access surfaces, not new canonical authorities;
+- OpenClaw index/cache/search is a derived retrieval layer, not a canonical replacement;
+- exact authoritative physical storage location remains OPEN until M6/its prerequisite review.
+
+## AC-016 | AGREED
+**Source:** EXPLICIT owner agreement — NOT LOCKED
+
+**CONFIRM DESIGN gate:** AP-000 may execute as reversible foundation work before full design confirmation. After AP-000 passes, `CONFIRM DESIGN` becomes a mandatory ZASS gate **before** broader exposure such as:
+- private multi-user memory;
+- WhatsApp/Telegram production ingestion;
+- Google writes;
+- Home Assistant control.
+
+The execution workflow must surface this gate to the owner when AP-000 reaches PASS.
+
 
 ---
 
@@ -1829,6 +1866,70 @@ Locked principles:
 **Locked by:** Project Owner
 
 ---
+## D-035 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Security Baseline from Day 0; Security Hardening in Stage 3.**
+
+Locked principle:
+- security is never postponed entirely until Stage 3;
+- Stage 0 and Stage 1 must apply the minimum security controls required to prevent avoidable exposure while keeping implementation simple;
+- Stage 3 owns deeper hardening, remote/private access, hosting/server exposure, network segmentation and mature operational security.
+
+Minimum Day-0/Stage-1 baseline:
+- no unnecessary public Internet exposure of OpenClaw/Home Assistant;
+- authentication/access control enabled where supported;
+- secrets/credentials/tokens/private keys must not be committed to Git or mixed into ordinary searchable knowledge/memory;
+- private workspaces and per-user isolation rules from D-025/D-027 are respected;
+- messaging/channel access uses allowlists/explicit authorization where supported;
+- important configuration/state has a recoverable backup/rollback path proportionate to the current stage;
+- least-privilege and deny-by-default are preferred for sensitive capabilities;
+- any intentional external exposure requires an explicit security review before activation.
+
+Stage 3 hardening may include:
+- private cloud/server exposure architecture;
+- hardened ingress/remote access;
+- network segmentation;
+- stronger secret management;
+- audit/logging;
+- stronger tenant/cell isolation where required;
+- disaster-recovery and mature operational controls.
+
+**Locked by:** Project Owner
+
+---
+## D-036 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Group / external messages are untrusted external feeds and cannot become durable personal/family knowledge or trigger consequential actions automatically.**
+
+Applies to:
+- WhatsApp groups;
+- Telegram groups/channels;
+- school/community groups;
+- other external/shared message feeds added later.
+
+Locked behaviour:
+1. Temaya may read, summarize, classify and surface candidate information from an explicitly permitted feed.
+2. Feed content is **not personal memory by default** and must not automatically become a fact about Hafiz, Hani, children or the family.
+3. Before any candidate information is promoted into durable state or triggers a write/action, Temaya must ask the appropriate user for approval.
+4. Approval must cover both:
+   - **relevance/interpretation** — e.g. “adakah ini memang berkaitan dengan keluarga kita?” / “adakah interpretasi Temaya betul?”;
+   - **next action** — what should happen to the approved information.
+5. Without approval, Temaya must not automatically:
+   - write it into Dzuddiyn Library;
+   - archive/promote it as canonical family knowledge;
+   - write it into personal/human memory;
+   - create/update Google Calendar events;
+   - create/update Tasks/reminders;
+   - perform other external writes or consequential actions based on that feed.
+6. Approved actions must retain source/provenance so the origin of the information remains traceable.
+7. If context is ambiguous, Temaya asks rather than infers a durable family fact.
+8. External feed content must be treated as potentially noisy, misleading or adversarial; it does not override system/project authority.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1883,6 +1984,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.18 | 2026-10-04 | Locked D-035 Day-0 security baseline / Stage-3 hardening and D-036 human-approval gate for all durable promotion/actions from group/external feeds. Recorded AC-015 Dzuddiyn Library authoritative-knowledge surfaces and AC-016 CONFIRM DESIGN gate after AP-000 and before broad exposure/writes/control. |
 | 0.1.17 | 2026-10-04 | Locked D-034: linear development order is Stage 0 Local Foundation → Stage 1 Minimum Useful Temaya → Stage 2 Artificial Soul Development → Stabilization/Portability Gate → Stage 3 Security + Hosting/Private-Cloud Hybrid. |
 | 0.1.16 | 2026-10-04 | Locked D-031–D-033: deployment portability and future private-cloud OpenClaw/local-HA hybrid mapping; broadened Phase 1 to Minimum Useful Temaya with messaging, Google services, Dzuddiyn Library, HA basic, smart speaker and memory/privacy milestones; AP-000 fixed as local OpenClaw+HA install/start foundation. D-026 remains a Phase 1 memory/privacy milestone but no longer defines the entire Phase 1 scope. |
 | 0.1.15 | 2026-10-04 | Locked D-030: Artificial Soul becomes an official Temaya design/architecture domain comprising identity/character, self-life continuity, emotional continuity, appraisal, bounded agency/initiative, and soul safety/boundaries. Implementation remains OpenClaw-first and deliberately open. |
@@ -1904,6 +2006,10 @@ Maka tindakan semasa:
 ---
 
 # CURRENT CHECKPOINT
+- D-035 LOCKED: minimum security baseline starts Day 0; deeper hardening remains Stage 3.
+- D-036 LOCKED: group/external messages are untrusted feeds; user must approve relevance/interpretation and the next durable write/action before promotion to memory/library/archive/calendar/tasks/reminders or other consequential state.
+- AC-015 AGREED: Dzuddiyn Library is authoritative knowledge; Obsidian/PC-phone apps are human access surfaces and OpenClaw index/cache is derived retrieval.
+- AC-016 AGREED: AP-000 may run before full confirmation; after AP-000 PASS, CONFIRM DESIGN is mandatory before broader private memory, messaging ingestion, Google writes or HA control.
 - D-034 LOCKED: development remains linear — Stage 0 foundation → Stage 1 Minimum Useful Temaya → Stage 2 Artificial Soul → stabilization/portability gate → Stage 3 security + hosting/private-cloud hybrid.
 - D-031 LOCKED: local Mini PC is the current deployment baseline; future target is portable OpenClaw/Temaya on a private cloud/server with secure hybrid connection to local Home Assistant.
 - D-032 LOCKED: Phase 1 final deliverable is Minimum Useful Temaya — OpenClaw companion + WhatsApp/Telegram group reader + Google Tasks/Calendar/Drive/Apps Script helper + Dzuddiyn Library practical access + HA basic + smart speaker + D-026 memory/privacy proof.
