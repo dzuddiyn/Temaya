@@ -97,3 +97,37 @@ None promoted yet.
 - D-018: Umar requires an English boy-robot voice; exact English TTS voice and processing remain open.
 
 These are planning constraints only; design remains unconfirmed.
+
+
+## Research candidates — not execution tasks
+
+These items are preserved for later evaluation and **do not enter the current execution queue**.
+
+### RC-001 — Artificial Soul emotional continuity POC
+
+**Source:** AC-013  
+**Status:** PARKED UNTIL CORE MEMORY/PRIVACY VERTICAL SLICE IS STABLE
+
+Candidate:
+- OpenClaw remains runtime/persona/factual-memory authority;
+- optional third-party Emotion Engine may provide compact emotional continuity;
+- evaluate only through a reversible POC;
+- no AICO/Mem0/custom memory replacement.
+
+Pass concept:
+- continuity persists across sessions;
+- persona remains within LOCKED profile;
+- factual/user memory remains separate;
+- no cross-user leakage;
+- decay returns state toward persona baseline.
+
+### RC-002 — Embodiment / Robot Vision benchmark
+
+**Source:** AC-014  
+**Status:** FUTURE R&D — NOT A CURRENT DESIGN BLOCKER
+
+When physical embodiment becomes active scope, compare integrated stereo/RGB-D candidates before selecting hardware.
+
+Research reference:
+`ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
