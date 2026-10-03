@@ -210,12 +210,15 @@ SOUL
 
 ## Privacy / isolation model
 
-Locked requirements:
+Locked requirements (D-025, D-027):
 - user-private memory never crosses user boundaries;
 - self-life never becomes a human-memory namespace;
 - human memory never becomes self-life;
 - all writes carry provenance/source;
-- use agent/workspace isolation or stronger boundary when privacy requires it.
+- use agent/workspace isolation or stronger boundary when privacy requires it;
+- each human has a private OpenClaw agent/workspace or equivalent isolation boundary;
+- cross-agent access is deny-by-default and explicit allow only;
+- exact separate Gateway/host topology remains an implementation/open boundary, not a design blocker.
 
 Candidate topology:
 
@@ -230,6 +233,32 @@ Logical Temaya system
 ```
 
 If multiple agents later share one persona self-life, use one authoritative writer with controlled readers.
+
+
+## Data authority boundary
+
+Locked by D-028:
+
+```text
+Knowledge / Library
+→ Dzuddiyn Library / document stores
+
+Persona + conversational memory
+→ OpenClaw
+
+Operational household state
+→ Home Assistant
+```
+
+Do not duplicate authoritative state without a demonstrated need. OpenClaw may read/direct Home Assistant through approved integration, while Home Assistant remains authority for household operational state.
+
+## Self-life ownership
+
+Locked by D-029:
+- one authoritative self-life writer per persona;
+- Puspa agent writes canonical Puspa self-life;
+- Companion B agent writes canonical Companion B self-life;
+- other agents are read-only unless explicit write authority is granted.
 
 ## Scheduler / event model
 
@@ -268,9 +297,10 @@ For Phase 1, one daily scheduled self-life event is enough.
 
 1. Can Dreaming process self-life without mixing it into human `MEMORY.md`?
 2. Can native retrieval reliably scope by source/path/domain?
-3. If several agents share one persona life, what is the lightest single-writer/many-reader mechanism?
-4. Is per-agent workspace on one Gateway enough for family privacy, or is stronger Gateway/host separation required?
-5. What minimum provenance metadata is enough for Phase 1?
+3. Is per-agent/workspace isolation on one Gateway sufficient in practice, or is stronger Gateway/host separation needed for some family-private data?
+4. What minimum provenance metadata is enough for Phase 1?
+
+These are implementation/validation questions. D-027–D-029 now provide the design baseline and none of the items above is currently treated as a blocker to opening CONFIRM DESIGN review.
 
 ## Minimal Phase 1 prototype
 
@@ -313,4 +343,6 @@ Acceptance:
 
 Core decisions D-021–D-026 are LOCKED.
 
-Overall design remains **PENDING CONFIRMATION** because Dreaming scope, retrieval scoping and production isolation still require testing.
+Overall design remains **PENDING CONFIRMATION**. Core design coverage is 4/4 and D-027–D-029 resolve the previously identified isolation, authority and self-life-writer blockers.
+
+**Confirmation readiness:** READY FOR `CONFIRM DESIGN` REVIEW. Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and provenance details remain `NEED TEST` during implementation and do not silently change LOCKED decisions.
