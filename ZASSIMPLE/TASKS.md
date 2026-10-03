@@ -30,6 +30,10 @@
 
 ## Queue
 
+Stage sequence: AP-000 → AP-100 → AP-200 → Stabilization/Portability Gate → Stage 3 Security + Hosting/Hybrid Cloud.
+
+Only tasks from the current eligible stage should be promoted. Later-stage tasks remain planned and must not create parallel execution branches.
+
 Empty until design confirmation.
 
 ## Delivered evidence
