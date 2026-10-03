@@ -110,6 +110,168 @@ Temaya may read/summarize/classify permitted feeds, but any promotion into durab
 
 No approval = no durable promotion/action. Provenance must be retained after approval.
 
+## Pre-architecture — audit-informed v0.1
+
+**Status:** WORKING / NOT CONFIRMED  
+**Input:** D-001–D-038 + PRE_EXECUTION_AUDIT owner response.  
+**Purpose:** give AP-000/AP-100 a coherent technical shape without prematurely fixing later-stage implementation details.
+
+### A. Stage-0 deployment
+
+Accepted provisional topology:
+
+```text
+Mini PC — Intel Core i3 circa 2018 / 8 GB RAM / 500 GB
+└── Hypervisor
+    ├── HAOS VM
+    │   └── Home Assistant / AIoT Core
+    └── Linux VM
+        └── OpenClaw / Temaya runtime
+```
+
+This topology is conditional on T-F000 hardware validation:
+- exact CPU model;
+- VT-x/virtualization support;
+- storage health/type/free capacity;
+- NIC;
+- available RAM under load.
+
+Do not force the topology if the real host cannot support it safely. The architecture intent is **failure isolation + portability**, not a specific hypervisor brand.
+
+### B. Stage-0 AI/provider
+
+- AP-000 preferred provider/auth route: ChatGPT/OpenAI.
+- Provider is not an architecture authority and remains replaceable.
+- Use one working provider only during foundation learning.
+- Verify actual account OAuth/model/allowance during onboarding; do not assume unlimited free usage.
+
+### C. Network and security
+
+D-035 applies from first boot:
+- LAN/private operation by default;
+- no public port forwarding;
+- auth/access controls where supported;
+- secrets outside Git and searchable memory;
+- basic snapshot/backup before risky changes;
+- inspect Arcadyan AW1000/OpenWrt firewall/WAN/admin/UPnP/port-forward posture during AP-000.
+
+Outbound internet access is allowed for cloud reasoning/services. Direct remote access to the local OpenClaw Gateway is a separate concern and should use a private secure transport when later required rather than exposing the Gateway publicly.
+
+### D. Identity / privacy baseline
+
+Before multi-user Stage-1 exposure:
+- one private human domain per user;
+- separate agent/workspace or equivalent boundary;
+- deny cross-agent access by default;
+- data classes:
+  - PRIVATE-HUMAN;
+  - FAMILY-SHARED;
+  - EXTERNAL-FEED;
+  - SYSTEM/OPERATIONAL.
+
+Escalate to stronger Gateway/process/host isolation only if leakage/authorization testing shows the baseline is insufficient.
+
+### E. External-feed ingestion
+
+D-036 governs WhatsApp/Telegram/group readers:
+
+```text
+permitted external feed
+      ↓
+read / summarize / classify
+      ↓
+candidate information
+      ↓
+USER APPROVAL
+├── relevance / interpretation
+└── next action
+      ↓
+TASK / LIBRARY / ARCHIVE / other permitted action
+```
+
+No approval means no durable promotion/action.
+
+Start with one-by-one channel allowlists and read/summarize-only behaviour.
+
+### F. Google action model
+
+Current agreed user experience (AC-017):
+
+```text
+ACTION / TO-DO / EVENT-LIKE INPUT
+→ Google Tasks as preferred capture doorway
+
+REFERENCE / DURABLE INFORMATION
+→ Dzuddiyn Library
+```
+
+Do not normally ask the owner to choose Calendar vs Task.
+
+Technical constraint to validate in M5:
+- Google Tasks UI can represent date/time, but the public Tasks REST API currently persists scheduled/due **date only** and discards time-of-day.
+- therefore exact timed-item automation remains a compatibility problem to solve at M5;
+- use the smallest compatibility mechanism available through the actual OpenClaw/Google integration without creating duplicate canonical intent.
+
+### G. Dzuddiyn Library
+
+D-037 authority model:
+
+```text
+Dzuddiyn Library — AUTHORITATIVE KNOWLEDGE
+├── canonical storage/source     ← exact physical topology due M6
+├── human access surfaces       ← PC / phone / Obsidian where useful
+└── derived AI retrieval        ← OpenClaw index/cache/search
+```
+
+Current legacy data remains distributed across Drive/HDD/PC/cloud. Do not migrate it during AP-000.
+
+M6 must select a reliable canonical storage/backup topology. The owner's current preference is toward local storage on/attached to the mini PC to reduce subscription dependence, but an old HDD is not acceptable as the sole durable copy. SSD/storage-health/RAM upgrade and incremental cloud backup remain candidates.
+
+### H. Home Assistant
+
+Existing contracts remain:
+- HA is operational/premises authority;
+- ordinary deterministic automations stay in HA;
+- OpenClaw handles higher-level intent;
+- sensitive actions are gated below the LLM;
+- HA Device/Area Registry is authoritative with OpenClaw local cache/fallback per D-008;
+- bridge starts with a small read set + one reversible action.
+
+### I. Interaction surfaces
+
+Stage 1:
+- Telegram;
+- WhatsApp;
+- smart speaker.
+
+Open idea for later:
+- wearable smart-speaker / companion chain;
+- optional earpiece/earbud connection;
+- exact transport/wake/privacy/routing deferred.
+
+### J. Mandatory confirmation boundary
+
+D-038:
+
+```text
+T-F000 / AP-000 PASS
+        ↓
+GATE-C001 — CONFIRM DESIGN
+        ↓
+Stage-1 exposure / writes / HA control
+```
+
+No silent continuation through this boundary.
+
+### K. Deferred domains
+
+- Speaker-ID / audio transport / codec → M8.
+- Artificial Soul implementation → Stage 2.
+- Private-cloud/server/remote hosting hardening → Stage 3.
+- Ryzen compute → optional extension.
+- Robots / rich embodiment → later subproject.
+
+
 ## Architecture domains
 
 ### 1. OpenClaw Core / Orchestration Runtime
