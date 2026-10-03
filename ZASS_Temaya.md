@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.15  
+**Document version:** 0.1.16  
 **Date:** 2026-10-04  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -1672,6 +1672,123 @@ Companion A may adopt only the Artificial Soul capabilities later determined use
 **Locked by:** Project Owner
 
 ---
+## D-031 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Deployment Portability + Future Hybrid Mapping Principle**.
+
+Temaya core must be designed so the runtime can move between deployment targets without redesigning the core identity, memory, knowledge or integration architecture.
+
+Locked principle:
+
+```text
+NOW
+Local Mini PC
+├── OpenClaw
+└── Home Assistant
+
+FUTURE
+Private Cloud / Private Server
+└── OpenClaw / Temaya runtime
+          │
+          └── secure bridge
+                 │
+                 ▼
+          Local Home Assistant
+          devices / sensors / automations
+```
+
+Locked boundaries:
+- Mini PC is the **current deployment baseline**, not the identity of Temaya;
+- OpenClaw/Temaya runtime should remain portable enough to migrate later to a private cloud/server when affordable and operationally desirable;
+- Home Assistant remains local-premises operational authority unless a future explicit decision changes it;
+- local HA must continue to operate independently of cloud/OpenClaw failure where practical;
+- cloud migration is a **future development stage**, not a current Phase 1 task;
+- avoid architecture choices that unnecessarily hard-code persona, memory authority, knowledge authority or integration contracts to one physical host;
+- Apps Script/serverless remains an optional helper for suitable Google-specific deterministic work, not the mandatory Temaya runtime or universal middleware;
+- future hybrid operation should preserve D-010 modularity and D-028 authority boundaries.
+
+**Locked by:** Project Owner
+
+---
+## D-032 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **Phase 1 final deliverable = Minimum Useful Temaya**, not only the earlier Living Memory proof.
+
+This decision **supersedes D-026 only for the overall Phase 1 scope**.  
+D-026 remains valid as the **Living Memory / privacy acceptance milestone inside Phase 1**, but no longer defines the complete Phase 1 deliverable.
+
+Phase 1 is not complete until the following are integrated and verified at a basic useful level:
+
+1. **OpenClaw core companion**
+   - working hosted OpenClaw;
+   - basic Temaya/Puspa persona operation;
+   - LLM orchestration sufficient for normal companion interaction.
+
+2. **Messaging**
+   - WhatsApp integration;
+   - Telegram integration;
+   - group-reader capability for relevant groups/channels, subject to platform permissions and privacy rules.
+
+3. **Google services**
+   - Tasks;
+   - Calendar;
+   - Drive;
+   - Apps Script helper where it materially simplifies deterministic Google-specific workflows.
+
+4. **Dzuddiyn Library**
+   - usable Temaya access to Dzuddiyn Library;
+   - practical access path for the owner from PC and phone;
+   - Obsidian or another suitably simple software/app integration may be used where it improves direct library access without creating a new authority layer.
+
+5. **Home Assistant basic**
+   - basic Temaya ↔ Home Assistant integration;
+   - aligned with the reusable AIoT Core / premises architecture;
+   - HA remains independently functional and authoritative for household operational state.
+
+6. **Smart speaker**
+   - smart-speaker path is a **vital Phase 1 interface**, especially for convenient use by Hani and the family;
+   - implementation should follow existing voice/ESPHome/OpenClaw direction and may start with the simplest reliable hardware path.
+
+7. **Memory/privacy proof**
+   - D-026 acceptance remains required as a Phase 1 milestone;
+   - Hani/user private memory separation and self-life separation must be verified according to D-021–D-027.
+
+Phase 1 planning rule:
+- implement these as **one linear critical path with milestones**, not parallel architecture branches;
+- each milestone should build on the previous stable state;
+- avoid optional subsystems until the required deliverable path is working;
+- Artificial Soul advanced implementation is not required for Phase 1 completion unless later explicitly promoted.
+
+**Locked by:** Project Owner
+
+---
+## D-033 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction  
+**Decision:** **AP-000 is the Local Foundation stage.**
+
+AP-000 must remain intentionally small and practical:
+
+```text
+Mini PC
+├── install + host OpenClaw
+└── install + start Home Assistant
+```
+
+AP-000 goals:
+- owner learns the basic OpenClaw operational model by using the real runtime;
+- OpenClaw starts and can perform a basic LLM-orchestrated conversation;
+- Home Assistant is installed and running;
+- host/runtime locations, configuration, startup and basic recovery are understood;
+- no attempt is made in AP-000 to finish the full Phase 1 integrations.
+
+AP-000 exits when both OpenClaw and Home Assistant are running reliably enough to proceed to the Phase 1 integration milestones.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -1726,6 +1843,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.16 | 2026-10-04 | Locked D-031–D-033: deployment portability and future private-cloud OpenClaw/local-HA hybrid mapping; broadened Phase 1 to Minimum Useful Temaya with messaging, Google services, Dzuddiyn Library, HA basic, smart speaker and memory/privacy milestones; AP-000 fixed as local OpenClaw+HA install/start foundation. D-026 remains a Phase 1 memory/privacy milestone but no longer defines the entire Phase 1 scope. |
 | 0.1.15 | 2026-10-04 | Locked D-030: Artificial Soul becomes an official Temaya design/architecture domain comprising identity/character, self-life continuity, emotional continuity, appraisal, bounded agency/initiative, and soul safety/boundaries. Implementation remains OpenClaw-first and deliberately open. |
 | 0.1.14 | 2026-10-04 | Locked D-027–D-029: per-user isolation baseline, three-domain data authority boundary, and single authoritative self-life writer per persona. Resolved Q-004/Q-012 and partially resolved Q-005/Q-011. Design remains PENDING CONFIRMATION. |
 | 0.1.13 | 2026-10-04 | PROCEED without LOCK: recorded AC-013 Artificial Soul as an optional OpenClaw-compatible emotional-continuity research direction and AC-014 Embodiment/Robot Vision as a future R&D workstream; added research selection matrix and linked detailed research note. No D-xxx LOCKED decision changed. |
@@ -1745,6 +1863,9 @@ Maka tindakan semasa:
 ---
 
 # CURRENT CHECKPOINT
+- D-031 LOCKED: local Mini PC is the current deployment baseline; future target is portable OpenClaw/Temaya on a private cloud/server with secure hybrid connection to local Home Assistant.
+- D-032 LOCKED: Phase 1 final deliverable is Minimum Useful Temaya — OpenClaw companion + WhatsApp/Telegram group reader + Google Tasks/Calendar/Drive/Apps Script helper + Dzuddiyn Library practical access + HA basic + smart speaker + D-026 memory/privacy proof.
+- D-033 LOCKED: AP-000 is only the local foundation — install/host OpenClaw and install/start Home Assistant on the mini PC until both run reliably enough for integration work.
 - D-030 LOCKED: Artificial Soul is now an official Temaya design/architecture domain; it is a capability domain rather than one engine/product, and its implementation remains OpenClaw-first and open to evidence-driven refinement.
 
 - Root `/AGENTS.md` now defines canonical repository engineering/execution behaviour; it does not override `D-xxx | LOCKED` decisions.
