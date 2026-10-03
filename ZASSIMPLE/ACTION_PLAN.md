@@ -71,7 +71,9 @@ Plus one small state-aware event generator and one native Scheduled Task.
 Stop and document a gap if:
 - native retrieval cannot separate domains reliably;
 - native provenance is insufficient for generated persona narrative;
-- per-user privacy cannot be enforced at the required boundary;
+- D-027 per-user isolation cannot be enforced at the required boundary;
+- D-028 authority boundaries would require duplicated/conflicting canonical state;
+- D-029 single-writer self-life ownership cannot be maintained;
 - Dreaming mixes self-life with human durable memory.
 
 Do **not** expand scope before the gap is documented.
@@ -80,8 +82,11 @@ Do **not** expand scope before the gap is documented.
 
 - Living Design v0.1 supports native OpenClaw memory/indexing/scheduler first.
 - Custom scope is limited to the self-life namespace + state-aware event generator.
-- Dreaming treatment, retrieval scoping and production isolation remain **NEED TEST**.
-- Design remains **PENDING CONFIRMATION**.
+- D-027 resolves the minimum per-user isolation baseline: private agent/workspace or equivalent boundary, deny-by-default cross-agent access.
+- D-028 resolves authority split: Dzuddiyn Library/document stores = knowledge, OpenClaw = persona/conversational memory, Home Assistant = operational household state.
+- D-029 resolves self-life ownership: one authoritative writer per persona.
+- Dreaming behaviour, retrieval scoping, exact Gateway/host isolation and minimum provenance metadata remain **NEED TEST** during implementation.
+- Design remains **PENDING CONFIRMATION**, but current blocker review is cleared and the design is ready for CONFIRM DESIGN review.
 - Repository execution policy is now explicit in root `/AGENTS.md`; this is an execution-governance clarification, not a new Temaya architecture decision.
 
 
@@ -97,3 +102,37 @@ None promoted yet.
 - D-018: Umar requires an English boy-robot voice; exact English TTS voice and processing remain open.
 
 These are planning constraints only; design remains unconfirmed.
+
+
+## Research candidates — not execution tasks
+
+These items are preserved for later evaluation and **do not enter the current execution queue**.
+
+### RC-001 — Artificial Soul emotional continuity POC
+
+**Source:** AC-013  
+**Status:** PARKED UNTIL CORE MEMORY/PRIVACY VERTICAL SLICE IS STABLE
+
+Candidate:
+- OpenClaw remains runtime/persona/factual-memory authority;
+- optional third-party Emotion Engine may provide compact emotional continuity;
+- evaluate only through a reversible POC;
+- no AICO/Mem0/custom memory replacement.
+
+Pass concept:
+- continuity persists across sessions;
+- persona remains within LOCKED profile;
+- factual/user memory remains separate;
+- no cross-user leakage;
+- decay returns state toward persona baseline.
+
+### RC-002 — Embodiment / Robot Vision benchmark
+
+**Source:** AC-014  
+**Status:** FUTURE R&D — NOT A CURRENT DESIGN BLOCKER
+
+When physical embodiment becomes active scope, compare integrated stereo/RGB-D candidates before selecting hardware.
+
+Research reference:
+`ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
+
