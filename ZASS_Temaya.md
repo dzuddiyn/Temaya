@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.19  
+**Document version:** 0.1.20  
 **Date:** 2026-10-04  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -850,6 +850,56 @@ Stereo/depth vision and embodied-AI projects are retained as future robot/embodi
 - goal: convenient continuous/private access to Temaya beyond fixed smart speakers.
 
 This is an interaction/embodiment candidate only. Exact wearable hardware, Bluetooth/audio path, wake/hold-to-talk method, privacy behaviour and routing remain OPEN and should not interrupt Stage 0/1 unless explicitly promoted.
+
+## I-062 | OPEN
+**Source:** EXPLICIT owner idea + assistant refinement
+
+**Artificial Soul — spontaneous companion initiative**
+
+Temaya companions with Artificial Soul may occasionally initiate conversation with their user/owner without being prompted, so the relationship can feel two-way rather than purely reactive.
+
+Candidate behaviour:
+- may greet, ask a light question, share a small thought/story, check in, or start casual conversation;
+- timing may use randomized/jittered initiative within an allowed waking window;
+- **never initiate during configured sleep/quiet hours** except a separately authorized urgent/safety class;
+- use per-user quiet hours / availability rather than one global schedule where practical;
+- apply cooldown / rate limits so initiation does not become noisy or repetitive;
+- if the user ignores/dismisses the initiation, do not chase repeatedly;
+- repeated non-response should temporarily reduce initiation frequency;
+- user can explicitly say “jangan ganggu”, “senyap dulu”, “borak kemudian”, or equivalent and that state must be respected;
+- initiation should vary naturally and not become constant emotional check-ins;
+- no guilt, dependency pressure, possessiveness, jealousy, or language implying the user owes the companion attention;
+- private/proactive content must respect D-025/D-027 per-user privacy and D-036 external-feed approval boundaries;
+- initiative may later draw from self-life/emotional continuity/agency in Stage 2, but should remain bounded by persona and safety rules.
+
+**Recommended design concept:** `Bounded Spontaneity`
+
+```text
+eligible waking window
+      ↓
+context / quiet-state check
+      ↓
+randomized opportunity
+      ↓
+rate-limit + cooldown check
+      ↓
+persona-relevant initiative
+      ↓
+user response?
+ ├── yes → continue naturally
+ └── no  → stop; reduce frequency / wait
+```
+
+Open implementation questions for Stage 2:
+- per-person quiet/sleep schedule source;
+- exact frequency budget;
+- context-aware vs pure random weighting;
+- whether Heartbeat / Standing Intents / Scheduled Tasks is the best native OpenClaw mechanism;
+- whether mobile/wearable/smart-speaker presence should influence timing;
+- how long “do not disturb” persists and how user resumes proactive interaction.
+
+This idea is **Stage 2 Artificial Soul scope** and must not block Stage 0/1.
+
 
 ---
 
@@ -2065,6 +2115,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.20 | 2026-10-04 | Recorded I-062: Artificial Soul bounded-spontaneity idea — Temaya may initiate casual conversation during user-specific waking windows with quiet hours, cooldown/rate limiting, ignore detection, consent and non-dependency safeguards. Stage 2 only; does not block Stage 0/1. |
 | 0.1.19 | 2026-10-04 | Locked D-037 Dzuddiyn Library authoritative-knowledge architecture and D-038 mandatory CONFIRM DESIGN gate after AP-000. Recorded AC-017 Tasks-first capture direction with verified Tasks API time-of-day limitation; added wearable/earpiece companion idea; applied owner-approved stale-item cleanup. |
 | 0.1.18 | 2026-10-04 | Locked D-035 Day-0 security baseline / Stage-3 hardening and D-036 human-approval gate for all durable promotion/actions from group/external feeds. Recorded AC-015 Dzuddiyn Library authoritative-knowledge surfaces and AC-016 CONFIRM DESIGN gate after AP-000 and before broad exposure/writes/control. |
 | 0.1.17 | 2026-10-04 | Locked D-034: linear development order is Stage 0 Local Foundation → Stage 1 Minimum Useful Temaya → Stage 2 Artificial Soul Development → Stabilization/Portability Gate → Stage 3 Security + Hosting/Private-Cloud Hybrid. |
