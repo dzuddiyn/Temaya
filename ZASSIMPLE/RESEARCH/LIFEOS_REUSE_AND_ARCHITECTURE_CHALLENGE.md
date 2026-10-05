@@ -1,7 +1,7 @@
 # LifeOS Reuse-First Research & Pre-Confirmation Architecture Challenge
 
 **Date:** 2026-10-05  
-**Status:** RESEARCH CANDIDATE / NOT LOCKED  
+**Status:** D-039 SUPPORTING RESEARCH — reuse discipline and challenge flow LOCKED; named component adoption remains evidence-gated  
 **Scope:** Temaya + OpenClaw + Dzuddiyn Library + n8n + Home Assistant + Google services  
 **Authority:** This note does not override any D-xxx LOCKED decision in `ZASS_Temaya.md`.
 
@@ -167,11 +167,11 @@ Candidate references:
 13. **Identity resolution across channels, while preserving per-user isolation.**
 14. **Plugin/reuse-first before custom subsystem construction.**
 
-## Candidate pre-confirmation Architecture Challenge
+## Mandatory pre-confirmation Architecture Challenge — D-039
 
-**Status:** OWNER-PROPOSED CANDIDATE — not yet a new locked gate.
+**Status:** MANDATORY PRE-GATE-C001 REVIEW — LOCKED VIA D-039.
 
-Run after AP-000 evidence is complete and before the owner completes `GATE-C001 — CONFIRM DESIGN`. This fits inside the existing D-038 confirmation preparation and does not bypass or move that locked gate.
+Run after AP-000 evidence is complete and before the owner completes `GATE-C001 — CONFIRM DESIGN`. D-039 makes this challenge mandatory while D-038 remains the owner confirmation gate.
 
 ### Challenge methods
 

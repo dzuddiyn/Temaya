@@ -484,7 +484,7 @@ Research reference:
 ### RC-003 — LifeOS reuse-first / plugin-first architecture challenge
 
 **Source:** I-063  
-**Status:** OPEN RESEARCH CANDIDATE — PRE-GATE-C001 REVIEW CANDIDATE
+**Status:** LOCKED-SCOPE PRE-GATE-C001 REVIEW — mandated by D-039
 
 Goal:
 - avoid rebuilding mature capabilities from zero;
@@ -492,7 +492,7 @@ Goal:
 - compare reuse/integration/adaptation against custom implementation before design confirmation;
 - specifically challenge librarian/ingestion, messaging, Google, DL access, HA bridge, document processing and local-AI plumbing.
 
-Candidate components/patterns:
+Mandatory reuse candidates to evaluate before equivalent custom implementation:
 - OpenClaw ClawHub and official plugin inventory;
 - OpenClaw Skills / Skill Workshop;
 - n8n as ingestion/workflow/approval/dedup/verified-write layer;
@@ -501,7 +501,7 @@ Candidate components/patterns:
 - Obsidian + constrained local API as a human DL surface;
 - Apps Script only as a compatibility helper after a demonstrated gap.
 
-Candidate review methods:
+Mandatory challenge methods:
 1. first-principles authority review;
 2. reuse / integrate / adapt / build matrix;
 3. event-storming lifecycle walkthrough;
@@ -512,9 +512,9 @@ Candidate review methods:
 8. reference-project cross-check;
 9. ZASSELECTION for remaining viable alternatives.
 
-Timing candidate:
-- run after AP-000 evidence is complete and before owner completion of `GATE-C001 — CONFIRM DESIGN`;
-- this does not change or bypass D-038.
+Timing:
+- **mandatory after AP-000 evidence is complete and before owner completion of `GATE-C001 — CONFIRM DESIGN`**;
+- D-039 adds this review as a prerequisite to confirmation while preserving D-038 as the owner confirmation gate.
 
 Research reference:
 `ZASSIMPLE/RESEARCH/LIFEOS_REUSE_AND_ARCHITECTURE_CHALLENGE.md`.

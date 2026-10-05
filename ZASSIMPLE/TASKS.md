@@ -58,18 +58,37 @@ Apply D-035. Inspect relevant Arcadyan AW1000/OpenWrt firewall/WAN/admin/UPnP/po
 ### T-F008 | BLOCKED BY T-F007 — Restart / Recovery Proof
 Restart/reboot and independently verify HA + OpenClaw recovery, workspace/config/state locations, and the basic conversation path.
 
-### GATE-C001 | BLOCKED UNTIL T-F008 PASS — CONFIRM DESIGN
+### T-C001 | BLOCKED UNTIL T-F008 PASS — Pre-Confirmation Architecture Challenge
 
-**Source:** D-038 / ZASSIMPLE v0.3 confirmation discipline  
-**Trigger:** AP-000 evidence complete through T-F008.  
-**Owner action required then:** review the evidence-informed core design and explicitly complete the project confirmation command/gate.  
+**Source:** D-039  
+**Trigger:** AP-000 evidence complete through T-F008.
+
+Run the mandatory challenge flow:
+1. capability/reuse inventory;
+2. first-principles authority review;
+3. real-event / Event Storming walkthrough;
+4. Reuse / Integrate / Adapt / Build matrix;
+5. threat/privacy challenge + pre-mortem/FMEA;
+6. graceful-degradation / recovery test;
+7. migration / exit-path test;
+8. cross-check against mature LifeOS/assistant projects;
+9. ZASSELECTION for unresolved viable alternatives;
+10. reconcile findings into DESIGN.md ↔ ACTION_PLAN.md.
+
+**Pass:** required D-039 outputs exist; any conflict with a LOCKED decision is surfaced as an explicit decision gate; DESIGN/ACTION_PLAN findings are reconciled without silently changing D-xxx authority.
+
+### GATE-C001 | BLOCKED UNTIL T-C001 PASS — CONFIRM DESIGN
+
+**Source:** D-038 + D-039 / ZASSIMPLE v0.3 confirmation discipline  
+**Trigger:** AP-000 evidence complete through T-F008 **and** T-C001 Architecture Challenge PASS.  
+**Owner action required then:** review the evidence-informed, reuse-challenged core design and explicitly complete the project confirmation command/gate.  
 **Blocks:** private multi-user memory rollout, WhatsApp/Telegram production ingestion, Google writes, HA control.  
-**Reminder:** surface this gate immediately when T-F008 passes; do not silently continue.
+**Reminder:** surface this gate immediately when T-C001 passes; do not silently continue.
 
 ### GATE-N001 | DUE BEFORE COMPANION A/B BUILD — Final Names
 Choose final names for Companion A and Companion B before those personas are instantiated/routed. This gate does not block AP-000 or Puspa-only work.
 
-Stage sequence: AP-000 → GATE-C001 → AP-100 → AP-200 → Stabilization/Portability Gate → Stage 3 Security + Hosting/Hybrid Cloud.
+Stage sequence: AP-000 → T-C001 Architecture Challenge → GATE-C001 → AP-100 → AP-200 → Stabilization/Portability Gate → Stage 3 Security + Hosting/Hybrid Cloud.
 
 Only tasks from the current eligible stage should be promoted. Later-stage tasks remain planned and must not create parallel execution branches.
 

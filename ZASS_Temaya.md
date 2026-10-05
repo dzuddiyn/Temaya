@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.21  
+**Document version:** 0.1.22  
 **Date:** 2026-10-05  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -901,7 +901,7 @@ Open implementation questions for Stage 2:
 This idea is **Stage 2 Artificial Soul scope** and must not block Stage 0/1.
 
 
-## I-063 | OPEN
+## I-063 | PROMOTED VIA D-039
 **Source:** EXPLICIT owner idea + reuse-first research
 
 **LifeOS reuse-first / plugin-first architecture challenge**
@@ -931,7 +931,7 @@ Candidate challenge methods:
 Research reference:
 `ZASSIMPLE/RESEARCH/LIFEOS_REUSE_AND_ARCHITECTURE_CHALLENGE.md`
 
-This is an **OPEN candidate/review discipline**, not a new LOCKED architecture decision and not permission to bypass existing Stage-0 or GATE-C001 constraints.
+This idea has been **PROMOTED via D-039**. D-039 is authoritative for the locked reuse-first discipline, candidate-evaluation obligations, Apps Script boundary and mandatory pre-GATE-C001 challenge flow.
 
 
 ---
@@ -2094,6 +2094,57 @@ ZASS discipline:
 **Locked by:** Project Owner
 
 ---
+## D-039 | LOCKED
+
+**Source:** EXPLICIT owner LOCK instruction promoting I-063 / RC-003
+**Decision:** **Temaya adopts a reuse-first / plugin-first architecture discipline, and a mandatory Architecture Challenge must run after AP-000 PASS and before GATE-C001 — CONFIRM DESIGN.**
+
+### Locked reuse principle
+
+Reuse → Integrate → Adapt → Build Custom only after a verified gap.
+
+Before creating a new custom subsystem, first inspect: (1) native runtime capability; (2) official/bundled/maintained plugin, skill or integration; (3) mature open-source component with API and viable migration/exit path; (4) a small adapter around an existing component.
+
+### Locked candidate-evaluation obligations
+
+The following are mandatory candidates to evaluate before building equivalent custom functionality. They are not automatically adopted by this decision:
+- OpenClaw ClawHub + official plugins/skills — audit before custom Telegram/WhatsApp channel work, attachment parsing, memory helpers or provider plumbing.
+- OpenClaw Skills / Skill Workshop — evaluate reusable Librarian/Temaya behaviours such as TASK / LIBRARY / ARCHIVE / NOTHING classification, provenance capture, approval wording and DL retrieval.
+- n8n — evaluate as primary candidate deterministic workflow/gatekeeper for ingestion, normalization, deduplication, approval queue, retry, scheduling, verified writes and Google Tasks/Calendar/Drive orchestration.
+- Official Home Assistant MCP Server — evaluate as primary candidate direct Temaya/OpenClaw ↔ HA bridge before custom HA middleware.
+- Paperless-ngx — evaluate for OCR/document ingestion and document management before custom OCR/document-filing; it does not automatically become DL authority.
+- Obsidian + constrained local REST/API plugin — evaluate as human-facing DL surface before building a custom library UI; it remains an access surface unless separately decided.
+
+### Apps Script boundary
+
+Custom Apps Script is last-resort compatibility/helper logic, not default middleware. Use it only after the relevant OpenClaw/native integration, n8n or direct Google API path has been tested and a concrete Google-specific gap is documented.
+
+### Mandatory Architecture Challenge timing
+
+D-038 remains the mandatory confirmation gate. D-039 adds a mandatory evidence-informed review immediately before it:
+
+AP-000 PASS → ARCHITECTURE CHALLENGE → GATE-C001 — CONFIRM DESIGN → AP-100 / Stage 1.
+
+### Locked Challenge flow
+
+1. Capability / reuse inventory.
+2. First-principles authority review.
+3. Real-event / Event Storming walkthrough.
+4. Reuse / Integrate / Adapt / Build matrix.
+5. Threat/privacy challenge + pre-mortem/FMEA.
+6. Graceful-degradation / recovery test.
+7. Migration / exit-path test.
+8. Cross-check against mature LifeOS/assistant projects.
+9. ZASSELECTION for unresolved viable alternatives.
+10. Reconcile findings into DESIGN.md ↔ ACTION_PLAN.md.
+
+Required outputs before GATE-C001: capability/reuse inventory; authority matrix; data/event lifecycle; plugin/component candidate matrix; reuse-vs-build rationale; privacy/security/failure findings; degradation/recovery findings; migration/exit findings; unresolved architecture gates; reconciled DESIGN/ACTION_PLAN changes.
+
+The Architecture Challenge must not silently change any existing D-xxx LOCKED decision. If evidence conflicts with a LOCKED decision, stop at an explicit decision gate.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -2148,6 +2199,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.22 | 2026-10-05 | Locked D-039: reuse-first/plugin-first architecture discipline; mandatory candidate evaluation before equivalent custom work; Apps Script last-resort helper; mandatory Architecture Challenge after AP-000 PASS and before GATE-C001. |
 | 0.1.21 | 2026-10-05 | Recorded I-063: reuse-first / plugin-first LifeOS architecture challenge candidate; added research reference covering OpenClaw/ClawHub, n8n librarian/workflow use, HA MCP, Paperless-ngx, Obsidian API and pre-confirmation challenge methods. No LOCKED decision changed. |
 | 0.1.20 | 2026-10-04 | Recorded I-062: Artificial Soul bounded-spontaneity idea — Temaya may initiate casual conversation during user-specific waking windows with quiet hours, cooldown/rate limiting, ignore detection, consent and non-dependency safeguards. Stage 2 only; does not block Stage 0/1. |
 | 0.1.19 | 2026-10-04 | Locked D-037 Dzuddiyn Library authoritative-knowledge architecture and D-038 mandatory CONFIRM DESIGN gate after AP-000. Recorded AC-017 Tasks-first capture direction with verified Tasks API time-of-day limitation; added wearable/earpiece companion idea; applied owner-approved stale-item cleanup. |
