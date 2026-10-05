@@ -84,6 +84,10 @@ Run the mandatory challenge flow:
 - **P-C004 — Paperless-ngx POC:** non-sensitive sample OCR/document ingestion + API/export/provenance.
 - **P-C005 — Obsidian/API POC:** sample human-readable DL surface with constrained local/API access; prove no duplicate authority.
 - **P-C006 — Retrieval/representation POC:** where sample corpus exists, test rebuildable keyword/vector hybrid retrieval and portable human-readable representation.
+- **P-C007 — Local AI utility benchmark:** non-sensitive bounded tasks only; compare latency, memory pressure, quality/reliability and operational overhead on the real host; no model/runtime lock.
+- **P-C008 — Stage-1 first-integration ZASSELECTION:** compare current AP-100 ordering with an early read-only/reversible OpenClaw ↔ official HA MCP vertical slice; do not change sequence without explicit decision.
+- **P-C009 — Auxiliary-service need review:** MQTT/Node-RED/Open WebUI and similar services; `NO NEED` is an acceptable outcome.
+- **P-C010 — Hardware scaling review:** use T-F001/AP-000 metrics to decide whether no upgrade, targeted component upgrade, compute extension or host replacement is justified.
 
 **POC rule:** a POC may prove capability and fit, but must not create production-like private ingestion, external durable writes, or HA control that D-038 keeps blocked before GATE-C001.
 
