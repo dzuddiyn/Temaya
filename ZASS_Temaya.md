@@ -4,8 +4,8 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.20  
-**Date:** 2026-10-04  
+**Document version:** 0.1.21  
+**Date:** 2026-10-05  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
 
@@ -899,6 +899,39 @@ Open implementation questions for Stage 2:
 - how long “do not disturb” persists and how user resumes proactive interaction.
 
 This idea is **Stage 2 Artificial Soul scope** and must not block Stage 0/1.
+
+
+## I-063 | OPEN
+**Source:** EXPLICIT owner idea + reuse-first research
+
+**LifeOS reuse-first / plugin-first architecture challenge**
+
+Before final design confirmation, Temaya should deliberately challenge its proposed architecture against working LifeOS/personal-assistant patterns and available reusable components, so the project does not rebuild mature capabilities from zero.
+
+Candidate principles:
+- search existing OpenClaw bundled/official plugins, ClawHub skills/plugins, n8n nodes/templates, Home Assistant integrations and mature open-source components before creating custom middleware;
+- treat reusable projects as sources of both implementation and lessons: principles, do/don't, lifecycle patterns, failure handling, privacy boundaries and operational practices;
+- preserve Temaya-specific authority/privacy decisions even when reusing components;
+- prefer reuse → integrate → adapt → custom build;
+- evaluate a dedicated librarian/gatekeeper path using n8n plus OpenClaw skills before falling back to custom Apps Script;
+- keep Apps Script as a small compatibility helper only where a proven Google-specific gap remains;
+- evaluate reusable candidates such as OpenClaw channel/document/memory capabilities, official HA MCP, Paperless-ngx for OCR/document ingestion, and Obsidian API plugins for human DL access;
+- run an architecture-challenge review after AP-000 evidence is complete and before owner completion of GATE-C001, without changing D-038's locked confirmation requirement.
+
+Candidate challenge methods:
+- first-principles authority review;
+- reuse/integrate/adapt/build matrix;
+- event-storming/lifecycle walkthrough;
+- pre-mortem + FMEA;
+- threat/privacy review;
+- graceful-degradation and migration/exit tests;
+- reference-project cross-check;
+- ZASSELECTION where multiple viable implementations remain.
+
+Research reference:
+`ZASSIMPLE/RESEARCH/LIFEOS_REUSE_AND_ARCHITECTURE_CHALLENGE.md`
+
+This is an **OPEN candidate/review discipline**, not a new LOCKED architecture decision and not permission to bypass existing Stage-0 or GATE-C001 constraints.
 
 
 ---
@@ -2115,6 +2148,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.21 | 2026-10-05 | Recorded I-063: reuse-first / plugin-first LifeOS architecture challenge candidate; added research reference covering OpenClaw/ClawHub, n8n librarian/workflow use, HA MCP, Paperless-ngx, Obsidian API and pre-confirmation challenge methods. No LOCKED decision changed. |
 | 0.1.20 | 2026-10-04 | Recorded I-062: Artificial Soul bounded-spontaneity idea — Temaya may initiate casual conversation during user-specific waking windows with quiet hours, cooldown/rate limiting, ignore detection, consent and non-dependency safeguards. Stage 2 only; does not block Stage 0/1. |
 | 0.1.19 | 2026-10-04 | Locked D-037 Dzuddiyn Library authoritative-knowledge architecture and D-038 mandatory CONFIRM DESIGN gate after AP-000. Recorded AC-017 Tasks-first capture direction with verified Tasks API time-of-day limitation; added wearable/earpiece companion idea; applied owner-approved stale-item cleanup. |
 | 0.1.18 | 2026-10-04 | Locked D-035 Day-0 security baseline / Stage-3 hardening and D-036 human-approval gate for all durable promotion/actions from group/external feeds. Recorded AC-015 Dzuddiyn Library authoritative-knowledge surfaces and AC-016 CONFIRM DESIGN gate after AP-000 and before broad exposure/writes/control. |
