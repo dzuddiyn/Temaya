@@ -2388,6 +2388,8 @@ Maka tindakan semasa:
 # CURRENT CHECKPOINT
 - D-037 LOCKED: Dzuddiyn Library remains authoritative knowledge; clients are access surfaces and OpenClaw retrieval is derived/rebuildable.
 - D-038 LOCKED: after AP-000 PASS, GATE-C001 CONFIRM DESIGN is mandatory before broader private memory, messaging ingestion, Google writes or HA control.
+- D-039 LOCKED: reuse-first/plugin-first; Architecture Challenge is mandatory after AP-000 PASS and before GATE-C001.
+- D-040–D-050 LOCKED: small staged deployment; portable/human-inspectable canonical data; stable cross-channel person identity; observation→candidate→canonical promotion; Human Queue; restart-safe/idempotent workflows; deterministic privacy; source/private-data separation; model-role abstraction; graceful degradation; one coherent Temaya across surfaces and specialized authorities.
 - AC-017 AGREED: Google Tasks is the preferred single capture surface, but the public Tasks API currently cannot read/write due time-of-day, so exact timed-item implementation remains an M5 compatibility test.
 - I-061 OPEN: wearable smart-speaker / earpiece companion chain is recorded as a future interaction candidate.
 - D-035 LOCKED: minimum security baseline starts Day 0; deeper hardening remains Stage 3.
