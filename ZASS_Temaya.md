@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.24  
+**Document version:** 0.1.25  
 **Date:** 2026-10-05  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -2438,6 +2438,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.25 | 2026-10-05 | Reconciled prior Home Assistant <> Temaya / AIoT Core context into canonical planning without changing D-xxx authority. Added context-sync note: direct official HA MCP path first, HA registry/cache fallback, deterministic privacy, local-AI evidence gate, n8n only for proven cross-system workflow need, and need-driven MQTT/Node-RED. AP-100 order remains unchanged pending I-064/P-C008 decision. |
 | 0.1.24 | 2026-10-05 | Locked D-051–D-054: local AI bounded/provider role, evidence-gated local-AI adoption, need-driven protocols/auxiliary services, and evidence-driven hardware scaling/procurement. Recorded I-064 Stage-1 first-integration ordering challenge for T-C001/ZASSELECTION. |
 | 0.1.23 | 2026-10-05 | Locked D-040–D-050: small staged deployment, portable human-inspectable canonical data, stable cross-channel identity, observation→candidate→canonical promotion, Human Queue, restart-safe/idempotent workflows, deterministic privacy, code/private-data separation, model-role abstraction, graceful degradation, and one coherent Temaya across surfaces/authority systems. |
 | 0.1.22 | 2026-10-05 | Locked D-039: reuse-first/plugin-first architecture discipline; mandatory candidate evaluation before equivalent custom work; Apps Script last-resort helper; mandatory Architecture Challenge after AP-000 PASS and before GATE-C001. |
@@ -2466,6 +2467,7 @@ Maka tindakan semasa:
 ---
 
 # CURRENT CHECKPOINT
+- CONTEXT SYNC 2026-10-05: Home Assistant <> Temaya / AIoT Core reconciled. Official HA MCP remains direct primary path; HA registry is authoritative with OpenClaw cache/fallback; n8n is workflow/gatekeeper only when needed; local AI is bounded/evidence-gated; MQTT/Node-RED remain need-driven. Stage-1 ordering still waits for I-064/P-C008 ZASSELECTION.
 - D-037 LOCKED: Dzuddiyn Library remains authoritative knowledge; clients are access surfaces and OpenClaw retrieval is derived/rebuildable.
 - D-038 LOCKED: after AP-000 PASS, GATE-C001 CONFIRM DESIGN is mandatory before broader private memory, messaging ingestion, Google writes or HA control.
 - D-039 LOCKED: reuse-first/plugin-first; Architecture Challenge is mandatory after AP-000 PASS and before GATE-C001.
