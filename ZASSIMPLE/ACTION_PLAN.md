@@ -519,6 +519,73 @@ Timing:
 Research reference:
 `ZASSIMPLE/RESEARCH/LIFEOS_REUSE_AND_ARCHITECTURE_CHALLENGE.md`.
 
+### RC-004 — n8n Librarian / Workflow Gatekeeper POC
+
+**Source:** D-039, D-043–D-045  
+**Status:** BLOCKED UNTIL T-C001 / AP-000 PASS
+
+POC scope:
+- ingest one synthetic/reversible message/event;
+- normalize + classify to TASK / LIBRARY / ARCHIVE / NOTHING;
+- deduplicate by stable source/event id;
+- create a Human Queue / approval state when required;
+- perform one reversible verified write to a non-production target or test record;
+- prove retry/restart does not duplicate the action.
+
+Pass: n8n demonstrates useful deterministic workflow value without becoming memory/persona/privacy authority.
+
+### RC-005 — Paperless-ngx Document Ingestion POC
+
+**Source:** D-039, D-041, D-043  
+**Status:** BLOCKED UNTIL T-C001 / AP-000 PASS
+
+POC scope:
+- ingest a non-sensitive sample scan/PDF;
+- OCR/extract metadata;
+- preserve source/provenance;
+- export/retrieve through API;
+- show that Paperless can feed/reference DL without becoming DL authority.
+
+Pass: measurable reduction in custom OCR/document-filing work with a clean exit/export path.
+
+### RC-006 — Obsidian + Constrained API Human DL Surface POC
+
+**Source:** D-037, D-039, D-041, D-050  
+**Status:** BLOCKED UNTIL T-C001 / AP-000 PASS
+
+POC scope:
+- human-readable sample library content;
+- PC/phone browse/edit path where practical;
+- constrained local/API read-write test;
+- provenance/canonical-source mapping;
+- prove the client/API remains a surface rather than a competing authority.
+
+Pass: practical human access improves without introducing a second canonical store.
+
+### RC-007 — Rebuildable Hybrid Retrieval POC
+
+**Source:** D-037, D-041  
+**Status:** BLOCKED UNTIL SUITABLE SAMPLE CORPUS EXISTS
+
+POC scope:
+- compare keyword/BM25-style retrieval with vector/semantic retrieval and a hybrid path;
+- measure retrieval usefulness on representative DL samples;
+- delete/rebuild the derived index from canonical source;
+- preserve provenance to source records.
+
+Pass: retrieval improvement is demonstrated and index loss remains recoverable.
+
+### RC-008 — Canonical Representation Portability POC
+
+**Source:** D-041  
+**Status:** BLOCKED UNTIL T-C001 / M6 SAMPLE DATA
+
+POC scope:
+- compare a small human-readable/exportable representation such as Markdown + structured JSON metadata (Git only where suitable);
+- verify human inspection, backup/export, migration and machine parsing;
+- do not lock one format until evidence exists.
+
+Pass: at least one representation preserves semantics across tool/runtime replacement without depending on a proprietary internal store.
 
 
 ## Pre-confirmation design work

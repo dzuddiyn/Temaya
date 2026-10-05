@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.22  
+**Document version:** 0.1.23  
 **Date:** 2026-10-05  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -2145,6 +2145,166 @@ The Architecture Challenge must not silently change any existing D-xxx LOCKED de
 **Locked by:** Project Owner
 
 ---
+## D-040 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Architecture may be broad, but deployment must stay small, staged, reversible and evidence-driven.**
+
+Locked principles:
+- do not install or integrate every planned subsystem at once;
+- prefer the smallest useful vertical slice that proves a real capability;
+- expand only after the prior slice is verified and its operational cost is understood;
+- later architecture intent must not force premature deployment complexity.
+
+**Locked by:** Project Owner
+
+---
+## D-041 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Important canonical Temaya/Dzuddiyn data must remain human-inspectable, portable and recoverable independently of any one AI/runtime/vendor.**
+
+Locked principles:
+- canonical knowledge/memory must not exist only inside a vector DB, OpenClaw internal store, n8n database, or one AI provider;
+- a human-readable/exportable representation must exist for important canonical records;
+- exact representation technology (for example Markdown/JSON/Git) remains evidence-gated and is not locked here;
+- this decision complements D-037; derived indexes remain rebuildable.
+
+**Locked by:** Project Owner
+
+---
+## D-042 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **A human has one stable identity domain across channels; channel accounts are bindings/aliases, not separate people.**
+
+Locked principles:
+- WhatsApp, Telegram, email, Calendar identity and other channel identifiers may resolve to one canonical Person identity;
+- identity must not be inferred from display-name strings alone;
+- channel-to-person binding must preserve D-027 private-memory isolation and explicit authorization;
+- ambiguous or conflicting identity resolution must fail closed / require review.
+
+**Locked by:** Project Owner
+
+---
+## D-043 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **External/digital-exhaust ingestion follows an observation-promotion lifecycle instead of becoming canonical truth immediately.**
+
+Locked lifecycle:
+`RAW/OBSERVATION → CANDIDATE → APPROVED when required → CANONICAL`.
+
+Rules:
+- D-036 remains authoritative for untrusted external/group feeds and consequential promotion;
+- classification/summarization may happen before approval;
+- canonical memory/library/task/calendar promotion requires the applicable approval/policy gate;
+- direct authenticated user writes may follow their existing authorized path and are not forced through unnecessary approval.
+
+**Locked by:** Project Owner
+
+---
+## D-044 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Temaya must support a Human Queue / resumable decision state for ambiguity, approval and consequential actions.**
+
+Locked principles:
+- when required information/approval is missing, suspend rather than guess;
+- retain linkage to the originating event/job/request;
+- resume the same operation after the human response where safe;
+- lifecycle must distinguish at least candidate/review/approval/execution/verification states, though exact storage/UI remains open.
+
+**Locked by:** Project Owner
+
+---
+## D-045 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Important cross-system workflows must be restart-safe, idempotent, deduplicated, attributable and independently verifiable.**
+
+Locked principles:
+- persist enough state to reconcile uncertain/retried operations;
+- use stable source/event/request identifiers where available;
+- duplicate input must not silently create duplicate durable actions;
+- write success requires read-back/verification where the target supports it;
+- a process crash/restart must not silently lose or repeat consequential work.
+
+**Locked by:** Project Owner
+
+---
+## D-046 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Privacy, authorization and security-critical access decisions are deterministic policy concerns; an LLM may interpret content but must not grant access or become the sole security filter.**
+
+Locked principles:
+- private by default where ownership/scope is unclear;
+- fail closed on ambiguous authorization;
+- structural/path/identity controls sit below or outside model reasoning;
+- LLM classification may assist routing but cannot override explicit privacy/permission policy.
+
+**Locked by:** Project Owner
+
+---
+## D-047 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Source code/framework/config templates are separated from private family runtime data, durable memories and secrets.**
+
+Locked principles:
+- Git/source repositories may contain architecture, schemas, workflows, code and safe templates;
+- actual family private memory/content and runtime secrets must not be committed as source artifacts;
+- backup/recovery must preserve this separation;
+- private-repo status alone does not justify mixing family data with source code.
+
+**Locked by:** Project Owner
+
+---
+## D-048 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Temaya architecture selects model capability roles, not hard-coded model product names.**
+
+Examples of roles include `LOCAL_PRIVATE`, `LOCAL_FAST`, `CLOUD_FAST`, `CLOUD_REASONING` and `CLOUD_DEEP`.
+
+Locked principles:
+- concrete model/provider mapping is configuration and may change without architecture redesign;
+- benchmark/security/cost/availability determine implementation mapping;
+- no D-xxx decision should depend on a transient model name unless a specific compatibility requirement truly demands it.
+
+**Locked by:** Project Owner
+
+---
+## D-049 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Temaya uses graceful degradation and subsystem independence rather than one all-or-nothing dependency chain.**
+
+Required direction:
+- HA deterministic household automation remains operable if OpenClaw/n8n/cloud AI is unavailable;
+- canonical DL data survives derived-index failure and indexes are rebuildable;
+- failure of n8n must not unnecessarily remove basic Temaya conversation or HA native automation;
+- cloud-provider failure should preserve eligible local/basic functions where available;
+- exact fallback matrix is refined and proven through T-C001 and later integration tests.
+
+**Locked by:** Project Owner
+
+---
+## D-050 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after LifeOS pattern review
+**Decision:** **Temaya is one coherent intelligence/persona across many interaction surfaces and specialized authority systems; surfaces and subsystems must not become competing Temayas.**
+
+Locked principles:
+- WhatsApp, Telegram, voice, web and library clients are interaction/access surfaces;
+- persona, identity/privacy policy and authority mapping remain coherent across those surfaces;
+- Temaya is not itself the database, workflow engine, Home Assistant or one LLM;
+- OpenClaw/orchestration, DL, HA, workflow engines and model providers retain their specialized roles under the locked authority boundaries.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -2199,6 +2359,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.23 | 2026-10-05 | Locked D-040–D-050: small staged deployment, portable human-inspectable canonical data, stable cross-channel identity, observation→candidate→canonical promotion, Human Queue, restart-safe/idempotent workflows, deterministic privacy, code/private-data separation, model-role abstraction, graceful degradation, and one coherent Temaya across surfaces/authority systems. |
 | 0.1.22 | 2026-10-05 | Locked D-039: reuse-first/plugin-first architecture discipline; mandatory candidate evaluation before equivalent custom work; Apps Script last-resort helper; mandatory Architecture Challenge after AP-000 PASS and before GATE-C001. |
 | 0.1.21 | 2026-10-05 | Recorded I-063: reuse-first / plugin-first LifeOS architecture challenge candidate; added research reference covering OpenClaw/ClawHub, n8n librarian/workflow use, HA MCP, Paperless-ngx, Obsidian API and pre-confirmation challenge methods. No LOCKED decision changed. |
 | 0.1.20 | 2026-10-04 | Recorded I-062: Artificial Soul bounded-spontaneity idea — Temaya may initiate casual conversation during user-specific waking windows with quiet hours, cooldown/rate limiting, ignore detection, consent and non-dependency safeguards. Stage 2 only; does not block Stage 0/1. |
@@ -2227,6 +2388,8 @@ Maka tindakan semasa:
 # CURRENT CHECKPOINT
 - D-037 LOCKED: Dzuddiyn Library remains authoritative knowledge; clients are access surfaces and OpenClaw retrieval is derived/rebuildable.
 - D-038 LOCKED: after AP-000 PASS, GATE-C001 CONFIRM DESIGN is mandatory before broader private memory, messaging ingestion, Google writes or HA control.
+- D-039 LOCKED: reuse-first/plugin-first; Architecture Challenge is mandatory after AP-000 PASS and before GATE-C001.
+- D-040–D-050 LOCKED: small staged deployment; portable/human-inspectable canonical data; stable cross-channel person identity; observation→candidate→canonical promotion; Human Queue; restart-safe/idempotent workflows; deterministic privacy; source/private-data separation; model-role abstraction; graceful degradation; one coherent Temaya across surfaces and specialized authorities.
 - AC-017 AGREED: Google Tasks is the preferred single capture surface, but the public Tasks API currently cannot read/write due time-of-day, so exact timed-item implementation remains an M5 compatibility test.
 - I-061 OPEN: wearable smart-speaker / earpiece companion chain is recorded as a future interaction candidate.
 - D-035 LOCKED: minimum security baseline starts Day 0; deeper hardening remains Stage 3.
