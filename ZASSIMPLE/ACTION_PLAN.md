@@ -364,6 +364,9 @@ Stop and document a gap if:
 Do **not** expand scope before the gap is documented.
 
 ## Planning findings
+- Home Assistant <> Temaya context sync confirms direct HA MCP before n8n for HA integration evidence; n8n remains cross-system workflow/gatekeeper candidate, not default HA middleware.
+- HA Device/Area Registry authority + OpenClaw localization cache/fallback must be proven together during T-C001.
+- Local AI/Ollama-like runtime is optional and benchmark-gated; MQTT/Node-RED/Open WebUI remain need-driven.
 
 - Living Design v0.1 supports native OpenClaw memory/indexing/scheduler first.
 - Custom scope is limited to the self-life namespace + state-aware event generator.
@@ -481,6 +484,45 @@ Research reference:
 `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
 
 
+### Home Assistant <> Temaya alignment
+
+**Source:** `ZASSIMPLE/CONTEXT_SYNC_HOME_ASSISTANT_TEMAYA.md`  
+**Status:** REPLANNED — NO LOCKED AUTHORITY CHANGE
+
+Planning rule:
+- prove the shortest direct authority path before introducing optional orchestration;
+- OpenClaw → official HA MCP is tested before n8n is considered for HA-related work;
+- HA Device/Area Registry + OpenClaw cache/fallback is included in the direct integration proof;
+- local AI is benchmarked only for bounded utility roles and only if host resources allow;
+- n8n is tested as a workflow/Human-Queue/idempotency layer on a synthetic cross-system workflow, not as mandatory HA middleware;
+- MQTT/Node-RED/Open WebUI remain need-driven and may legitimately result in `NO NEED`.
+
+Preferred T-C001 evidence order:
+
+```text
+P-C001 OpenClaw native/plugin audit
+      ↓
+P-C003 Official HA MCP + D-008 registry/cache proof
+      ↓
+P-C007 Local AI bounded benchmark (if hardware allows)
+      ↓
+P-C002 n8n workflow/gatekeeper POC
+      ↓
+P-C004/P-C005/P-C006 DL/document/access/retrieval POCs
+      ↓
+P-C009 Auxiliary-service need review
+      ↓
+P-C010 Hardware scaling review
+      ↓
+P-C008 Stage-1 ordering ZASSELECTION
+      ↓
+reconcile DESIGN ↔ ACTION_PLAN
+      ↓
+GATE-C001
+```
+
+**Important:** this is the T-C001 evidence order, not a silent rewrite of AP-100 M1→M10. I-064/P-C008 remains the explicit decision point for any Stage-1 sequence change.
+
 ### RC-003 — LifeOS reuse-first / plugin-first architecture challenge
 
 **Source:** I-063  
@@ -519,10 +561,33 @@ Timing:
 Research reference:
 `ZASSIMPLE/RESEARCH/LIFEOS_REUSE_AND_ARCHITECTURE_CHALLENGE.md`.
 
+### RC-012 — Official HA MCP + Registry/Cache Proof
+
+**Source:** D-007, D-008, D-010, D-028, I-064  
+**Status:** BLOCKED UNTIL AP-000 PASS / T-C001
+
+POC scope:
+- connect OpenClaw test context to the official Home Assistant MCP Server;
+- expose only a small approved entity set;
+- prove a read-only household-state query;
+- verify HA remains authority for state/device/area registry;
+- resolve `device_id → area_id → area_name`;
+- create/read a small local OpenClaw cache/fallback of the authoritative mapping;
+- prove the cache can be treated as stale/fallback rather than authority;
+- optional reversible/test-only action only if the current gate permits it.
+
+Pass:
+- direct OpenClaw↔HA path works without n8n;
+- authority remains unambiguous;
+- registry/cache fallback contract is observable;
+- failure of OpenClaw does not remove HA native operation.
+
 ### RC-004 — n8n Librarian / Workflow Gatekeeper POC
 
-**Source:** D-039, D-043–D-045  
-**Status:** BLOCKED UNTIL T-C001 / AP-000 PASS
+**Source:** D-039, D-043–D-045 + Home Assistant <> Temaya context sync  
+**Status:** BLOCKED UNTIL DIRECT HA-MCP PROOF / T-C001
+
+**Boundary:** n8n is not the default inline OpenClaw→HA control path. Run this POC only after the direct official HA MCP path is understood, and use n8n to prove cross-system workflow value rather than duplicate HA/OpenClaw authority.
 
 POC scope:
 - ingest one synthetic/reversible message/event;
