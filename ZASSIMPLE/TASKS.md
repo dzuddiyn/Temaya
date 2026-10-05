@@ -77,6 +77,16 @@ Run the mandatory challenge flow:
 
 **Pass:** required D-039 outputs exist; any conflict with a LOCKED decision is surfaced as an explicit decision gate; DESIGN/ACTION_PLAN findings are reconciled without silently changing D-xxx authority.
 
+**Mandatory POC/evaluation pack within T-C001 where technically feasible without crossing GATE-C001:**
+- **P-C001 — OpenClaw native/plugin audit:** ClawHub + bundled/official plugins + Skill Workshop; record reuse vs custom gaps.
+- **P-C002 — n8n Librarian gatekeeper POC:** synthetic/reversible ingestion → classify → dedup → approval → verified test write → retry proof.
+- **P-C003 — Official HA MCP POC/design proof:** validate scoped entity exposure and read path; any action remains reversible/test-only until the applicable control gate permits it.
+- **P-C004 — Paperless-ngx POC:** non-sensitive sample OCR/document ingestion + API/export/provenance.
+- **P-C005 — Obsidian/API POC:** sample human-readable DL surface with constrained local/API access; prove no duplicate authority.
+- **P-C006 — Retrieval/representation POC:** where sample corpus exists, test rebuildable keyword/vector hybrid retrieval and portable human-readable representation.
+
+**POC rule:** a POC may prove capability and fit, but must not create production-like private ingestion, external durable writes, or HA control that D-038 keeps blocked before GATE-C001.
+
 ### GATE-C001 | BLOCKED UNTIL T-C001 PASS — CONFIRM DESIGN
 
 **Source:** D-038 + D-039 / ZASSIMPLE v0.3 confirmation discipline  
