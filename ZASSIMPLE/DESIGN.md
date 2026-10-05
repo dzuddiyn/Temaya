@@ -251,19 +251,52 @@ Open idea for later:
 
 ### J. Mandatory confirmation boundary
 
-D-038:
+D-038 + D-039:
 
 ```text
 T-F000 / AP-000 PASS
+        ↓
+D-039 ARCHITECTURE CHALLENGE
+reuse inventory
+→ authority review
+→ real-event walkthrough
+→ Reuse / Integrate / Adapt / Build
+→ privacy/threat + pre-mortem/FMEA
+→ degradation/recovery
+→ migration/exit
+→ mature-project cross-check
+→ ZASSELECTION where needed
+→ reconcile DESIGN ↔ ACTION_PLAN
         ↓
 GATE-C001 — CONFIRM DESIGN
         ↓
 Stage-1 exposure / writes / HA control
 ```
 
-No silent continuation through this boundary.
+The Architecture Challenge is mandatory preparation for confirmation. It does not itself confirm the design and must not silently rewrite a D-xxx LOCKED decision.
 
-### K. Deferred domains
+### K. Reuse-first implementation discipline
+
+Locked by D-039:
+- inspect native/runtime capability first;
+- then official/bundled/maintained plugins and integrations;
+- then mature OSS with API + migration/exit path;
+- then small adapters;
+- custom subsystem only after a recorded gap.
+
+Mandatory candidates to evaluate before equivalent custom work:
+- OpenClaw ClawHub + official plugins/skills;
+- OpenClaw Skills / Skill Workshop;
+- n8n for deterministic ingestion/workflow/librarian orchestration;
+- official Home Assistant MCP Server;
+- Paperless-ngx for OCR/document ingestion;
+- Obsidian + constrained local API for human DL access.
+
+Apps Script is a last-resort Google-specific compatibility/helper mechanism, not default middleware.
+
+No silent continuation through the confirmation boundary.
+
+### L. Deferred domains
 
 - Speaker-ID / audio transport / codec → M8.
 - Artificial Soul implementation → Stage 2.
