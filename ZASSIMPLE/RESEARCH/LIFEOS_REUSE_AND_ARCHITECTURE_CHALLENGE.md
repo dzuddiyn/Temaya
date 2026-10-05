@@ -214,6 +214,23 @@ Run after AP-000 evidence is complete and before the owner completes `GATE-C001 
 - proposed updates to `DESIGN.md` and `ACTION_PLAN.md`;
 - only then owner `CONFIRM DESIGN`.
 
+## Promoted LifeOS-derived principles — D-040 to D-050
+
+The following research lessons are now promoted to LOCKED project principles:
+- staged/reversible deployment despite broad architecture intent;
+- human-inspectable and portable canonical data;
+- stable person identity across channel bindings;
+- observation/candidate/canonical promotion lifecycle;
+- Human Queue / resumable approval state;
+- restart-safe, idempotent and deduplicated workflows;
+- deterministic privacy/authorization outside sole LLM discretion;
+- source-code separation from private family runtime data and secrets;
+- model-role abstraction rather than hard-coded model names;
+- graceful degradation / subsystem independence;
+- one coherent Temaya across multiple interaction surfaces and specialized authority systems.
+
+Exact product adoption remains evidence-gated under D-039. RC-004–RC-008 define the corresponding POC candidates.
+
 ## Candidate adoption rule
 
 A plugin/open-source component should be adopted only when it:
