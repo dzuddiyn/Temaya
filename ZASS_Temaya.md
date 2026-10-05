@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.23  
+**Document version:** 0.1.24  
 **Date:** 2026-10-05  
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -933,6 +933,22 @@ Research reference:
 
 This idea has been **PROMOTED via D-039**. D-039 is authoritative for the locked reuse-first discipline, candidate-evaluation obligations, Apps Script boundary and mandatory pre-GATE-C001 challenge flow.
 
+## I-064 | OPEN — T-C001 DECISION INPUT
+**Source:** EXPLICIT owner PROCEED after architecture review
+
+**Stage-1 first-integration ordering challenge**
+
+Current AP-100 order places messaging/Google/DL milestones before M7 Home Assistant bridge. A competing evidence-based proposal is to prove an early `OpenClaw ↔ Official HA MCP` read-only/reversible vertical slice immediately after AP-000 because it quickly demonstrates Temaya interacting with real household state.
+
+Do not change AP-100 ordering silently.
+
+At T-C001:
+- compare current AP-100 ordering vs an early HA-MCP vertical slice;
+- use Event Storming, dependency/risk analysis and ZASSELECTION;
+- preserve D-007/D-008/D-010/D-028 authority boundaries;
+- any change to the locked plan/sequence requires an explicit decision gate.
+
+Status: **OPEN / PARKED UNTIL T-C001**.
 
 ---
 
@@ -2305,6 +2321,69 @@ Locked principles:
 **Locked by:** Project Owner
 
 ---
+## D-051 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after architecture review
+**Decision:** **Local AI is a replaceable compute/model provider for bounded private/offline work; it is not Temaya identity, persona, canonical memory, authorization authority or security authority.**
+
+Locked use classes may include:
+- intent/classification;
+- structured extraction;
+- private/local summarization;
+- simple bounded transformation;
+- offline/basic fallback;
+- other low-risk local inference proven useful by benchmark.
+
+Local AI output remains subject to the same policy, provenance and action boundaries as cloud-model output.
+
+**Locked by:** Project Owner
+
+---
+## D-052 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after architecture review
+**Decision:** **Local AI runtime/model adoption is evidence-gated by real use case and hardware benchmark; no local model, model size, quantization or Ollama-equivalent runtime is mandatory by architecture.**
+
+Locked principles:
+- do not install local AI merely because the host is an AI/home server;
+- benchmark representative workloads on the actual target hardware;
+- measure latency, memory pressure, reliability and quality before adoption;
+- concrete model/runtime selection remains replaceable configuration under D-048;
+- if local AI adds more operational cost than value, cloud/provider routing remains valid.
+
+**Locked by:** Project Owner
+
+---
+## D-053 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after architecture review
+**Decision:** **Protocols and auxiliary services are need-driven, not baseline-by-fashion.**
+
+Locked principles:
+- MQTT/broker is introduced when a device/integration/event architecture actually requires MQTT;
+- Node-RED is introduced only when event-flow/protocol/IoT complexity demonstrates a need beyond HA-native automation/n8n roles;
+- Open WebUI or similar local-model UI is optional convenience, not a Temaya architecture requirement;
+- auxiliary services must have an explicit capability owner/use case, recovery path and operational justification before becoming persistent infrastructure;
+- no specific broker, Node-RED deployment or local-model UI product is locked by this decision.
+
+**Locked by:** Project Owner
+
+---
+## D-054 | LOCKED
+
+**Source:** EXPLICIT owner PROCEED after architecture review
+**Decision:** **Hardware scaling and procurement are evidence-driven. Use the existing safe hardware baseline until measured workload, reliability or capacity evidence justifies upgrade/replacement.**
+
+Locked principles:
+- exact RAM/CPU/GPU tier is not an architecture decision;
+- inspect real host capability/health before installation or procurement;
+- upgrade based on measured bottlenecks such as sustained memory pressure, swap/thrashing, unacceptable latency, storage-health/capacity risk, virtualization limits or required accelerator capability;
+- prefer the smallest upgrade that resolves the proven constraint before replacing the whole host;
+- speculative future-proofing alone is insufficient reason to buy higher-tier hardware.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -2359,6 +2438,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.24 | 2026-10-05 | Locked D-051–D-054: local AI bounded/provider role, evidence-gated local-AI adoption, need-driven protocols/auxiliary services, and evidence-driven hardware scaling/procurement. Recorded I-064 Stage-1 first-integration ordering challenge for T-C001/ZASSELECTION. |
 | 0.1.23 | 2026-10-05 | Locked D-040–D-050: small staged deployment, portable human-inspectable canonical data, stable cross-channel identity, observation→candidate→canonical promotion, Human Queue, restart-safe/idempotent workflows, deterministic privacy, code/private-data separation, model-role abstraction, graceful degradation, and one coherent Temaya across surfaces/authority systems. |
 | 0.1.22 | 2026-10-05 | Locked D-039: reuse-first/plugin-first architecture discipline; mandatory candidate evaluation before equivalent custom work; Apps Script last-resort helper; mandatory Architecture Challenge after AP-000 PASS and before GATE-C001. |
 | 0.1.21 | 2026-10-05 | Recorded I-063: reuse-first / plugin-first LifeOS architecture challenge candidate; added research reference covering OpenClaw/ClawHub, n8n librarian/workflow use, HA MCP, Paperless-ngx, Obsidian API and pre-confirmation challenge methods. No LOCKED decision changed. |
