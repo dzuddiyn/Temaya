@@ -77,17 +77,17 @@ Run the mandatory challenge flow:
 
 **Pass:** required D-039 outputs exist; any conflict with a LOCKED decision is surfaced as an explicit decision gate; DESIGN/ACTION_PLAN findings are reconciled without silently changing D-xxx authority.
 
-**Mandatory POC/evaluation pack within T-C001 where technically feasible without crossing GATE-C001:**
-- **P-C001 — OpenClaw native/plugin audit:** ClawHub + bundled/official plugins + Skill Workshop; record reuse vs custom gaps.
-- **P-C002 — n8n Librarian gatekeeper POC:** synthetic/reversible ingestion → classify → dedup → approval → verified test write → retry proof.
-- **P-C003 — Official HA MCP POC/design proof:** validate scoped entity exposure and read path; any action remains reversible/test-only until the applicable control gate permits it.
-- **P-C004 — Paperless-ngx POC:** non-sensitive sample OCR/document ingestion + API/export/provenance.
-- **P-C005 — Obsidian/API POC:** sample human-readable DL surface with constrained local/API access; prove no duplicate authority.
-- **P-C006 — Retrieval/representation POC:** where sample corpus exists, test rebuildable keyword/vector hybrid retrieval and portable human-readable representation.
-- **P-C007 — Local AI utility benchmark:** non-sensitive bounded tasks only; compare latency, memory pressure, quality/reliability and operational overhead on the real host; no model/runtime lock.
-- **P-C008 — Stage-1 first-integration ZASSELECTION:** compare current AP-100 ordering with an early read-only/reversible OpenClaw ↔ official HA MCP vertical slice; do not change sequence without explicit decision.
-- **P-C009 — Auxiliary-service need review:** MQTT/Node-RED/Open WebUI and similar services; `NO NEED` is an acceptable outcome.
-- **P-C010 — Hardware scaling review:** use T-F001/AP-000 metrics to decide whether no upgrade, targeted component upgrade, compute extension or host replacement is justified.
+**Mandatory POC/evaluation pack within T-C001 where technically feasible without crossing GATE-C001. Execute in this evidence order unless a real dependency blocks it:**
+1. **P-C001 — OpenClaw native/plugin audit:** ClawHub + bundled/official plugins + Skill Workshop; record reuse vs custom gaps.
+2. **P-C003 — Official HA MCP + registry/cache proof:** validate scoped entity exposure and read path; verify HA Device/Area Registry authority and a stale-safe OpenClaw cache/fallback; any action remains reversible/test-only until the applicable control gate permits it.
+3. **P-C007 — Local AI utility benchmark:** only if hardware allows; bounded non-sensitive tasks; compare latency, memory pressure, quality/reliability and operational overhead; no model/runtime lock.
+4. **P-C002 — n8n Librarian/workflow gatekeeper POC:** run after the direct HA path is understood; synthetic/reversible ingestion → classify → dedup → approval → verified test write → retry proof. n8n is not default HA middleware.
+5. **P-C004 — Paperless-ngx POC:** non-sensitive sample OCR/document ingestion + API/export/provenance.
+6. **P-C005 — Obsidian/API POC:** sample human-readable DL surface with constrained local/API access; prove no duplicate authority.
+7. **P-C006 — Retrieval/representation POC:** where sample corpus exists, test rebuildable keyword/vector hybrid retrieval and portable human-readable representation.
+8. **P-C009 — Auxiliary-service need review:** MQTT/Node-RED/Open WebUI and similar services; `NO NEED` is an acceptable outcome.
+9. **P-C010 — Hardware scaling review:** use T-F001/AP-000 metrics to decide whether no upgrade, targeted component upgrade, compute extension or host replacement is justified.
+10. **P-C008 — Stage-1 first-integration ZASSELECTION:** compare current AP-100 ordering with an early read-only/reversible OpenClaw ↔ official HA MCP vertical slice; do not change sequence without explicit decision.
 
 **POC rule:** a POC may prove capability and fit, but must not create production-like private ingestion, external durable writes, or HA control that D-038 keeps blocked before GATE-C001.
 
