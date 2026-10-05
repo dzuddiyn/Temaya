@@ -481,6 +481,45 @@ Research reference:
 `ZASSIMPLE/RESEARCH/ARTIFICIAL_SOUL_AND_EMBODIMENT.md`.
 
 
+### RC-003 — LifeOS reuse-first / plugin-first architecture challenge
+
+**Source:** I-063  
+**Status:** OPEN RESEARCH CANDIDATE — PRE-GATE-C001 REVIEW CANDIDATE
+
+Goal:
+- avoid rebuilding mature capabilities from zero;
+- inventory reusable OpenClaw skills/plugins, n8n nodes/templates, HA integrations and mature open-source components;
+- compare reuse/integration/adaptation against custom implementation before design confirmation;
+- specifically challenge librarian/ingestion, messaging, Google, DL access, HA bridge, document processing and local-AI plumbing.
+
+Candidate components/patterns:
+- OpenClaw ClawHub and official plugin inventory;
+- OpenClaw Skills / Skill Workshop;
+- n8n as ingestion/workflow/approval/dedup/verified-write layer;
+- official Home Assistant MCP Server;
+- Paperless-ngx for OCR/document-management POC where useful;
+- Obsidian + constrained local API as a human DL surface;
+- Apps Script only as a compatibility helper after a demonstrated gap.
+
+Candidate review methods:
+1. first-principles authority review;
+2. reuse / integrate / adapt / build matrix;
+3. event-storming lifecycle walkthrough;
+4. pre-mortem + FMEA;
+5. threat/privacy challenge;
+6. graceful-degradation test;
+7. migration/exit test;
+8. reference-project cross-check;
+9. ZASSELECTION for remaining viable alternatives.
+
+Timing candidate:
+- run after AP-000 evidence is complete and before owner completion of `GATE-C001 — CONFIRM DESIGN`;
+- this does not change or bypass D-038.
+
+Research reference:
+`ZASSIMPLE/RESEARCH/LIFEOS_REUSE_AND_ARCHITECTURE_CHALLENGE.md`.
+
+
 
 ## Pre-confirmation design work
 
