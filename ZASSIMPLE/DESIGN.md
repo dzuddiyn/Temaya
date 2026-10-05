@@ -314,7 +314,17 @@ Locked by D-040–D-050:
 
 These principles refine D-027/D-028/D-036/D-037/D-039 without moving their authority boundaries.
 
-### M. Deferred domains
+### M. Local AI / auxiliary-service / hardware discipline
+
+Locked by D-051–D-054:
+- local AI is a replaceable bounded compute/provider layer, not identity/persona/memory/security authority;
+- local AI adoption is benchmark- and use-case-driven; no model/runtime/size is architecture-mandatory;
+- MQTT, Node-RED, Open WebUI and similar auxiliary services are introduced only by demonstrated need;
+- hardware scaling/procurement follows real host metrics and the smallest adequate remedy rather than speculative future-proofing.
+
+Stage-1 integration ordering remains unchanged for now. I-064 requires T-C001 to compare the current AP-100 order against an early read-only/reversible OpenClaw ↔ official HA MCP vertical slice using ZASSELECTION before any sequence change.
+
+### N. Deferred domains
 
 - Speaker-ID / audio transport / codec → M8.
 - Artificial Soul implementation → Stage 2.
