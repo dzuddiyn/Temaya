@@ -296,7 +296,25 @@ Apps Script is a last-resort Google-specific compatibility/helper mechanism, not
 
 No silent continuation through the confirmation boundary.
 
-### L. Deferred domains
+### L. Cross-cutting LifeOS-derived architecture principles
+
+Locked by D-040–D-050:
+
+- **Small deployment, large architecture:** deploy only the smallest reversible vertical slice needed to prove the next capability.
+- **Portable canonical data:** important canonical records remain human-inspectable/exportable and independent of any one AI/runtime/vendor.
+- **Stable person identity:** one human identity may bind multiple channels; display names alone are not identity authority.
+- **Observation promotion:** external/digital-exhaust content follows RAW/OBSERVATION → CANDIDATE → APPROVED where required → CANONICAL.
+- **Human Queue:** ambiguity/approval can suspend a job and later resume the same attributable operation.
+- **Durable workflow semantics:** consequential cross-system work is restart-safe, idempotent, deduplicated and verified.
+- **Deterministic privacy:** LLMs may interpret content but do not grant access or replace explicit authorization policy.
+- **Source/private-data separation:** source repositories do not become stores for private family memories or secrets.
+- **Model-role abstraction:** architecture binds to capability roles rather than transient model product names.
+- **Graceful degradation:** HA, DL, Temaya/OpenClaw, workflow engine and providers fail independently where practical.
+- **One Temaya, many surfaces:** channels and UI clients are surfaces over one coherent persona/policy/authority model, not competing Temaya instances.
+
+These principles refine D-027/D-028/D-036/D-037/D-039 without moving their authority boundaries.
+
+### M. Deferred domains
 
 - Speaker-ID / audio transport / codec → M8.
 - Artificial Soul implementation → Stage 2.
