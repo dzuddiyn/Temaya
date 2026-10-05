@@ -587,6 +587,40 @@ POC scope:
 
 Pass: at least one representation preserves semantics across tool/runtime replacement without depending on a proprietary internal store.
 
+### RC-009 — Local AI Utility Benchmark POC
+
+**Source:** D-048, D-051, D-052  
+**Status:** BLOCKED UNTIL AP-000 PASS / T-C001 AND HARDWARE ALLOWS
+
+POC scope:
+- benchmark representative bounded tasks such as classification, structured extraction and private/local summarization using non-sensitive samples;
+- compare at least latency, memory pressure, output quality/reliability and operational overhead;
+- test one replaceable local runtime/model mapping without making it architectural authority;
+- compare against a cloud/provider baseline where useful.
+
+Pass: local inference demonstrates a concrete useful role on the actual host without violating D-051/D-052.
+
+### RC-010 — Need-Driven Auxiliary Service Review
+
+**Source:** D-053  
+**Status:** T-C001 REVIEW / ACTIVATE ONLY ON REAL REQUIREMENT
+
+Review MQTT/broker, Node-RED, Open WebUI and similar auxiliary services against actual requirements.
+
+Pass rule:
+- `NO NEED` is a valid PASS;
+- adopt only when a concrete capability cannot be served more simply by existing HA/OpenClaw/n8n/native mechanisms;
+- record owner/use case, failure/recovery path and removal/exit path.
+
+### RC-011 — Evidence-Driven Hardware Scaling Review
+
+**Source:** D-054 / T-F001 evidence  
+**Status:** T-C001 REVIEW AFTER ACTUAL HOST METRICS
+
+Use actual host facts/metrics to decide whether AP-100 needs no upgrade, a targeted RAM/storage upgrade, accelerator/compute extension, or host replacement. Do not lock generic 8/16/32-GB tiers as architecture requirements.
+
+Pass: any proposed purchase/upgrade is tied to a measured constraint and the smallest adequate remedy.
+
 
 ## Pre-confirmation design work
 
