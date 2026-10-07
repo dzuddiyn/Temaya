@@ -216,11 +216,14 @@ M10 End-to-end Phase 1 verification
 #### M4 — WhatsApp integration + group reader
 
 - connect Temaya to WhatsApp using the simplest maintainable supported route;
+- **I-065 field evidence:** treat Hani's private WhatsApp → Puspa path as a primary daily usability target, not merely WhatsApp group ingestion;
+- prove that Hani can send a simple natural household message (for example, "telur habis") through her normal WhatsApp habit without first switching assistant modes/apps or using a special voice invocation;
+- capture the intent/message first; any downstream task/list/library/calendar write remains governed by the relevant later milestone, authority and approval rules;
 - enforce D-036 human approval before any group-derived information becomes memory/library/archive/calendar/task/reminder or triggers another durable/consequential action;
 - support relevant group reading where the actual platform/integration permits it;
 - preserve privacy and source provenance.
 
-**Pass:** Temaya can ingest/use the required WhatsApp information path at a basic useful level.
+**Pass:** Hani can use her normal private WhatsApp path to reach Puspa/Temaya with low friction, and Temaya can also ingest/use the required WhatsApp group-information path at a basic useful level.
 
 #### M5 — Google services
 
