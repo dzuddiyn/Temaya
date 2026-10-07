@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.27
+**Document version:** 0.1.28
 **Date:** 2026-10-08
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -950,20 +950,22 @@ At T-C001:
 
 Status: **OPEN / PARKED UNTIL T-C001**.
 
-## I-065 | OBSERVED FIELD EVIDENCE — HANI WHATSAPP PRIMARY DAILY SURFACE
-**Source:** EXPLICIT owner-reported real household UX observation on 2026-10-08.
+## I-065 | OBSERVED FIELD EVIDENCE — HANI CONTEXT-DEPENDENT PRIMARY SURFACES
+**Source:** EXPLICIT owner-reported real household UX observations on 2026-10-08.
 **Decision status:** NOT LOCKED. This is implementation/design evidence and must not silently change D-032 or AP-100 milestone order.
 
-Observed workflow:
-- owner asked Hani to invoke Gemini from the phone power button, speak a simple household shortage ("telur habis"), and rely on Gemini to place it into Google Keep;
-- Hani rejected the flow as cumbersome and sometimes unreliable;
-- Hani explicitly preferred saving/sending the information through WhatsApp instead.
+Observed workflows:
+- when Hani already has the phone in hand, she rejects the power-button → Gemini → Google Keep flow as cumbersome/sometimes unreliable and prefers simply sending the information through WhatsApp;
+- when Hani is in the kitchen/cooking with dirty or occupied hands, she prefers the smart speaker because hands-free access is materially easier;
+- in the kitchen/hands-busy context, **reliable wake-word activation is a primary usability requirement**.
 
 Design implication:
-- for Hani, WhatsApp should be treated as the **preferred low-friction daily interaction/capture surface** for Temaya/Puspa unless later evidence contradicts it;
+- Hani does not have one universal primary surface; the preferred Temaya/Puspa surface is **context-dependent**;
+- **phone-in-hand → WhatsApp is primary** because it matches her existing habit with minimal friction;
+- **kitchen / cooking / hands-busy → smart speaker is primary**, provided wake-word activation is reliable;
 - M4 WhatsApp must prove the private Hani → Puspa path, not only group-reader ingestion;
-- voice/smart-speaker remains valuable as a convenience/complementary surface, but should not be forced as the primary daily path;
-- downstream durable destination (task/list/library/calendar/etc.) remains governed by the relevant authority, approval and later milestone rules; WhatsApp is the interaction/capture surface, not automatically the canonical store.
+- M8 smart speaker must treat reliable hands-free wake-word invocation as a core acceptance concern, especially for kitchen use;
+- downstream durable destination (task/list/library/calendar/etc.) remains governed by the relevant authority, approval and later milestone rules; the interaction surface is not automatically the canonical store.
 
 ---
 
@@ -2470,6 +2472,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.28 | 2026-10-08 | Refined I-065 from WhatsApp-always-primary to context-dependent Hani surfaces: phone-in-hand → WhatsApp primary; kitchen/cooking/hands-busy → smart speaker primary, with reliable wake word treated as a core usability requirement. M4/M8 planning aligned; no D-xxx or AP-100 ordering changed. |
 | 0.1.27 | 2026-10-08 | Recorded I-065 household UX field evidence: Hani rejected the power-button → Gemini → Google Keep voice flow as cumbersome/unreliable and preferred WhatsApp. Planning implication: WhatsApp is the preferred low-friction daily Hani/Puspa interaction surface; M4 must prove private Hani → Puspa usage as well as group ingestion. No D-xxx or AP-100 ordering changed. |
 | 0.1.26 | 2026-10-08 | Locked D-055: reSpeaker Lite Voice Assistant Kit (reSpeaker Lite 2-Mic Array + XIAO ESP32S3) as M8 smart-speaker endpoint baseline; recorded existing reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi as reuse-first M8 prototype/test asset; preserved H1–H3 open implementation details and D-054 evidence-driven procurement. |
 | 0.1.25 | 2026-10-05 | Reconciled prior Home Assistant <> Temaya / AIoT Core context into canonical planning without changing D-xxx authority. Added context-sync note: direct official HA MCP path first, HA registry/cache fallback, deterministic privacy, local-AI evidence gate, n8n only for proven cross-system workflow need, and need-driven MQTT/Node-RED. AP-100 order remains unchanged pending I-064/P-C008 decision. |

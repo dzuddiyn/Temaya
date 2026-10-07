@@ -244,7 +244,7 @@ Stage 1:
 - WhatsApp;
 - smart speaker.
 
-**Observed household UX evidence (I-065, 2026-10-08):** Hani preferred WhatsApp over a power-button → Gemini → Google Keep voice workflow because the latter felt cumbersome and was not consistently reliable. Current design implication: treat **WhatsApp as Hani's preferred low-friction daily Temaya/Puspa surface**. The smart-speaker/voice path remains important but complementary rather than something Hani must use as the primary daily interface. WhatsApp is an interaction/capture surface; canonical task/list/library/calendar ownership remains with the relevant authority.
+**Observed household UX evidence (I-065, 2026-10-08):** Hani's preferred Temaya/Puspa surface is context-dependent. **Phone already in hand → WhatsApp is primary** because it matches her existing habit with minimal friction. **Kitchen/cooking/hands busy → smart speaker is primary**, because hands-free access matters more; in that context, reliable wake-word activation is a core usability requirement. These are interaction/capture surfaces; canonical task/list/library/calendar ownership remains with the relevant authority.
 
 Open idea for later:
 - wearable smart-speaker / companion chain;

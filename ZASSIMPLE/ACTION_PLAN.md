@@ -216,7 +216,7 @@ M10 End-to-end Phase 1 verification
 #### M4 — WhatsApp integration + group reader
 
 - connect Temaya to WhatsApp using the simplest maintainable supported route;
-- **I-065 field evidence:** treat Hani's private WhatsApp → Puspa path as a primary daily usability target, not merely WhatsApp group ingestion;
+- **I-065 field evidence:** when Hani already has the phone in hand, treat her private WhatsApp → Puspa path as the primary low-friction daily target, not merely WhatsApp group ingestion;
 - prove that Hani can send a simple natural household message (for example, "telur habis") through her normal WhatsApp habit without first switching assistant modes/apps or using a special voice invocation;
 - capture the intent/message first; any downstream task/list/library/calendar write remains governed by the relevant later milestone, authority and approval rules;
 - enforce D-036 human approval before any group-derived information becomes memory/library/archive/calendar/task/reminder or triggers another durable/consequential action;
@@ -278,6 +278,7 @@ Write rules:
 - reuse the already-owned **reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi** as an early audio/wake/transport prototype/test asset where useful before additional prototype purchases;
 - keep the endpoint thin: local wake word + audio I/O/transport; heavy STT, Speaker ID, identity routing, OpenClaw reasoning and memory remain off-device;
 - preserve the independent Home Assistant native voice fallback;
+- **I-065 field evidence:** kitchen/cooking/hands-busy use is a primary Hani smart-speaker scenario; reliable wake-word invocation must be treated as a core usability/acceptance concern;
 - resolve H1/H2/H3 at the M8 gate: Speaker-ID engine, audio transport, and return-audio codec/path;
 - exact seller/price/unit count remains evidence/need-driven under D-054;
 - no robot/embodiment requirement;
