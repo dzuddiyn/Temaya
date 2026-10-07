@@ -271,11 +271,16 @@ Write rules:
 
 - provide a convenient voice interface for Hani/family;
 - follow existing ESPHome / voice-gateway / OpenClaw architecture direction;
-- choose the simplest reliable Phase 1 hardware implementation;
+- implement D-055 using **Seeed Studio reSpeaker Lite Voice Assistant Kit (reSpeaker Lite 2-Mic Array + XIAO ESP32S3)** as the endpoint baseline;
+- reuse the already-owned **reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi** as an early audio/wake/transport prototype/test asset where useful before additional prototype purchases;
+- keep the endpoint thin: local wake word + audio I/O/transport; heavy STT, Speaker ID, identity routing, OpenClaw reasoning and memory remain off-device;
+- preserve the independent Home Assistant native voice fallback;
+- resolve H1/H2/H3 at the M8 gate: Speaker-ID engine, audio transport, and return-audio codec/path;
+- exact seller/price/unit count remains evidence/need-driven under D-054;
 - no robot/embodiment requirement;
 - wearable smart-speaker/earpiece chain (I-061) stays optional/future and must not delay the fixed smart-speaker PASS.
 
-**Pass:** a family member can invoke Temaya from the smart-speaker path and receive the reply on the source device.
+**Pass:** a family member can invoke Temaya from the reSpeaker-based smart-speaker path and receive the reply on the source device; the HA native fallback remains independently usable.
 
 #### M9 — D-026 Living Memory milestone
 

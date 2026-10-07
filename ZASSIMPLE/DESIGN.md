@@ -390,6 +390,10 @@ User-facing interaction surfaces:
 
 The smart speaker is a Phase 1 vital interface for convenient family use, especially for Hani. Robots and richer physical embodiment remain future extensions.
 
+**D-055 hardware baseline:** Seeed Studio reSpeaker Lite Voice Assistant Kit (reSpeaker Lite 2-Mic Array + XIAO ESP32S3) is the M8 endpoint baseline. It remains a thin client: local wake word, post-wake audio capture/transport, and response playback. Heavy STT/Speaker-ID/routing/reasoning remains in the Temaya Voice Gateway/OpenClaw path, while the Home Assistant native voice route remains an independent fallback.
+
+**Reuse-first asset already owned:** reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi. Use this as an M8 prototype/test asset where useful before buying redundant prototype hardware. It does not replace the D-055 baseline without an explicit later decision.
+
 ### 7. AIoT Core / Home Assistant
 Independent household automation and operational-state authority. It must continue functioning without Temaya/OpenClaw.
 
