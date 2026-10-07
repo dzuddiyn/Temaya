@@ -43,6 +43,7 @@
 - **G1:** ACCEPT deterministic HA + higher-level OpenClaw split. Preserve previously locked HA area/device localization cache/fallback contracts (D-007/D-008).
 
 ## SMART SPEAKER
+- **H0 hardware endpoint:** RESOLVED via D-055 — reSpeaker Lite Voice Assistant Kit is the M8 baseline; existing reSpeaker Pi HAT + Pi Zero + USB Wi-Fi is reuse-first prototype/test hardware.
 - **H1/H2/H3:** DEFER to M8.
 
 ## ARTIFICIAL SOUL
@@ -424,6 +425,17 @@ OpenClaw index/cache/search is derived and rebuildable. Preserve source IDs/link
 ---
 
 # H — BEFORE M8: SMART SPEAKER
+
+## H0 — Smart-speaker endpoint hardware
+**STATUS:** RESOLVED VIA D-055.
+
+**LOCKED BASELINE:** Seeed Studio reSpeaker Lite Voice Assistant Kit (reSpeaker Lite 2-Mic Array + XIAO ESP32S3).
+
+**EXISTING REUSE ASSET:** reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi.
+
+**BOUNDARY:** use the existing Pi-HAT stack for reversible prototype/test work where useful; it does not replace the D-055 reSpeaker Lite baseline. Seller, price, quantity, audio transport, codec and Speaker-ID remain outside this hardware lock.
+
+---
 
 ## H1 — Q-013 Speaker-ID engine
 **DUE:** BEFORE M8.

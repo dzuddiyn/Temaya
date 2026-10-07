@@ -4,8 +4,8 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.25  
-**Date:** 2026-10-05  
+**Document version:** 0.1.26
+**Date:** 2026-10-08
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
 
@@ -2384,6 +2384,23 @@ Locked principles:
 **Locked by:** Project Owner
 
 ---
+## D-055 | LOCKED
+
+**Source:** EXPLICIT owner instruction: "lock respeaker ini" after smart-speaker review; owner also disclosed existing reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi hardware.
+**Decision:** **Seeed Studio reSpeaker Lite Voice Assistant Kit (reSpeaker Lite 2-Mic Array + XIAO ESP32S3) is the Stage-1 M8 smart-speaker endpoint hardware baseline.**
+
+Locked principles:
+- the reSpeaker Lite endpoint remains an ESPHome-oriented thin client under D-004/D-005: local wake-word handling, microphone/audio capture after wake, transport to the Temaya Voice Gateway, and response-audio playback;
+- the endpoint is not Temaya identity, persona, canonical memory, privacy/authorization authority or heavy AI compute;
+- the existing dual-route boundary remains unchanged: Temaya/OpenClaw Voice Gateway route plus independent Home Assistant native voice fallback;
+- Speaker-ID engine, end-device ↔ Voice Gateway audio transport, and return-audio codec/path remain OPEN until H1/H2/H3 at M8;
+- the owner's existing **reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi** is a reuse-first M8 prototype/test asset for audio/wake/transport experiments and must be evaluated before unnecessary additional prototype procurement;
+- the existing Pi-HAT stack does not silently replace the locked reSpeaker Lite endpoint baseline; changing the baseline requires an explicit later decision;
+- exact seller, price, enclosure variant, speaker unit count and procurement timing are not locked; apply D-054 evidence/need-driven procurement.
+
+**Locked by:** Project Owner
+
+---
 ## OWNER-DECIDED BUT NOT LOCKED
 
 Robot companion untuk **setiap anak dan ayah**, menggunakan pendekatan **modify robot murah di Shopee**, telah dinyatakan owner sebagai "decided".
@@ -2438,6 +2455,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.26 | 2026-10-08 | Locked D-055: reSpeaker Lite Voice Assistant Kit (reSpeaker Lite 2-Mic Array + XIAO ESP32S3) as M8 smart-speaker endpoint baseline; recorded existing reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi as reuse-first M8 prototype/test asset; preserved H1–H3 open implementation details and D-054 evidence-driven procurement. |
 | 0.1.25 | 2026-10-05 | Reconciled prior Home Assistant <> Temaya / AIoT Core context into canonical planning without changing D-xxx authority. Added context-sync note: direct official HA MCP path first, HA registry/cache fallback, deterministic privacy, local-AI evidence gate, n8n only for proven cross-system workflow need, and need-driven MQTT/Node-RED. AP-100 order remains unchanged pending I-064/P-C008 decision. |
 | 0.1.24 | 2026-10-05 | Locked D-051–D-054: local AI bounded/provider role, evidence-gated local-AI adoption, need-driven protocols/auxiliary services, and evidence-driven hardware scaling/procurement. Recorded I-064 Stage-1 first-integration ordering challenge for T-C001/ZASSELECTION. |
 | 0.1.23 | 2026-10-05 | Locked D-040–D-050: small staged deployment, portable human-inspectable canonical data, stable cross-channel identity, observation→candidate→canonical promotion, Human Queue, restart-safe/idempotent workflows, deterministic privacy, code/private-data separation, model-role abstraction, graceful degradation, and one coherent Temaya across surfaces/authority systems. |
@@ -2473,6 +2491,7 @@ Maka tindakan semasa:
 - D-039 LOCKED: reuse-first/plugin-first; Architecture Challenge is mandatory after AP-000 PASS and before GATE-C001.
 - D-040–D-050 LOCKED: small staged deployment; portable/human-inspectable canonical data; stable cross-channel person identity; observation→candidate→canonical promotion; Human Queue; restart-safe/idempotent workflows; deterministic privacy; source/private-data separation; model-role abstraction; graceful degradation; one coherent Temaya across surfaces and specialized authorities.
 - D-051–D-054 LOCKED: local AI is a bounded replaceable provider, local-AI adoption is benchmark/use-case gated, auxiliary protocols/services are need-driven, and hardware scaling/procurement is evidence-driven.
+- D-055 LOCKED: reSpeaker Lite Voice Assistant Kit (2-Mic Array + XIAO ESP32S3) is the M8 smart-speaker endpoint baseline; existing reSpeaker Pi HAT + Pi Zero + USB Wi-Fi is a reuse-first prototype/test asset.
 - AC-017 AGREED: Google Tasks is the preferred single capture surface, but the public Tasks API currently cannot read/write due time-of-day, so exact timed-item implementation remains an M5 compatibility test.
 - I-061 OPEN: wearable smart-speaker / earpiece companion chain is recorded as a future interaction candidate.
 - D-035 LOCKED: minimum security baseline starts Day 0; deeper hardening remains Stage 3.
