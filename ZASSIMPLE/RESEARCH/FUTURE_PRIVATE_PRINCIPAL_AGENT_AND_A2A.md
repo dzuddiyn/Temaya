@@ -4,6 +4,11 @@
 **Date:** 2026-10-08  
 **Scope:** Future productization / commercialization direction. Not current Stage 0/1 critical path.
 
+**Canonical evidence ledger for Malaysia agent-market / protocol / commerce facts:**  
+`ZASSIMPLE/RESEARCH/MALAYSIA_TEMAYA_MARKET_RESEARCH_2026-10-08.md`
+
+Use that research snapshot for factual claims and source links. This file remains the owner architecture aspiration, not the factual evidence ledger.
+
 ## Owner premise
 
 Temaya's long-term defensible value should not be defined by building a bespoke booking, calling, purchasing or merchant-integration stack for every business.

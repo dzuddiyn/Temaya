@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.28
+**Document version:** 0.1.29
 **Date:** 2026-10-08
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -966,6 +966,37 @@ Design implication:
 - M4 WhatsApp must prove the private Hani → Puspa path, not only group-reader ingestion;
 - M8 smart speaker must treat reliable hands-free wake-word invocation as a core acceptance concern, especially for kitchen use;
 - downstream durable destination (task/list/library/calendar/etc.) remains governed by the relevant authority, approval and later milestone rules; the interaction surface is not automatically the canonical store.
+
+---
+
+## I-066 | RESEARCH SNAPSHOT — MALAYSIA MARKET / AGEING / CARE / AGENTIC ECOSYSTEM
+**Source:** EXPLICIT owner instruction to preserve and tidy the 2026-10-08 research with factual sourcing.
+**Decision status:** NOT LOCKED. Research evidence only; forecasts and owner aspirations remain explicitly separated from facts.
+
+Canonical research snapshot:
+`ZASSIMPLE/RESEARCH/MALAYSIA_TEMAYA_MARKET_RESEARCH_2026-10-08.md`
+
+The snapshot consolidates:
+- Malaysia personal-AI / assistant landscape: Proxi, Jadwal, AI Bradaa, Gemini Personal Intelligence, Grab and Ryt AI;
+- Tab as an external trust-oriented personal-agent reference;
+- correction that AI Bradaa's vendor-described "Soul Component" is a ferrofluid/state UI and must not be treated as evidence of a Temaya-equivalent Artificial Soul;
+- agentic-commerce / interoperability evidence: A2A, UCP, AP2 and Mastercard's Malaysia Agent Pay pilot;
+- Malaysia consumer/retailer trust evidence from Adyen 2026;
+- DOSM current and projected ageing-population data through 2060;
+- DOSM life-expectancy data at age 60;
+- NHMS 2025 older-person evidence including social support, dementia, depression, IADL/ADL limitation and informal-caregiver burden;
+- NHMS 2023 functional-difficulty / depression evidence with interpretation cautions;
+- Malaysia Care Strategic Framework 2026–2030 and RMK13 / National Ageing Blueprint policy direction;
+- owner future payer models: B2C, B2B2C, B2G and B2NGO/waqaf/CSR;
+- owner help-first / V-Road positioning and deliberate non-head-on positioning against affluent personal-productivity / premium-companion markets;
+- addressable-population arithmetic;
+- 2026–2035 forecasts clearly labelled as FORECAST rather than fact.
+
+Research rule:
+- factual claims must point to source URLs in the research snapshot;
+- vendor statements remain VENDOR CLAIM unless independently verified;
+- forecasts do not become project decisions;
+- time-sensitive facts must be re-verified before public, investment, grant, procurement, pricing or market-entry use.
 
 ---
 
@@ -2472,6 +2503,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.29 | 2026-10-08 | Recorded I-066 research snapshot reference for Malaysia personal-agent market, agentic interoperability, ageing/care demographics, NHMS older-person evidence, care-policy direction, payer models and clearly labelled forecasts. Centralised sourced facts in `ZASSIMPLE/RESEARCH/MALAYSIA_TEMAYA_MARKET_RESEARCH_2026-10-08.md`; no D-xxx decision changed. |
 | 0.1.28 | 2026-10-08 | Refined I-065 from WhatsApp-always-primary to context-dependent Hani surfaces: phone-in-hand → WhatsApp primary; kitchen/cooking/hands-busy → smart speaker primary, with reliable wake word treated as a core usability requirement. M4/M8 planning aligned; no D-xxx or AP-100 ordering changed. |
 | 0.1.27 | 2026-10-08 | Recorded I-065 household UX field evidence: Hani rejected the power-button → Gemini → Google Keep voice flow as cumbersome/unreliable and preferred WhatsApp. Planning implication: WhatsApp is the preferred low-friction daily Hani/Puspa interaction surface; M4 must prove private Hani → Puspa usage as well as group ingestion. No D-xxx or AP-100 ordering changed. |
 | 0.1.26 | 2026-10-08 | Locked D-055: reSpeaker Lite Voice Assistant Kit (reSpeaker Lite 2-Mic Array + XIAO ESP32S3) as M8 smart-speaker endpoint baseline; recorded existing reSpeaker Pi HAT + Raspberry Pi Zero + USB Wi-Fi as reuse-first M8 prototype/test asset; preserved H1–H3 open implementation details and D-054 evidence-driven procurement. |
