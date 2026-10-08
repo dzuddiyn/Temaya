@@ -4,6 +4,11 @@
 **Date:** 2026-10-08  
 **Scope:** Future commercial/product direction only. Not current Stage 0/1 implementation scope.
 
+**Canonical evidence ledger for Malaysia market/demography/care facts:**  
+`ZASSIMPLE/RESEARCH/MALAYSIA_TEMAYA_MARKET_RESEARCH_2026-10-08.md`
+
+Use that research snapshot for sourced facts. This file should remain primarily an owner-philosophy / future-direction artifact rather than duplicate market evidence.
+
 ## Source lineage
 
 This future direction intentionally adapts the **Kerani_Core_SuperBasic D-048 — V-Road / 7V Core + Extended V-Gates** philosophy.
