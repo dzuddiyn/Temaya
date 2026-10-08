@@ -88,6 +88,7 @@ Run the mandatory challenge flow:
 8. **P-C009 — Auxiliary-service need review:** MQTT/Node-RED/Open WebUI and similar services; `NO NEED` is an acceptable outcome.
 9. **P-C010 — Hardware scaling review:** use T-F001/AP-000 metrics to decide whether no upgrade, targeted component upgrade, compute extension or host replacement is justified.
 10. **P-C008 — Stage-1 first-integration ZASSELECTION:** compare current AP-100 ordering with an early read-only/reversible OpenClaw ↔ official HA MCP vertical slice; do not change sequence without explicit decision.
+11. **P-C011 — Uptime Kuma monitoring POC:** test low-privilege service availability/history/alerting and failure independence; explicitly assess same-host blind spot and avoid privileged Docker socket access unless separately justified.
 
 **POC rule:** a POC may prove capability and fit, but must not create production-like private ingestion, external durable writes, or HA control that D-038 keeps blocked before GATE-C001.
 

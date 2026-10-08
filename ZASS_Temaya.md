@@ -4,7 +4,7 @@
 **Repository:** `dzuddiyn/Temaya`  
 **Methodology:** ZASSIMPLE_MY v0.3.0  
 **Official method source:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/ZASSIMPLE/ZASSIMPLE_MY.md`  
-**Document version:** 0.1.29
+**Document version:** 0.1.30
 **Date:** 2026-10-08
 **Status:** DISCOVERY — idea dump dahulu, padanan kemudian  
 **Owner:** Project Owner
@@ -997,6 +997,25 @@ Research rule:
 - vendor statements remain VENDOR CLAIM unless independently verified;
 - forecasts do not become project decisions;
 - time-sensitive facts must be re-verified before public, investment, grant, procurement, pricing or market-entry use.
+## I-067 | OPEN — Uptime Kuma monitoring candidate
+**Source:** EXPLICIT owner idea + current open-source verification
+
+Evaluate **Uptime Kuma** as a lightweight self-hosted monitoring/health surface for Temaya infrastructure and services.
+
+Candidate role:
+- monitor availability/health of OpenClaw, Home Assistant, n8n, Paperless-ngx, Obsidian/API endpoints, DL-related services, DNS/network endpoints and other HTTP/TCP/WebSocket/Push-capable targets;
+- provide local dashboard/history, notifications and optional status pages;
+- remain a monitoring observer, not an authority for persona, memory, workflow, household state or service recovery decisions;
+- do not make monitored services depend on Uptime Kuma to function;
+- prefer low-privilege HTTP/TCP/Push checks before privileged Docker-daemon access.
+
+Important limitation:
+- an Uptime Kuma instance running on the same mini PC cannot independently prove total mini-PC, site-power or local-network availability once that host/path is down; an external/second-host vantage point may be required later for true host/site outage detection.
+
+Security note:
+- Docker socket monitoring can grant broad Docker-daemon control to the Uptime Kuma container; avoid or isolate it unless the monitoring benefit clearly justifies that privilege.
+
+Status: **OPEN / REUSE-FIRST CANDIDATE — evaluate at T-C001; no adoption lock yet.**
 
 ---
 
@@ -2503,6 +2522,7 @@ Maka tindakan semasa:
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.30 | 2026-10-08 | Recorded I-067: Uptime Kuma as an OPEN reuse-first monitoring/health-plane candidate for service availability/history/alerting, with explicit same-host blind-spot and Docker-socket privilege guardrails; no adoption or D-xxx decision changed. |
 | 0.1.29 | 2026-10-08 | Recorded I-066 research snapshot reference for Malaysia personal-agent market, agentic interoperability, ageing/care demographics, NHMS older-person evidence, care-policy direction, payer models and clearly labelled forecasts. Centralised sourced facts in `ZASSIMPLE/RESEARCH/MALAYSIA_TEMAYA_MARKET_RESEARCH_2026-10-08.md`; no D-xxx decision changed. |
 | 0.1.28 | 2026-10-08 | Refined I-065 from WhatsApp-always-primary to context-dependent Hani surfaces: phone-in-hand → WhatsApp primary; kitchen/cooking/hands-busy → smart speaker primary, with reliable wake word treated as a core usability requirement. M4/M8 planning aligned; no D-xxx or AP-100 ordering changed. |
 | 0.1.27 | 2026-10-08 | Recorded I-065 household UX field evidence: Hani rejected the power-button → Gemini → Google Keep voice flow as cumbersome/unreliable and preferred WhatsApp. Planning implication: WhatsApp is the preferred low-friction daily Hani/Puspa interaction surface; M4 must prove private Hani → Puspa usage as well as group ingestion. No D-xxx or AP-100 ordering changed. |
