@@ -326,7 +326,18 @@ Locked by D-051–D-054:
 
 Stage-1 integration ordering remains unchanged for now. I-064 requires T-C001 to compare the current AP-100 order against an early read-only/reversible OpenClaw ↔ official HA MCP vertical slice using ZASSELECTION before any sequence change.
 
-### N. Deferred domains
+### N. Monitoring / health-plane candidate
+
+Uptime Kuma is an OPEN reuse-first candidate (I-067 / RC-012), not a core dependency.
+
+Candidate principles:
+- monitoring observes services; it does not become service authority;
+- monitored services must remain independent of the monitor;
+- prefer HTTP/TCP/Push and other low-privilege checks before privileged container-runtime access;
+- same-host monitoring cannot independently prove total-host/site availability;
+- external/second-vantage monitoring may be added later if host/site outage detection becomes a requirement.
+
+### O. Deferred domains
 
 - Speaker-ID / audio transport / codec → M8.
 - Artificial Soul implementation → Stage 2.
