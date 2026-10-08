@@ -695,6 +695,25 @@ Use actual host facts/metrics to decide whether AP-100 needs no upgrade, a targe
 
 Pass: any proposed purchase/upgrade is tied to a measured constraint and the smallest adequate remedy.
 
+### RC-012 — Uptime Kuma Monitoring Plane POC
+
+**Source:** I-067 / D-039 / D-049  
+**Status:** T-C001 REUSE POC CANDIDATE
+
+POC scope:
+- deploy only in a reversible/test context if host resources allow;
+- monitor a small set of test/service endpoints via HTTP/TCP/Push where possible;
+- prove alerting/history usefulness without placing Uptime Kuma on a critical dependency path;
+- verify monitored services continue functioning when Uptime Kuma is stopped;
+- assess an external/second-vantage option conceptually or practically for total-host/site outage coverage;
+- avoid Docker socket access unless a separate least-privilege/security review justifies it.
+
+Pass:
+- service-level availability monitoring adds useful operational visibility at low complexity;
+- failure of Uptime Kuma does not impair Temaya/HA/OpenClaw;
+- limits of same-host monitoring are explicitly documented;
+- adoption/removal path is simple and recoverable.
+
 
 ## Pre-confirmation design work
 
