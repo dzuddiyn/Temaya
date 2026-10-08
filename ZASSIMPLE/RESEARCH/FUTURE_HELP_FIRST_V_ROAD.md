@@ -231,4 +231,123 @@ ONLY THEN: EXTERNAL HOUSEHOLDS / MARKET TEST
 
 No current engineering task should be promoted merely for future commercial positioning unless it also improves the real family deployment or preserves a low-cost future interoperability boundary.
 
+
+---
+
+## Future payer / deployment channels for assistive Temaya
+
+The owner explicitly accepts a multi-payer model for future assistive/care deployment.
+
+### B2C — family-funded
+A son/daughter/family member installs or subscribes to Temaya for an older parent or dependent family member.
+
+Primary value:
+- reduce routine coordination burden;
+- provide reminders, companionship and daily assistance;
+- keep the family informed through controlled, consent-aware channels;
+- improve accessibility through familiar conversational surfaces.
+
+### B2B2C — care-centre infrastructure
+A residential care centre / elderly-care facility purchases the local Temaya infrastructure, while each resident receives a separate personal Temaya identity/context boundary.
+
+Candidate shape:
+
+```text
+CARE CENTRE
+├── local/private Temaya infrastructure
+├── Home Assistant / building automation
+├── staff escalation layer
+├── resident A → private Temaya
+├── resident B → private Temaya
+├── resident C → private Temaya
+└── ...
+```
+
+The goal is not to remove human carers. It is to reduce repetitive cognitive/coordination load so staff can focus on work that requires human presence, judgment, physical care and empathy.
+
+### B2G — government / state / agency funded
+Government, state bodies or public agencies may fund deployment to selected populations where care burden, accessibility or social-support needs justify it.
+
+Possible future contexts:
+- ageing-in-place programmes;
+- elderly-care facilities;
+- community care;
+- accessibility support;
+- digital inclusion;
+- public-health or social-support programmes.
+
+Any such deployment must preserve Temaya's privacy, user-control and data-authority principles.
+
+### B2NGO / waqaf / CSR — sponsored access
+NGOs, waqaf bodies, foundations, CSR programmes or social-impact partners may sponsor Temaya for elderly people, low-income households, people living alone or others with limited support.
+
+The product philosophy remains:
+**help the person first; funding channel is secondary.**
+
+---
+
+## Future care-infrastructure direction
+
+For institutional/care deployments, Home Assistant / local automation can become a major part of the value proposition.
+
+Candidate uses include:
+- room comfort controls within safe limits;
+- lights, fan/air-conditioning and accessibility controls;
+- staff-call / escalation;
+- routine reminders;
+- presence/state sensing where ethically and legally appropriate;
+- local alarms;
+- local-only operation for critical/basic functions.
+
+Design preference:
+- offline/private-first for sensitive resident context and core local functions;
+- cloud reasoning/services optional where they add value;
+- no assumption that internet availability is required for basic safety/assistance workflows.
+
+This is a future direction only. Exact clinical, regulatory, safeguarding and facility-operational boundaries remain OPEN.
+
+---
+
+## Market-positioning boundary
+
+The owner explicitly does **not** want future Temaya commercialisation to chase the same primary market as products such as Proxi, AI Bradaa or Jadwal.
+
+Those products may continue to serve convenience/productivity/companion segments, including more affluent users who primarily buy personal productivity or premium convenience.
+
+Temaya's intended differentiation is instead:
+
+- assistive value;
+- family continuity;
+- private personal/family context;
+- ageing and care support;
+- low-friction daily help;
+- household/home integration;
+- underserved or high-friction human problems;
+- privacy and local/offline deployment where useful.
+
+This is **not** an exclusivity claim and does not assume those services cannot enter adjacent markets later. It is a deliberate Temaya positioning choice: do not spend effort competing head-on where other products already serve the need well.
+
+---
+
+## Strategic principle
+
+Temaya should not ask:
+
+> "Which market is richest?"
+
+It should ask:
+
+> "Who is struggling with a real recurring problem that Temaya can reduce safely and reliably?"
+
+If that value becomes important enough, the paying party may be:
+- the user;
+- the user's family;
+- a care institution;
+- government;
+- an NGO/waqaf body;
+- a CSR or social-impact sponsor.
+
+This preserves the V-Road principle:
+**Value first. Payer and scale follow evidence.**
+
 This is **future work**, not a current commercial launch plan and not a LOCKED D-xxx decision.
